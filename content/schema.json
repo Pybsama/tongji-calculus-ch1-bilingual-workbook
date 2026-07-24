@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tongji Calculus Chapter 1 bilingual question",
+  "type": "object",
+  "required": [
+    "id",
+    "section",
+    "tier",
+    "difficulty",
+    "type",
+    "tags",
+    "minutes",
+    "space",
+    "classic_method",
+    "zh",
+    "en"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^Q[0-9]{3}$"},
+    "section": {"type": "integer", "minimum": 1, "maximum": 10},
+    "tier": {
+      "enum": ["foundation", "methods", "synthesis", "challenge"]
+    },
+    "difficulty": {
+      "enum": ["basic", "standard", "advanced", "hard", "challenge"]
+    },
+    "type": {
+      "enum": [
+        "single_choice",
+        "multiple_choice",
+        "true_false",
+        "fill_blank",
+        "calculation",
+        "proof",
+        "comprehensive",
+        "error_diagnosis"
+      ]
+    },
+    "tags": {
+      "type": "object",
+      "required": ["zh", "en"],
+      "properties": {
+        "zh": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "en": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    },
+    "minutes": {"type": "integer", "minimum": 2, "maximum": 45},
+    "space": {"enum": ["S", "M", "L", "XL"]},
+    "classic_method": {"type": "boolean"},
+    "zh": {"$ref": "#/$defs/localized"},
+    "en": {"$ref": "#/$defs/localized"}
+  },
+  "$defs": {
+    "localized": {
+      "type": "object",
+      "required": ["title", "prompt", "answer", "solution"],
+      "properties": {
+        "title": {"type": "string", "minLength": 2},
+        "prompt": {"type": "string", "minLength": 4},
+        "choices": {"type": "array", "items": {"type": "string"}},
+        "answer": {"type": "string", "minLength": 1},
+        "solution": {
+          "type": "object",
+          "required": [
+            "knowledge",
+            "analysis",
+            "steps",
+            "pitfalls",
+            "verification",
+            "takeaway",
+            "extension"
+          ],
+          "properties": {
+            "knowledge": {
+              "type": "array",
+              "items": {"type": "string"},
+              "minItems": 1
+            },
+            "analysis": {"type": "string", "minLength": 8},
+            "steps": {
+              "type": "array",
+              "items": {"type": "string"},
+              "minItems": 2
+            },
+            "pitfalls": {
+              "type": "array",
+              "items": {"type": "string"},
+              "minItems": 1
+            },
+            "verification": {"type": "string", "minLength": 4},
+            "takeaway": {"type": "string", "minLength": 4},
+            "extension": {"type": "string"}
+          }
+        }
+      }
+    }
+  }
+}
+
