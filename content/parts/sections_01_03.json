@@ -6,61 +6,91 @@
     "difficulty": "basic",
     "type": "single_choice",
     "tags": {
-      "zh": ["映射", "函数定义", "定义域与陪域"],
-      "en": ["mapping", "definition of a function", "domain and codomain"]
+      "zh": [
+        "映射",
+        "函数定义",
+        "定义域与陪域"
+      ],
+      "en": [
+        "mapping",
+        "definition of a function",
+        "domain and codomain"
+      ]
     },
     "minutes": 4,
     "space": "S",
     "classic_method": false,
     "zh": {
       "title": "判断合法映射",
-      "prompt": "设 X={-1,0,1}，Y={0,1}。下列对应中，哪一个定义了从 X 到 Y 的函数？",
+      "prompt": "设 $X=\\{-1,0,1\\}$，$Y=\\{0,1\\}$。下列对应中，哪一个定义了从 X 到 Y 的函数？",
       "choices": [
-        "A. 对每个 x∈X，令 f(x)=x²",
-        "B. f(-1)=1，f(1)=1，但不给出 f(0)",
-        "C. f(-1)=1，f(0)=0，同时规定 f(1)=0 和 f(1)=1",
-        "D. 对每个 x∈X，令 f(x)=x+1"
+        "A. 对每个 $x\\in X$，令 $f(x)=x^{2}$",
+        "B. $f(-1)=1$，$f(1)=1$，但不给出 $f(0)$",
+        "C. $f(-1)=1$，$f(0)=0$，同时规定 $f(1)=0$ 和 $f(1)=1$",
+        "D. 对每个 $x\\in X$，令 $f(x)=x+1$"
       ],
       "answer": "A",
       "solution": {
-        "knowledge": ["函数要求定义域中每个元素都有像", "每个自变量只能对应唯一函数值", "函数值必须属于陪域"],
+        "knowledge": [
+          "函数要求定义域中每个元素都有像",
+          "每个自变量只能对应唯一函数值",
+          "函数值必须属于陪域"
+        ],
         "analysis": "逐项检查三个必要条件：X 中是否每个元素都被定义、像是否唯一、像是否全部落在 Y 中。只要有一项失败，就不是从 X 到 Y 的函数。",
         "steps": [
-          "检查 A：(-1)²=1，0²=0，1²=1，三个元素均有且仅有一个像。",
+          "检查 A：$(-1)^{2}=1$，$0^{2}=0$，$1^{2}=1$，三个元素均有且仅有一个像。",
           "A 的所有函数值都是 0 或 1，均属于 Y，所以 A 合法。",
-          "B 没有给出 f(0)，因此没有覆盖整个定义域 X。",
-          "C 让同一个输入 1 对应两个不同值；D 中 f(1)=2∉Y，因此 C、D 均不合法。"
+          "B 没有给出 $f(0)$，因此没有覆盖整个定义域 X。",
+          "C 让同一个输入 1 对应两个不同值；D 中 $f(1)=2\\notin Y$，因此 C、D 均不合法。"
         ],
-        "pitfalls": ["只检查公式能否计算，而不检查函数值是否落在指定陪域", "误以为一个输入可以同时对应多个输出"],
-        "verification": "把 X 的三个元素逐一代入 A，可得到有序对集合 {(-1,1),(0,0),(1,1)}，每个第一分量恰好出现一次，第二分量均在 Y 中。",
+        "pitfalls": [
+          "只检查公式能否计算，而不检查函数值是否落在指定陪域",
+          "误以为一个输入可以同时对应多个输出"
+        ],
+        "verification": "把 X 的三个元素逐一代入 A，可得到有序对集合 $\\{(-1,1),(0,0),(1,1)\\}$，每个第一分量恰好出现一次，第二分量均在 Y 中。",
         "takeaway": "判断映射要同时核对“处处有定义、像唯一、像属于陪域”。",
-        "extension": "若把 D 的陪域改为 {0,1,2}，则 D 会成为从 X 到该新陪域的函数。"
+        "extension": "若把 D 的陪域改为 $\\{0,1,2\\}$，则 D 会成为从 X 到该新陪域的函数。"
       }
     },
     "en": {
       "title": "Identify a Valid Mapping",
-      "prompt": "Let X={-1,0,1} and Y={0,1}. Which correspondence defines a function from X to Y?",
+      "prompt": "Let $X=\\{-1,0,1\\}$ and $Y=\\{0,1\\}$. Which correspondence defines a function from X to Y?",
       "choices": [
-        "A. For every x∈X, define f(x)=x²",
-        "B. Define f(-1)=1 and f(1)=1, but do not define f(0)",
-        "C. Define f(-1)=1 and f(0)=0, while assigning both f(1)=0 and f(1)=1",
-        "D. For every x∈X, define f(x)=x+1"
+        "A. For every $x\\in X$, define $f(x)=x^{2}$",
+        "B. Define $f(-1)=1$ and $f(1)=1$, but do not define $f(0)$",
+        "C. Define $f(-1)=1$ and $f(0)=0$, while assigning both $f(1)=0$ and $f(1)=1$",
+        "D. For every $x\\in X$, define $f(x)=x+1$"
       ],
       "answer": "A",
       "solution": {
-        "knowledge": ["every domain element must have an image", "each input must have a unique output", "every output must belong to the codomain"],
+        "knowledge": [
+          "every domain element must have an image",
+          "each input must have a unique output",
+          "every output must belong to the codomain"
+        ],
         "analysis": "Check the three defining requirements one by one: every element of X must be covered, its image must be unique, and every image must lie in Y. Failure of any one condition invalidates the correspondence.",
         "steps": [
-          "For A, (-1)²=1, 0²=0, and 1²=1, so all three inputs have exactly one image.",
+          "For $A, (-1)^{2}=1, 0^{2}=0$, and $1^{2}=1$, so all three inputs have exactly one image.",
           "All outputs in A are either 0 or 1, hence they belong to Y; therefore A is valid.",
-          "B leaves f(0) undefined, so it does not cover the whole domain X.",
-          "C gives the same input 1 two outputs, while D gives f(1)=2∉Y; therefore C and D are invalid."
+          "B leaves $f(0)$ undefined, so it does not cover the whole domain X.",
+          "C gives the same input 1 two outputs, while D gives $f(1)=2\\notin Y$; therefore C and D are invalid."
         ],
-        "pitfalls": ["checking only whether a formula can be evaluated and ignoring the prescribed codomain", "allowing one input to have two different outputs"],
-        "verification": "Substitution in A gives the ordered-pair set {(-1,1),(0,0),(1,1)}. Every first component appears exactly once, and every second component lies in Y.",
+        "pitfalls": [
+          "checking only whether a formula can be evaluated and ignoring the prescribed codomain",
+          "allowing one input to have two different outputs"
+        ],
+        "verification": "Substitution in A gives the ordered-pair set $\\{(-1,1),(0,0),(1,1)\\}$. Every first component appears exactly once, and every second component lies in Y.",
         "takeaway": "A mapping is a function only when it is defined everywhere on the domain, single-valued, and codomain-respecting.",
-        "extension": "If the codomain in D were changed to {0,1,2}, then D would define a function from X to that new codomain."
+        "extension": "If the codomain in D were changed to $\\{0,1,2\\}$, then D would define a function from X to that new codomain."
       }
+    },
+    "source_lineage": {
+      "category": "open_text_adaptation",
+      "method_family": "mapping / definition of a function",
+      "relation": "Independently rewritten around an openly documented mapping / definition of a function pattern; the references establish method-level lineage, not verbatim reproduction of a source problem.",
+      "references": [
+        "openstax-v1-1.1-functions"
+      ]
     }
   },
   {
@@ -70,49 +100,79 @@
     "difficulty": "basic",
     "type": "fill_blank",
     "tags": {
-      "zh": ["函数定义域", "根式", "对数"],
-      "en": ["domain", "radical", "logarithm"]
+      "zh": [
+        "函数定义域",
+        "根式",
+        "对数"
+      ],
+      "en": [
+        "domain",
+        "radical",
+        "logarithm"
+      ]
     },
     "minutes": 5,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "根式与对数的共同定义域",
-      "prompt": "函数 f(x)=√(2-x)+ln(x+1) 的自然定义域为 ______。",
-      "answer": "(-1,2]",
+      "prompt": "函数 $f(x)=\\sqrt{2-x}+\\ln(x+1)$ 的自然定义域为 $\\underline{\\qquad}$。",
+      "answer": "$(-1,2]$",
       "solution": {
-        "knowledge": ["偶次根式要求被开方数非负", "自然对数真数必须严格为正", "复合限制取交集"],
+        "knowledge": [
+          "偶次根式要求被开方数非负",
+          "自然对数真数必须严格为正",
+          "复合限制取交集"
+        ],
         "analysis": "两个表达式同时出现时，x 必须同时满足根式和对数的定义条件。根式端点可以取到，而对数端点不能取到。",
         "steps": [
-          "由 √(2-x) 有意义，得到 2-x≥0，即 x≤2。",
-          "由 ln(x+1) 有意义，得到 x+1>0，即 x>-1。",
-          "同时满足两条件，取区间 (-1,+∞) 与 (-∞,2] 的交集。",
-          "交集为 (-1,2]，其中 -1 被排除而 2 可以取到。"
+          "由 $\\sqrt{2-x}$ 有意义，得到 $2-x\\ge 0$，即 $x\\le 2$。",
+          "由 $\\ln(x+1)$ 有意义，得到 $x+1>0$，即 $x>-1$。",
+          "同时满足两条件，取区间 $(-1,+\\infty)$ 与 $(-\\infty,2]$ 的交集。",
+          "交集为 $(-1,2]$，其中 $-1$ 被排除而 2 可以取到。"
         ],
-        "pitfalls": ["把对数真数条件误写成 x+1≥0", "分别求出两个区间后忘记取交集"],
-        "verification": "在 x=2 时函数值为 √0+ln3，有意义；当 x=-1 时出现 ln0，无意义，这与端点开闭一致。",
-        "takeaway": "定义域问题的核心是列出全部限制并取交集，严格区分 >0 与 ≥0。",
-        "extension": "若把 ln(x+1) 改为 1/ln(x+1)，还需增加 ln(x+1)≠0，即排除 x=0。"
+        "pitfalls": [
+          "把对数真数条件误写成 $x+1\\ge 0$",
+          "分别求出两个区间后忘记取交集"
+        ],
+        "verification": "在 $x=2$ 时函数值为 $\\sqrt{0}+\\ln3$，有意义；当 $x=-1$ 时出现 $\\ln0$，无意义，这与端点开闭一致。",
+        "takeaway": "定义域问题的核心是列出全部限制并取交集，严格区分 $>0$ 与 $\\ge 0$。",
+        "extension": "若把 $\\ln(x+1)$ 改为 $\\frac{1}{\\ln(x+1)}$，还需增加 $\\ln(x+1)\\ne 0$，即排除 $x=0$。"
       }
     },
     "en": {
       "title": "Common Domain of a Radical and a Logarithm",
-      "prompt": "The natural domain of f(x)=√(2-x)+ln(x+1) is ______.",
-      "answer": "(-1,2]",
+      "prompt": "The natural domain of $f(x)=\\sqrt{2-x}+\\ln(x+1)$ is $\\underline{\\qquad}$.",
+      "answer": "$(-1,2]$",
       "solution": {
-        "knowledge": ["an even root requires a nonnegative radicand", "the argument of a natural logarithm must be strictly positive", "simultaneous restrictions are intersected"],
+        "knowledge": [
+          "an even root requires a nonnegative radicand",
+          "the argument of a natural logarithm must be strictly positive",
+          "simultaneous restrictions are intersected"
+        ],
         "analysis": "Because both expressions occur in the same function, x must satisfy both restrictions. The radical may include its zero endpoint, whereas the logarithm may not.",
         "steps": [
-          "For √(2-x) to be defined, require 2-x≥0, hence x≤2.",
-          "For ln(x+1) to be defined, require x+1>0, hence x>-1.",
-          "Intersect (-1,+∞) with (-∞,2].",
-          "The intersection is (-1,2]; -1 is excluded and 2 is included."
+          "For $\\sqrt{2-x}$ to be defined, require $2-x\\ge 0$, hence $x\\le 2$.",
+          "For $\\ln(x+1)$ to be defined, require $x+1>0$, hence $x>-1$.",
+          "Intersect $(-1,+\\infty)$ with $(-\\infty,2]$.",
+          "The intersection is $(-1,2]; -1$ is excluded and 2 is included."
         ],
-        "pitfalls": ["replacing the logarithmic condition x+1>0 with x+1≥0", "listing the two restrictions without taking their intersection"],
-        "verification": "At x=2 the value √0+ln3 is defined, while x=-1 would produce ln0, confirming the stated endpoint types.",
+        "pitfalls": [
+          "replacing the logarithmic condition $x+1>0$ with $x+1\\ge 0$",
+          "listing the two restrictions without taking their intersection"
+        ],
+        "verification": "At $x=2$ the value $\\sqrt{0}+\\ln3$ is defined, while $x=-1$ would produce $\\ln0$, confirming the stated endpoint types.",
         "takeaway": "For a natural domain, collect every restriction, intersect them, and distinguish strict from non-strict inequalities.",
-        "extension": "If ln(x+1) were replaced by 1/ln(x+1), one would also require ln(x+1)≠0, excluding x=0."
+        "extension": "If $\\ln(x+1)$ were replaced by $\\frac{1}{\\ln(x+1)}$, one would also require $\\ln(x+1)\\ne 0$, excluding $x=0$."
       }
+    },
+    "source_lineage": {
+      "category": "open_text_adaptation",
+      "method_family": "domain / radical",
+      "relation": "Independently rewritten around an openly documented domain / radical pattern; the references establish method-level lineage, not verbatim reproduction of a source problem.",
+      "references": [
+        "openstax-v1-1.1-functions"
+      ]
     }
   },
   {
@@ -122,49 +182,79 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["复合函数", "复合定义域", "根式分式"],
-      "en": ["composite function", "domain of a composition", "radical and rational expression"]
+      "zh": [
+        "复合函数",
+        "复合定义域",
+        "根式分式"
+      ],
+      "en": [
+        "composite function",
+        "domain of a composition",
+        "radical and rational expression"
+      ]
     },
     "minutes": 8,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "复合函数及其定义域",
-      "prompt": "设 f(x)=√(x+2)，g(u)=1/(u-1)。求 (g∘f)(x) 的解析式及自然定义域。",
-      "answer": "(g∘f)(x)=1/(√(x+2)-1)，定义域为 [-2,-1)∪(-1,+∞)。",
+      "prompt": "设 $f(x)=\\sqrt{x+2}$，$g(u)=\\frac{1}{u-1}$。求 $(g\\circ f)(x)$ 的解析式及自然定义域。",
+      "answer": "$(g\\circ f)(x)=\\frac{1}{\\sqrt{x+2}-1}$，定义域为 $[-2,-1)\\cup (-1,+\\infty)$。",
       "solution": {
-        "knowledge": ["复合函数的代入顺序", "内层函数必须有定义", "内层函数值必须落在外层函数定义域"],
-        "analysis": "不能只把 f(x) 代入 g；还必须同时保证根式存在且代入后的外层分母不为零。",
-        "steps": [
-          "按 g∘f 的顺序，先计算 f(x)=√(x+2)，再将其作为 g 的输入。",
-          "代入得到 (g∘f)(x)=g(f(x))=1/(√(x+2)-1)。",
-          "内层根式要求 x+2≥0，所以 x≥-2。",
-          "外层 g 的输入不能等于 1，因此 √(x+2)≠1，即 x≠-1；合并得 [-2,-1)∪(-1,+∞)。"
+        "knowledge": [
+          "复合函数的代入顺序",
+          "内层函数必须有定义",
+          "内层函数值必须落在外层函数定义域"
         ],
-        "pitfalls": ["把 g∘f 错写成 f∘g", "只写 x≥-2，漏掉复合后分母为零的点 x=-1"],
-        "verification": "x=-2 时分母为 -1，函数有定义；x=-1 时分母为 0，必须排除；任取 x>-2 且 x≠-1，根式和分母均合法。",
+        "analysis": "不能只把 $f(x)$ 代入 g；还必须同时保证根式存在且代入后的外层分母不为零。",
+        "steps": [
+          "按 $g\\circ f$ 的顺序，先计算 $f(x)=\\sqrt{x+2}$，再将其作为 g 的输入。",
+          "代入得到 $(g\\circ f)(x)=g(f(x))=\\frac{1}{\\sqrt{x+2}-1}$。",
+          "内层根式要求 $x+2\\ge 0$，所以 $x\\ge -2$。",
+          "外层 g 的输入不能等于 1，因此 $\\sqrt{x+2}\\ne 1$，即 $x\\ne -1$；合并得 $[-2,-1)\\cup (-1,+\\infty)$。"
+        ],
+        "pitfalls": [
+          "把 $g\\circ f$ 错写成 $f\\circ g$",
+          "只写 $x\\ge -2$，漏掉复合后分母为零的点 $x=-1$"
+        ],
+        "verification": "$x=-2$ 时分母为 $-1$，函数有定义；$x=-1$ 时分母为 0，必须排除；任取 $x>-2$ 且 $x\\ne -1$，根式和分母均合法。",
         "takeaway": "复合函数定义域要经过两道检查：内层可算，内层输出还要能进入外层。",
-        "extension": "可进一步求 f∘g；其限制与 g∘f 不同，说明复合运算通常不可交换。"
+        "extension": "可进一步求 $f\\circ g$；其限制与 $g\\circ f$ 不同，说明复合运算通常不可交换。"
       }
     },
     "en": {
       "title": "A Composite Function and Its Domain",
-      "prompt": "Let f(x)=√(x+2) and g(u)=1/(u-1). Find the formula and natural domain of (g∘f)(x).",
-      "answer": "(g∘f)(x)=1/(√(x+2)-1), with domain [-2,-1)∪(-1,+∞).",
+      "prompt": "Let $f(x)=\\sqrt{x+2}$ and $g(u)=\\frac{1}{u-1}$. Find the formula and natural domain of $(g\\circ f)(x)$.",
+      "answer": "$(g\\circ f)(x)=\\frac{1}{\\sqrt{x+2}-1}$, with domain $[-2,-1)\\cup (-1,+\\infty)$.",
       "solution": {
-        "knowledge": ["order of composition", "the inner function must be defined", "the inner output must lie in the outer domain"],
+        "knowledge": [
+          "order of composition",
+          "the inner function must be defined",
+          "the inner output must lie in the outer domain"
+        ],
         "analysis": "Substitution alone is not enough. The radical must exist, and after substitution the denominator of the outer function must remain nonzero.",
         "steps": [
-          "The order g∘f means first compute f(x)=√(x+2), then use it as the input of g.",
-          "Substitution gives (g∘f)(x)=g(f(x))=1/(√(x+2)-1).",
-          "The inner radical requires x+2≥0, so x≥-2.",
-          "The input of g cannot equal 1, so √(x+2)≠1, or x≠-1; combining the restrictions gives [-2,-1)∪(-1,+∞)."
+          "The order $g\\circ f$ means first compute $f(x)=\\sqrt{x+2}$, then use it as the input of g.",
+          "Substitution gives $(g\\circ f)(x)=g(f(x))=\\frac{1}{\\sqrt{x+2}-1}$.",
+          "The inner radical requires $x+2\\ge 0$, so $x\\ge -2$.",
+          "The input of g cannot equal 1, so $\\sqrt{x+2}\\ne 1$, or $x\\ne -1$; combining the restrictions gives $[-2,-1)\\cup (-1,+\\infty)$."
         ],
-        "pitfalls": ["reversing g∘f into f∘g", "keeping only x≥-2 and missing the zero denominator at x=-1"],
-        "verification": "At x=-2 the denominator is -1, so the function is defined. At x=-1 the denominator is 0, so the point must be removed. Every other x≥-2 satisfies both restrictions.",
+        "pitfalls": [
+          "reversing $g\\circ f$ into $f\\circ g$",
+          "keeping only $x\\ge -2$ and missing the zero denominator at $x=-1$"
+        ],
+        "verification": "At $x=-2$ the denominator is $-1$, so the function is defined. At $x=-1$ the denominator is 0, so the point must be removed. Every other $x\\ge -2$ satisfies both restrictions.",
         "takeaway": "A composite domain requires two checks: the inner function must be evaluable, and its output must be admissible for the outer function.",
-        "extension": "One may also find f∘g; its restrictions differ from those of g∘f, illustrating that composition is generally not commutative."
+        "extension": "One may also find $f\\circ g$; its restrictions differ from those of $g\\circ f$, illustrating that composition is generally not commutative."
       }
+    },
+    "source_lineage": {
+      "category": "open_text_adaptation",
+      "method_family": "composite function / domain of a composition",
+      "relation": "Independently rewritten around an openly documented composite function / domain of a composition pattern; the references establish method-level lineage, not verbatim reproduction of a source problem.",
+      "references": [
+        "openstax-v1-1.1-functions"
+      ]
     }
   },
   {
@@ -174,61 +264,91 @@
     "difficulty": "standard",
     "type": "multiple_choice",
     "tags": {
-      "zh": ["函数性质", "奇偶性", "有界性"],
-      "en": ["function properties", "parity", "boundedness"]
+      "zh": [
+        "函数性质",
+        "奇偶性",
+        "有界性"
+      ],
+      "en": [
+        "function properties",
+        "parity",
+        "boundedness"
+      ]
     },
     "minutes": 7,
     "space": "M",
     "classic_method": false,
     "zh": {
       "title": "辨析函数的整体性质",
-      "prompt": "设 h(x)=|x|/(1+x²)，定义域为 R。下列结论中正确的是哪些？",
+      "prompt": "设 $h(x)=\\frac{|x|}{1+x^{2}}$，定义域为 R。下列结论中正确的是哪些？",
       "choices": [
         "A. h 为偶函数",
-        "B. 对所有 x∈R，有 0≤h(x)≤1/2",
+        "B. 对所有 $x\\in \\mathbb{R}$，有 $0\\le h(x)\\le\\frac{1}{2}$",
         "C. h 是周期函数",
-        "D. h 在 [0,+∞) 上严格递增"
+        "D. h 在 $[0,+\\infty)$ 上严格递增"
       ],
       "answer": "A、B",
       "solution": {
-        "knowledge": ["偶函数判定", "代数不等式估计有界性", "周期性与单调性的反例检验"],
-        "analysis": "奇偶性可直接比较 h(-x) 与 h(x)；有界性可用 (|x|-1)²≥0；对周期性和单调性，找出与定义矛盾的函数值即可。",
-        "steps": [
-          "h(-x)=|-x|/(1+(-x)²)=|x|/(1+x²)=h(x)，故 A 正确。",
-          "由 (|x|-1)²≥0 得 x²+1≥2|x|，从而 0≤|x|/(1+x²)≤1/2，故 B 正确。",
-          "当 |x|→+∞ 时 h(x)→0，而 h(1)=1/2；非零周期函数若重复取值，不会呈现这种远处趋零的行为，因此 C 错误。",
-          "h(1)=1/2，而 h(2)=2/5<1/2，所以 h 在 [0,+∞) 上并非严格递增，D 错误。"
+        "knowledge": [
+          "偶函数判定",
+          "代数不等式估计有界性",
+          "周期性与单调性的反例检验"
         ],
-        "pitfalls": ["看到绝对值就只判断偶性而忽略其余选项", "凭图形直觉断言有界或单调，不给代数依据"],
-        "verification": "等号 x²+1=2|x| 恰在 |x|=1 时成立，所以最大值 1/2 确实能取到；数值 h(1)=1/2、h(2)=2/5 直接否定 D。",
+        "analysis": "奇偶性可直接比较 $h(-x)$ 与 $h(x)$；有界性可用 $(|x|-1)^{2}\\ge 0$；对周期性和单调性，找出与定义矛盾的函数值即可。",
+        "steps": [
+          "$h(-x)=\\frac{|-x|}{1+(-x)^{2}}=\\frac{|x|}{1+x^{2}}=h(x)$，故 A 正确。",
+          "由 $(|x|-1)^{2}\\ge 0$ 得 $x^{2}+1\\ge 2|x|$，从而 $0\\le\\frac{|x|}{1+x^{2}}\\le\\frac{1}{2}$，故 B 正确。",
+          "当 $|x|\\to +\\infty$ 时 $h(x)\\to 0$，而 $h(1)=\\frac{1}{2}$；非零周期函数若重复取值，不会呈现这种远处趋零的行为，因此 C 错误。",
+          "$h(1)=\\frac{1}{2}$，而 $h(2)=\\frac{2}{5}<\\frac{1}{2}$，所以 h 在 $[0,+\\infty)$ 上并非严格递增，D 错误。"
+        ],
+        "pitfalls": [
+          "看到绝对值就只判断偶性而忽略其余选项",
+          "凭图形直觉断言有界或单调，不给代数依据"
+        ],
+        "verification": "等号 $x^{2}+1=2|x|$ 恰在 $|x|=1$ 时成立，所以最大值 $\\frac{1}{2}$ 确实能取到；数值 $h(1)=\\frac{1}{2}$、$h(2)=\\frac{2}{5}$ 直接否定 D。",
         "takeaway": "函数性质题应分别按定义或不等式验证，不能由一个局部印象推出整体结论。",
-        "extension": "可继续研究 h 在 [0,1] 与 [1,+∞) 上的单调性，但不能使用导数时需通过差值或代数比较完成。"
+        "extension": "可继续研究 h 在 $[0,1]$ 与 $[1,+\\infty)$ 上的单调性，但不能使用导数时需通过差值或代数比较完成。"
       }
     },
     "en": {
       "title": "Analyze Global Properties of a Function",
-      "prompt": "Let h(x)=|x|/(1+x²) on R. Which statements are correct?",
+      "prompt": "Let $h(x)=\\frac{|x|}{1+x^{2}}$ on R. Which statements are correct?",
       "choices": [
         "A. h is even",
-        "B. For every x∈R, 0≤h(x)≤1/2",
+        "B. For every $x\\in \\mathbb{R}, 0\\le h(x)\\le\\frac{1}{2}$",
         "C. h is periodic",
-        "D. h is strictly increasing on [0,+∞)"
+        "D. h is strictly increasing on $[0,+\\infty)$"
       ],
       "answer": "A, B",
       "solution": {
-        "knowledge": ["test for an even function", "algebraic bounds", "counterexamples to periodicity and monotonicity"],
-        "analysis": "Parity follows by comparing h(-x) and h(x). Boundedness follows from (|x|-1)²≥0. Periodicity and monotonicity can be rejected by consequences or explicit values that contradict their definitions.",
-        "steps": [
-          "h(-x)=|-x|/(1+(-x)²)=|x|/(1+x²)=h(x), so A is correct.",
-          "From (|x|-1)²≥0 we obtain x²+1≥2|x|, hence 0≤|x|/(1+x²)≤1/2; B is correct.",
-          "As |x|→+∞, h(x)→0, while h(1)=1/2. A nonzero periodic repetition is incompatible with this decay, so C is false.",
-          "Since h(1)=1/2 but h(2)=2/5<1/2, h is not strictly increasing on [0,+∞); D is false."
+        "knowledge": [
+          "test for an even function",
+          "algebraic bounds",
+          "counterexamples to periodicity and monotonicity"
         ],
-        "pitfalls": ["stopping after noticing the absolute value and checking only parity", "asserting boundedness or monotonicity from a sketch without algebraic evidence"],
-        "verification": "Equality in x²+1≥2|x| occurs at |x|=1, so the upper bound 1/2 is attained. The values h(1)=1/2 and h(2)=2/5 directly disprove D.",
+        "analysis": "Parity follows by comparing $h(-x)$ and $h(x)$. Boundedness follows from $(|x|-1)^{2}\\ge 0$. Periodicity and monotonicity can be rejected by consequences or explicit values that contradict their definitions.",
+        "steps": [
+          "$h(-x)=\\frac{|-x|}{1+(-x)^{2}}=\\frac{|x|}{1+x^{2}}=h(x)$, so A is correct.",
+          "From $(|x|-1)^{2}\\ge 0$ we obtain $x^{2}+1\\ge 2|x|$, hence $0\\le\\frac{|x|}{1+x^{2}}\\le\\frac{1}{2}; B$ is correct.",
+          "As $|x|\\to +\\infty, h(x)\\to 0$, while $h(1)=\\frac{1}{2}$. A nonzero periodic repetition is incompatible with this decay, so C is false.",
+          "Since $h(1)=\\frac{1}{2}$ but $h(2)=\\frac{2}{5}<\\frac{1}{2}, h$ is not strictly increasing on $[0,+\\infty); D$ is false."
+        ],
+        "pitfalls": [
+          "stopping after noticing the absolute value and checking only parity",
+          "asserting boundedness or monotonicity from a sketch without algebraic evidence"
+        ],
+        "verification": "Equality in $x^{2}+1\\ge 2|x|$ occurs at $|x|=1$, so the upper bound $\\frac{1}{2}$ is attained. The values $h(1)=\\frac{1}{2}$ and $h(2)=\\frac{2}{5}$ directly disprove D.",
         "takeaway": "Test each global property independently by its definition or a rigorous inequality.",
-        "extension": "The monotonicity of h on [0,1] and [1,+∞) can be studied algebraically through differences, without derivatives."
+        "extension": "The monotonicity of h on $[0,1]$ and $[1,+\\infty)$ can be studied algebraically through differences, without derivatives."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "function properties / parity",
+      "relation": "Independently authored variant of the widely taught function properties / parity method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v1-1.1-functions"
+      ]
     }
   },
   {
@@ -238,49 +358,75 @@
     "difficulty": "basic",
     "type": "true_false",
     "tags": {
-      "zh": ["复合函数", "定义域条件"],
-      "en": ["composition", "domain condition"]
+      "zh": [
+        "复合函数",
+        "定义域条件"
+      ],
+      "en": [
+        "composition",
+        "domain condition"
+      ]
     },
     "minutes": 3,
     "space": "S",
     "classic_method": false,
     "zh": {
       "title": "复合函数的必要条件",
-      "prompt": "判断正误：若 (f∘g)(x₀) 有定义，则 g(x₀) 必属于 f 的定义域。",
+      "prompt": "判断正误：若 $(f\\circ g)(x_{0})$ 有定义，则 $g(x_{0})$ 必属于 f 的定义域。",
       "answer": "正确。",
       "solution": {
-        "knowledge": ["复合函数定义", "外层函数输入条件"],
-        "analysis": "(f∘g)(x₀) 的含义是 f(g(x₀))。这个表达式能够成立，先要有 g(x₀)，再要能把该值作为 f 的输入。",
-        "steps": [
-          "按定义，(f∘g)(x₀)=f(g(x₀))。",
-          "既然复合值有定义，首先 x₀ 必在 g 的定义域内，所以 g(x₀) 存在。",
-          "f(g(x₀)) 能被计算，要求输入 g(x₀) 位于 f 的定义域。",
-          "因此题述条件是复合函数在 x₀ 有定义的必要条件，命题正确。"
+        "knowledge": [
+          "复合函数定义",
+          "外层函数输入条件"
         ],
-        "pitfalls": ["只要求 x₀ 同时在 f、g 的定义域，而忽略真正进入 f 的是 g(x₀)", "把复合函数的顺序反过来"],
-        "verification": "若反设 g(x₀) 不在 f 的定义域，则 f(g(x₀)) 无意义，与 (f∘g)(x₀) 有定义矛盾。",
+        "analysis": "$(f\\circ g)(x_{0})$ 的含义是 $f(g(x_{0}))$。这个表达式能够成立，先要有 $g(x_{0})$，再要能把该值作为 f 的输入。",
+        "steps": [
+          "按定义，$(f\\circ g)(x_{0})=f(g(x_{0}))$。",
+          "既然复合值有定义，首先 $x_{0}$ 必在 g 的定义域内，所以 $g(x_{0})$ 存在。",
+          "$f(g(x_{0}))$ 能被计算，要求输入 $g(x_{0})$ 位于 f 的定义域。",
+          "因此题述条件是复合函数在 $x_{0}$ 有定义的必要条件，命题正确。"
+        ],
+        "pitfalls": [
+          "只要求 $x_{0}$ 同时在 f、g 的定义域，而忽略真正进入 f 的是 $g(x_{0})$",
+          "把复合函数的顺序反过来"
+        ],
+        "verification": "若反设 $g(x_{0})$ 不在 f 的定义域，则 $f(g(x_{0}))$ 无意义，与 $(f\\circ g)(x_{0})$ 有定义矛盾。",
         "takeaway": "复合函数的关键检查对象是内层输出，而不是原始自变量是否直接属于外层定义域。",
-        "extension": "反命题还需补充 x₀ 在 g 的定义域；只有 g(x₀) 存在且属于 f 的定义域，复合值才有定义。"
+        "extension": "反命题还需补充 $x_{0}$ 在 g 的定义域；只有 $g(x_{0})$ 存在且属于 f 的定义域，复合值才有定义。"
       }
     },
     "en": {
       "title": "A Necessary Condition for Composition",
-      "prompt": "True or false: If (f∘g)(x₀) is defined, then g(x₀) must belong to the domain of f.",
+      "prompt": "True or false: If $(f\\circ g)(x_{0})$ is defined, then $g(x_{0})$ must belong to the domain of f.",
       "answer": "True.",
       "solution": {
-        "knowledge": ["definition of a composite function", "input condition for the outer function"],
-        "analysis": "(f∘g)(x₀) means f(g(x₀)). For this expression to exist, g(x₀) must first exist and must then be an admissible input for f.",
+        "knowledge": [
+          "definition of a composite function",
+          "input condition for the outer function"
+        ],
+        "analysis": "$(f\\circ g)(x_{0})$ means $f(g(x_{0}))$. For this expression to exist, $g(x_{0})$ must first exist and must then be an admissible input for f.",
         "steps": [
-          "By definition, (f∘g)(x₀)=f(g(x₀)).",
-          "Because the composite value is defined, x₀ must lie in the domain of g, so g(x₀) exists.",
-          "For f(g(x₀)) to be evaluated, the input g(x₀) must lie in the domain of f.",
+          "By definition, $(f\\circ g)(x_{0})=f(g(x_{0}))$.",
+          "Because the composite value is defined, $x_{0}$ must lie in the domain of g, so $g(x_{0})$ exists.",
+          "For $f(g(x_{0}))$ to be evaluated, the input $g(x_{0})$ must lie in the domain of f.",
           "Thus the stated condition is necessary, and the statement is true."
         ],
-        "pitfalls": ["requiring x₀ itself to lie in both domains instead of checking the inner output g(x₀)", "reversing the order of composition"],
-        "verification": "If g(x₀) were outside the domain of f, then f(g(x₀)) would be undefined, contradicting the hypothesis.",
+        "pitfalls": [
+          "requiring $x_{0}$ itself to lie in both domains instead of checking the inner output $g(x_{0})$",
+          "reversing the order of composition"
+        ],
+        "verification": "If $g(x_{0})$ were outside the domain of f, then $f(g(x_{0}))$ would be undefined, contradicting the hypothesis.",
         "takeaway": "For a composition, inspect the output of the inner function because that output becomes the input of the outer function.",
-        "extension": "For the converse, one must also require x₀ to lie in the domain of g; together, these two conditions are sufficient."
+        "extension": "For the converse, one must also require $x_{0}$ to lie in the domain of g; together, these two conditions are sufficient."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "composition / domain condition",
+      "relation": "Independently authored variant of the widely taught composition / domain condition method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v1-1.1-functions"
+      ]
     }
   },
   {
@@ -290,49 +436,80 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["反函数", "值域", "定义域"],
-      "en": ["inverse function", "range", "domain"]
+      "zh": [
+        "反函数",
+        "值域",
+        "定义域"
+      ],
+      "en": [
+        "inverse function",
+        "range",
+        "domain"
+      ]
     },
     "minutes": 8,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "带区间限制的反函数",
-      "prompt": "函数 f(x)=2x-3 的定义域为 [1,4]。求 f 的值域、反函数解析式，并写出反函数的定义域和值域。",
-      "answer": "f 的值域为 [-1,5]；f⁻¹(y)=(y+3)/2，定义域为 [-1,5]，值域为 [1,4]。",
+      "prompt": "函数 $f(x)=2x-3$ 的定义域为 $[1,4]$。求 f 的值域、反函数解析式，并写出反函数的定义域和值域。",
+      "answer": "f 的值域为 $[-1,5]$；$f^{-1}(y)=\\frac{y+3}{2}$，定义域为 $[-1,5]$，值域为 $[1,4]$。",
       "solution": {
-        "knowledge": ["严格单调函数存在反函数", "原函数值域成为反函数定义域", "交换变量求反函数"],
-        "analysis": "线性函数在给定区间上严格递增，因此一一对应。先由端点确定值域，再从 y=2x-3 解出 x。",
-        "steps": [
-          "当 x 从 1 增加到 4 时，2x-3 严格增加，所以 f 在 [1,4] 上是一一映射。",
-          "计算端点：f(1)=-1，f(4)=5，因此 f 的值域为 [-1,5]。",
-          "由 y=2x-3 解得 x=(y+3)/2，所以 f⁻¹(y)=(y+3)/2。",
-          "反函数交换定义域和值域，故 Dom(f⁻¹)=[-1,5]，Range(f⁻¹)=[1,4]。"
+        "knowledge": [
+          "严格单调函数存在反函数",
+          "原函数值域成为反函数定义域",
+          "交换变量求反函数"
         ],
-        "pitfalls": ["写出反函数公式后仍把其定义域写成 [1,4]", "把 f⁻¹(y) 误写成 1/(2y-3)"],
-        "verification": "对 x∈[1,4]，f⁻¹(f(x))=((2x-3)+3)/2=x；对 y∈[-1,5]，f(f⁻¹(y))=2·(y+3)/2-3=y。",
+        "analysis": "线性函数在给定区间上严格递增，因此一一对应。先由端点确定值域，再从 $y=2x-3$ 解出 x。",
+        "steps": [
+          "当 x 从 1 增加到 4 时，$2x-3$ 严格增加，所以 f 在 $[1,4]$ 上是一一映射。",
+          "计算端点：$f(1)=-1$，$f(4)=5$，因此 f 的值域为 $[-1,5]$。",
+          "由 $y=2x-3$ 解得 $x=\\frac{y+3}{2}$，所以 $f^{-1}(y)=\\frac{y+3}{2}$。",
+          "反函数交换定义域和值域，故 $\\operatorname{Dom}(f^{-1})=[-1,5]$，$\\operatorname{Range}(f^{-1})=[1,4]$。"
+        ],
+        "pitfalls": [
+          "写出反函数公式后仍把其定义域写成 $[1,4]$",
+          "把 $f^{-1}(y)$ 误写成 $\\frac{1}{2y-3}$"
+        ],
+        "verification": "对 $x\\in [1,4]$，$f^{-1}(f(x))=\\frac{(2x-3)+3}{2}=x$；对 $y\\in [-1,5]$，$f(f^{-1}(y))=\\frac{2\\cdot (y+3)}{2}-3=y$。",
         "takeaway": "求反函数必须同时交换公式中的角色和定义域、值域。",
-        "extension": "若不限制原函数定义域而取 R，同一公式的反函数仍为 (y+3)/2，但其定义域和值域都变为 R。"
+        "extension": "若不限制原函数定义域而取 R，同一公式的反函数仍为 $\\frac{y+3}{2}$，但其定义域和值域都变为 R。"
       }
     },
     "en": {
       "title": "An Inverse Function with an Interval Restriction",
-      "prompt": "The domain of f(x)=2x-3 is [1,4]. Find the range of f, the formula for its inverse, and the domain and range of the inverse.",
-      "answer": "The range of f is [-1,5]. The inverse is f⁻¹(y)=(y+3)/2, with domain [-1,5] and range [1,4].",
+      "prompt": "The domain of $f(x)=2x-3$ is $[1,4]$. Find the range of f, the formula for its inverse, and the domain and range of the inverse.",
+      "answer": "The range of f is $[-1,5]$. The inverse is $f^{-1}(y)=\\frac{y+3}{2}$, with domain $[-1,5]$ and range $[1,4]$.",
       "solution": {
-        "knowledge": ["a strictly monotone function is invertible on its interval", "the original range becomes the inverse domain", "solve after interchanging input and output roles"],
-        "analysis": "The linear function is strictly increasing on the prescribed interval, so it is one-to-one there. Determine the range from endpoint values, then solve y=2x-3 for x.",
-        "steps": [
-          "As x increases from 1 to 4, 2x-3 increases strictly, so f is one-to-one on [1,4].",
-          "The endpoint values are f(1)=-1 and f(4)=5, hence the range of f is [-1,5].",
-          "Solving y=2x-3 gives x=(y+3)/2, so f⁻¹(y)=(y+3)/2.",
-          "The inverse swaps domain and range: Dom(f⁻¹)=[-1,5] and Range(f⁻¹)=[1,4]."
+        "knowledge": [
+          "a strictly monotone function is invertible on its interval",
+          "the original range becomes the inverse domain",
+          "solve after interchanging input and output roles"
         ],
-        "pitfalls": ["keeping [1,4] as the domain of the inverse after finding its formula", "confusing f⁻¹(y) with the reciprocal 1/(2y-3)"],
-        "verification": "For x∈[1,4], f⁻¹(f(x))=((2x-3)+3)/2=x. For y∈[-1,5], f(f⁻¹(y))=2·(y+3)/2-3=y.",
+        "analysis": "The linear function is strictly increasing on the prescribed interval, so it is one-to-one there. Determine the range from endpoint values, then solve $y=2x-3$ for x.",
+        "steps": [
+          "As x increases from 1 to $4, 2x-3$ increases strictly, so f is one-to-one on $[1,4]$.",
+          "The endpoint values are $f(1)=-1$ and $f(4)=5$, hence the range of f is $[-1,5]$.",
+          "Solving $y=2x-3$ gives $x=\\frac{y+3}{2}$, so $f^{-1}(y)=\\frac{y+3}{2}$.",
+          "The inverse swaps domain and range: $\\operatorname{Dom}(f^{-1})=[-1,5]$ and $\\operatorname{Range}(f^{-1})=[1,4]$."
+        ],
+        "pitfalls": [
+          "keeping $[1,4]$ as the domain of the inverse after finding its formula",
+          "confusing $f^{-1}(y)$ with the reciprocal $\\frac{1}{2y-3}$"
+        ],
+        "verification": "For $x\\in [1,4], f^{-1}(f(x))=\\frac{(2x-3)+3}{2}=x$. For $y\\in [-1,5], f(f^{-1}(y))=\\frac{2\\cdot (y+3)}{2}-3=y$.",
         "takeaway": "Finding an inverse requires swapping not only the variables but also the original domain and range.",
         "extension": "If the original domain were all of R, the same inverse formula would hold, but both its domain and range would be R."
       }
+    },
+    "source_lineage": {
+      "category": "open_text_adaptation",
+      "method_family": "inverse function / range",
+      "relation": "Independently rewritten around an openly documented inverse function / range pattern; the references establish method-level lineage, not verbatim reproduction of a source problem.",
+      "references": [
+        "openstax-v1-1.1-functions",
+        "openstax-v1-1.4-inverse-functions"
+      ]
     }
   },
   {
@@ -342,49 +519,79 @@
     "difficulty": "advanced",
     "type": "proof",
     "tags": {
-      "zh": ["奇偶性", "复合函数", "定义证明"],
-      "en": ["parity", "composite function", "proof from definitions"]
+      "zh": [
+        "奇偶性",
+        "复合函数",
+        "定义证明"
+      ],
+      "en": [
+        "parity",
+        "composite function",
+        "proof from definitions"
+      ]
     },
     "minutes": 10,
     "space": "L",
     "classic_method": false,
     "zh": {
       "title": "复合函数的奇偶性",
-      "prompt": "设 D 关于原点对称，g:D→E 为偶函数，f:E→R 为任意函数，且复合函数 h=f∘g 在 D 上有定义。证明 h 是 D 上的偶函数。",
-      "answer": "对任意 x∈D，有 h(-x)=f(g(-x))=f(g(x))=h(x)，故 h 为偶函数。",
+      "prompt": "设 D 关于原点对称，$g:D\\to E$ 为偶函数，$f:E\\to R$ 为任意函数，且复合函数 $h=f\\circ g$ 在 D 上有定义。证明 h 是 D 上的偶函数。",
+      "answer": "对任意 $x\\in D$，有 $h(-x)=f(g(-x))=f(g(x))=h(x)$，故 h 为偶函数。",
       "solution": {
-        "knowledge": ["偶函数定义", "复合函数", "对称定义域条件"],
-        "analysis": "外层函数 f 不需要具备奇偶性。决定结果的是偶函数 g 对 x 与 -x 给出同一内层值，f 对同一输入当然给出同一输出。",
-        "steps": [
-          "任取 x∈D。由于 D 关于原点对称，-x 也属于 D，因此 h(-x) 有意义。",
-          "由复合函数定义，h(-x)=f(g(-x))。",
-          "g 为偶函数，所以 g(-x)=g(x)。代入得 h(-x)=f(g(x))。",
-          "再次使用 h(x)=f(g(x))，得到 h(-x)=h(x)。这对所有 x∈D 成立，故 h 为偶函数。"
+        "knowledge": [
+          "偶函数定义",
+          "复合函数",
+          "对称定义域条件"
         ],
-        "pitfalls": ["遗漏定义域关于原点对称这一奇偶性前提", "误认为外层函数 f 也必须是偶函数"],
-        "verification": "取示例 g(x)=x²、f(u)=u+u³，则 h(x)=x²+x⁶，确有 h(-x)=h(x)，与一般证明一致。",
-        "takeaway": "偶内层会把 x 与 -x 映到同一点，因此任何合法外层函数都会保留这种对称。",
-        "extension": "若 g 为奇函数，则 f∘g 的奇偶性取决于 f：f 偶时复合为偶，f 奇时复合为奇。"
+        "analysis": "外层函数 f 不需要具备奇偶性。决定结果的是偶函数 g 对 x 与 $-x$ 给出同一内层值，f 对同一输入当然给出同一输出。",
+        "steps": [
+          "任取 $x\\in D$。由于 D 关于原点对称，$-x$ 也属于 D，因此 $h(-x)$ 有意义。",
+          "由复合函数定义，$h(-x)=f(g(-x))$。",
+          "g 为偶函数，所以 $g(-x)=g(x)$。代入得 $h(-x)=f(g(x))$。",
+          "再次使用 $h(x)=f(g(x))$，得到 $h(-x)=h(x)$。这对所有 $x\\in D$ 成立，故 h 为偶函数。"
+        ],
+        "pitfalls": [
+          "遗漏定义域关于原点对称这一奇偶性前提",
+          "误认为外层函数 f 也必须是偶函数"
+        ],
+        "verification": "取示例 $g(x)=x^{2}$、$f(u)=u+u^{3}$，则 $h(x)=x^{2}+x^{6}$，确有 $h(-x)=h(x)$，与一般证明一致。",
+        "takeaway": "偶内层会把 x 与 $-x$ 映到同一点，因此任何合法外层函数都会保留这种对称。",
+        "extension": "若 g 为奇函数，则 $f\\circ g$ 的奇偶性取决于 f：f 偶时复合为偶，f 奇时复合为奇。"
       }
     },
     "en": {
       "title": "Parity of a Composite Function",
-      "prompt": "Let D be symmetric about the origin. Suppose g:D→E is even, f:E→R is arbitrary, and h=f∘g is defined on D. Prove that h is even on D.",
-      "answer": "For every x∈D, h(-x)=f(g(-x))=f(g(x))=h(x); hence h is even.",
+      "prompt": "Let D be symmetric about the origin. Suppose $g:D\\to E$ is even, $f:E\\to R$ is arbitrary, and $h=f\\circ g$ is defined on D. Prove that h is even on D.",
+      "answer": "For every $x\\in D, h(-x)=f(g(-x))=f(g(x))=h(x)$; hence h is even.",
       "solution": {
-        "knowledge": ["definition of an even function", "composite functions", "symmetric-domain requirement"],
-        "analysis": "The outer function f needs no parity property. Because the even inner function g assigns the same inner value to x and -x, f receives the same input in both cases.",
-        "steps": [
-          "Take any x∈D. Since D is symmetric about the origin, -x∈D and h(-x) is defined.",
-          "By the definition of composition, h(-x)=f(g(-x)).",
-          "Since g is even, g(-x)=g(x), so h(-x)=f(g(x)).",
-          "Because h(x)=f(g(x)), we obtain h(-x)=h(x) for every x∈D; therefore h is even."
+        "knowledge": [
+          "definition of an even function",
+          "composite functions",
+          "symmetric-domain requirement"
         ],
-        "pitfalls": ["omitting the symmetric-domain condition required for parity", "incorrectly assuming that the outer function f must also be even"],
-        "verification": "For example, with g(x)=x² and f(u)=u+u³, one gets h(x)=x²+x⁶, which indeed satisfies h(-x)=h(x).",
-        "takeaway": "An even inner function maps x and -x to the same point, so any admissible outer function preserves that symmetry.",
-        "extension": "If g is odd, the parity of f∘g depends on f: an even f gives an even composition, while an odd f gives an odd composition."
+        "analysis": "The outer function f needs no parity property. Because the even inner function g assigns the same inner value to x and $-x, f$ receives the same input in both cases.",
+        "steps": [
+          "Take any $x\\in D$. Since D is symmetric about the origin, $-x\\in D$ and $h(-x)$ is defined.",
+          "By the definition of composition, $h(-x)=f(g(-x))$.",
+          "Since g is even, $g(-x)=g(x)$, so $h(-x)=f(g(x))$.",
+          "Because $h(x)=f(g(x))$, we obtain $h(-x)=h(x)$ for every $x\\in D$; therefore h is even."
+        ],
+        "pitfalls": [
+          "omitting the symmetric-domain condition required for parity",
+          "incorrectly assuming that the outer function f must also be even"
+        ],
+        "verification": "For example, with $g(x)=x^{2}$ and $f(u)=u+u^{3}$, one gets $h(x)=x^{2}+x^{6}$, which indeed satisfies $h(-x)=h(x)$.",
+        "takeaway": "An even inner function maps x and $-x$ to the same point, so any admissible outer function preserves that symmetry.",
+        "extension": "If g is odd, the parity of $f\\circ g$ depends on $f:$ an even f gives an even composition, while an odd f gives an odd composition."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "parity / composite function",
+      "relation": "Independently authored synthesis combining parity / composite function; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v1-1.1-functions"
+      ]
     }
   },
   {
@@ -394,51 +601,85 @@
     "difficulty": "advanced",
     "type": "comprehensive",
     "tags": {
-      "zh": ["分段函数", "函数建模", "值域", "单调性"],
-      "en": ["piecewise function", "modeling", "range", "monotonicity"]
+      "zh": [
+        "分段函数",
+        "函数建模",
+        "值域",
+        "单调性"
+      ],
+      "en": [
+        "piecewise function",
+        "modeling",
+        "range",
+        "monotonicity"
+      ]
     },
     "minutes": 14,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "停车收费的分段函数模型",
-      "prompt": "某停车场对停车时长 t（小时）按连续时间计费：0<t≤2 时收费 6 元；2<t≤5 时，在 6 元基础上按超出 2 小时的部分每小时加收 3 元。写出费用 C(t) 的分段表达式，求其定义域和值域，并说明它在定义域上的单调性与有界性。",
-      "answer": "C(t)={6, 0<t≤2；6+3(t-2)=3t, 2<t≤5}。定义域为 (0,5]，值域为 [6,15]；函数单调不减，且 6≤C(t)≤15。",
+      "prompt": "某停车场对停车时长 t（小时）按连续时间计费：$0<t\\le 2$ 时收费 6 元；$2<t\\le 5$ 时，在 6 元基础上按超出 2 小时的部分每小时加收 3 元。写出费用 $C(t)$ 的分段表达式，求其定义域和值域，并说明它在定义域上的单调性与有界性。",
+      "answer": "$C(t)=\\begin{cases}6,&0<t\\le 2,\\\\3t,&2<t\\le 5.\\end{cases}$定义域为 $(0,5]$，值域为 $[6,15]$；函数单调不减，且 $6\\le C(t)\\le 15$。",
       "solution": {
-        "knowledge": ["从文字条件建立分段函数", "分段函数值域", "单调不减", "有界性"],
-        "analysis": "收费规则在 t=2 处分段。前一段是常值，后一段只对超出 2 小时的时长收费；还要检查两段在连接处的费用是否匹配。",
-        "steps": [
-          "题目给出有效停车时长 0<t≤5，因此 C 的定义域是 (0,5]。",
-          "当 0<t≤2 时，费用固定为 6，所以第一段 C(t)=6。",
-          "当 2<t≤5 时，超时部分为 t-2，费用 C(t)=6+3(t-2)=3t。",
-          "第一段只取值 6；第二段在 2<t≤5 时取值 (6,15]，合并为 [6,15]。",
-          "在第一段 C 保持不变，在第二段随 t 增大而增大，且跨过 t=2 时没有下降，因此整体单调不减；同时 6≤C(t)≤15。"
+        "knowledge": [
+          "从文字条件建立分段函数",
+          "分段函数值域",
+          "单调不减",
+          "有界性"
         ],
-        "pitfalls": ["把第二段误写成 6+3t，重复计算前两小时", "将单调不减误称为严格递增，因为前两小时费用相同"],
-        "verification": "代入 t=2 得 6 元；从右侧公式的趋势看 3t→6，收费不跳降。代入 t=5 得 15 元，符合 6+3×3=15。",
+        "analysis": "收费规则在 $t=2$ 处分段。前一段是常值，后一段只对超出 2 小时的时长收费；还要检查两段在连接处的费用是否匹配。",
+        "steps": [
+          "题目给出有效停车时长 $0<t\\le 5$，因此 C 的定义域是 $(0,5]$。",
+          "当 $0<t\\le 2$ 时，费用固定为 6，所以第一段 $C(t)=6$。",
+          "当 $2<t\\le 5$ 时，超时部分为 $t-2$，费用 $C(t)=6+3(t-2)=3t$。",
+          "第一段只取值 6；第二段在 $2<t\\le 5$ 时取值 $(6,15]$，合并为 $[6,15]$。",
+          "在第一段 C 保持不变，在第二段随 t 增大而增大，且跨过 $t=2$ 时没有下降，因此整体单调不减；同时 $6\\le C(t)\\le 15$。"
+        ],
+        "pitfalls": [
+          "把第二段误写成 $6+3t$，重复计算前两小时",
+          "将单调不减误称为严格递增，因为前两小时费用相同"
+        ],
+        "verification": "代入 $t=2$ 得 6 元；从右侧公式的趋势看 $3t\\to 6$，收费不跳降。代入 $t=5$ 得 15 元，符合 $6+3\\times 3=15$。",
         "takeaway": "实际建模先确定自变量范围和分界点，再翻译每一段规则，最后检查连接处与整体性质。",
         "extension": "若规定不足半小时按半小时计费，模型将出现阶梯状分段，不再是连续时间下的线性函数。"
       }
     },
     "en": {
       "title": "A Piecewise Parking-Fee Model",
-      "prompt": "A parking lot charges by continuous parking time t in hours. For 0<t≤2, the fee is 6 yuan. For 2<t≤5, it charges 6 yuan plus 3 yuan per hour for the portion beyond 2 hours. Write the piecewise formula C(t), find its domain and range, and describe its monotonicity and boundedness.",
-      "answer": "C(t)={6 for 0<t≤2; 6+3(t-2)=3t for 2<t≤5}. The domain is (0,5], the range is [6,15], C is nondecreasing, and 6≤C(t)≤15.",
+      "prompt": "A parking lot charges by continuous parking time t in hours. For $0<t\\le 2$, the fee is 6 yuan. For $2<t\\le 5$, it charges 6 yuan plus 3 yuan per hour for the portion beyond 2 hours. Write the piecewise formula $C(t)$, find its domain and range, and describe its monotonicity and boundedness.",
+      "answer": "$C(t)=\\begin{cases}6,&0<t\\le 2,\\\\3t,&2<t\\le 5.\\end{cases}$ The domain is $(0,5]$, the range is $[6,15]$, $C$ is nondecreasing, and $6\\le C(t)\\le 15$.",
       "solution": {
-        "knowledge": ["constructing a piecewise model", "range of a piecewise function", "nondecreasing functions", "boundedness"],
-        "analysis": "The pricing rule changes at t=2. The first piece is constant, and the second charges only for time beyond 2 hours. The two formulas should also be checked at the junction.",
-        "steps": [
-          "The permitted parking time is 0<t≤5, so the domain of C is (0,5].",
-          "For 0<t≤2, the fixed charge gives C(t)=6.",
-          "For 2<t≤5, the extra time is t-2, so C(t)=6+3(t-2)=3t.",
-          "The first piece contributes the value 6; the second contributes (6,15], so the total range is [6,15].",
-          "C is constant on the first piece and increases on the second, with no decrease across t=2; hence it is nondecreasing and satisfies 6≤C(t)≤15."
+        "knowledge": [
+          "constructing a piecewise model",
+          "range of a piecewise function",
+          "nondecreasing functions",
+          "boundedness"
         ],
-        "pitfalls": ["writing 6+3t and charging the first two hours twice", "calling the function strictly increasing even though the fee is constant for the first two hours"],
-        "verification": "At t=2 the charge is 6. The right-hand formula tends to 3·2=6 near the junction. At t=5 it gives 15, matching 6+3×3=15.",
+        "analysis": "The pricing rule changes at $t=2$. The first piece is constant, and the second charges only for time beyond 2 hours. The two formulas should also be checked at the junction.",
+        "steps": [
+          "The permitted parking time is $0<t\\le 5$, so the domain of C is $(0,5]$.",
+          "For $0<t\\le 2$, the fixed charge gives $C(t)=6$.",
+          "For $2<t\\le 5$, the extra time is $t-2$, so $C(t)=6+3(t-2)=3t$.",
+          "The first piece contributes the value 6; the second contributes $(6,15]$, so the total range is $[6,15]$.",
+          "C is constant on the first piece and increases on the second, with no decrease across $t=2$; hence it is nondecreasing and satisfies $6\\le C(t)\\le 15$."
+        ],
+        "pitfalls": [
+          "writing $6+3t$ and charging the first two hours twice",
+          "calling the function strictly increasing even though the fee is constant for the first two hours"
+        ],
+        "verification": "At $t=2$ the charge is 6. The right-hand formula tends to $3\\cdot 2=6$ near the junction. At $t=5$ it gives 15, matching $6+3\\times 3=15$.",
         "takeaway": "In modeling, identify the variable range and breakpoints, translate each rule, and then check junctions and global properties.",
         "extension": "If every started half-hour were charged as a full half-hour, the model would become a step function rather than a linear continuous-time model."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "piecewise function / modeling",
+      "relation": "Independently authored synthesis combining piecewise function / modeling; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v1-1.1-functions"
+      ]
     }
   },
   {
@@ -448,51 +689,85 @@
     "difficulty": "hard",
     "type": "error_diagnosis",
     "tags": {
-      "zh": ["定义域", "对数复合函数", "严格不等式", "错解诊断"],
-      "en": ["domain", "logarithmic composition", "strict inequality", "error diagnosis"]
+      "zh": [
+        "定义域",
+        "对数复合函数",
+        "严格不等式",
+        "错解诊断"
+      ],
+      "en": [
+        "domain",
+        "logarithmic composition",
+        "strict inequality",
+        "error diagnosis"
+      ]
     },
     "minutes": 12,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "找出定义域中的端点错误",
-      "prompt": "求 F(x)=ln(1-√(x-1)) 的定义域。一名同学写道：“根式要求 x≥1；对数要求 1-√(x-1)≥0，所以 x≤2。因此定义域为 [1,2]。”请指出错误并给出正确解答。",
-      "answer": "错误在于对数真数必须严格大于 0，而不是大于等于 0。正确定义域为 [1,2)。",
+      "prompt": "求 $F(x)=\\ln(1-\\sqrt{x-1})$ 的定义域。一名同学写道：“根式要求 $x\\ge 1$；对数要求 $1-\\sqrt{x-1}\\ge 0$，所以 $x\\le 2$。因此定义域为 $[1,2]$。”请指出错误并给出正确解答。",
+      "answer": "错误在于对数真数必须严格大于 0，而不是大于等于 0。正确定义域为 $[1,2)$。",
       "solution": {
-        "knowledge": ["复合函数定义域", "对数真数严格为正", "根式非负条件", "端点检验"],
-        "analysis": "学生对根式的条件处理正确，但把对数的严格正条件放宽成了非负，因此错误地保留了使真数等于零的端点 x=2。",
-        "steps": [
-          "内层 √(x-1) 有意义要求 x-1≥0，即 x≥1。",
-          "外层对数要求 1-√(x-1)>0，而不是 ≥0。",
-          "由 √(x-1)<1，且两边非负，可平方得 x-1<1，即 x<2。",
-          "合并 x≥1 与 x<2，得到正确定义域 [1,2)。",
-          "在 x=2 时，对数真数为 1-1=0，ln0 无定义，这正是原解多出的端点。"
+        "knowledge": [
+          "复合函数定义域",
+          "对数真数严格为正",
+          "根式非负条件",
+          "端点检验"
         ],
-        "pitfalls": ["混淆根式的 ≥0 与对数真数的 >0", "只解不等式而不把候选端点代回原式核验"],
-        "verification": "x=1 时 F(1)=ln1=0，有定义；当 1<x<2 时真数位于 (0,1)；x=2 时出现 ln0，必须排除。",
+        "analysis": "学生对根式的条件处理正确，但把对数的严格正条件放宽成了非负，因此错误地保留了使真数等于零的端点 $x=2$。",
+        "steps": [
+          "内层 $\\sqrt{x-1}$ 有意义要求 $x-1\\ge 0$，即 $x\\ge 1$。",
+          "外层对数要求 $1-\\sqrt{x-1}>0$，而不是 $\\ge 0$。",
+          "由 $\\sqrt{x-1}<1$，且两边非负，可平方得 $x-1<1$，即 $x<2$。",
+          "合并 $x\\ge 1$ 与 $x<2$，得到正确定义域 $[1,2)$。",
+          "在 $x=2$ 时，对数真数为 $1-1=0$，$\\ln0$ 无定义，这正是原解多出的端点。"
+        ],
+        "pitfalls": [
+          "混淆根式的 $\\ge 0$ 与对数真数的 $>0$",
+          "只解不等式而不把候选端点代回原式核验"
+        ],
+        "verification": "$x=1$ 时 $F(1)=\\ln1=0$，有定义；当 $1<x<2$ 时真数位于 $(0,1)$；$x=2$ 时出现 $\\ln0$，必须排除。",
         "takeaway": "复合定义域最容易错在严格性；每个边界点都应代回原式单独检查。",
-        "extension": "若函数改为 √(1-√(x-1))，外层根式允许真数等于零，此时定义域才会是 [1,2]。"
+        "extension": "若函数改为 $\\sqrt{1-\\sqrt{x-1}}$，外层根式允许真数等于零，此时定义域才会是 $[1,2]$。"
       }
     },
     "en": {
       "title": "Diagnose an Endpoint Error in a Domain",
-      "prompt": "Find the domain of F(x)=ln(1-√(x-1)). A student writes: “The radical requires x≥1. The logarithm requires 1-√(x-1)≥0, so x≤2. Hence the domain is [1,2].” Identify the error and give the correct solution.",
-      "answer": "The logarithm requires its argument to be strictly positive, not merely nonnegative. The correct domain is [1,2).",
+      "prompt": "Find the domain of $F(x)=\\ln(1-\\sqrt{x-1})$. A student writes: “The radical requires $x\\ge 1$. The logarithm requires $1-\\sqrt{x-1}\\ge 0$, so $x\\le 2$. Hence the domain is $[1,2]$.” Identify the error and give the correct solution.",
+      "answer": "The logarithm requires its argument to be strictly positive, not merely nonnegative. The correct domain is $[1,2)$.",
       "solution": {
-        "knowledge": ["domain of a composite function", "strict positivity of a logarithm argument", "nonnegative radicand", "endpoint checking"],
-        "analysis": "The radical condition is correct, but the student weakened the logarithmic requirement from strict positivity to nonnegativity, incorrectly retaining x=2 where the logarithm has argument zero.",
-        "steps": [
-          "The inner radical √(x-1) requires x-1≥0, so x≥1.",
-          "The outer logarithm requires 1-√(x-1)>0, not ≥0.",
-          "Thus √(x-1)<1. Both sides are nonnegative, so squaring gives x-1<1, or x<2.",
-          "Combining x≥1 and x<2 gives the correct domain [1,2).",
-          "At x=2, the logarithm argument is 1-1=0, and ln0 is undefined; this is the extra endpoint in the student's answer."
+        "knowledge": [
+          "domain of a composite function",
+          "strict positivity of a logarithm argument",
+          "nonnegative radicand",
+          "endpoint checking"
         ],
-        "pitfalls": ["confusing the radical condition ≥0 with the logarithmic condition >0", "solving inequalities without substituting candidate endpoints back into the original expression"],
-        "verification": "At x=1, F(1)=ln1=0 is defined. For 1<x<2 the logarithm argument lies in (0,1). At x=2 it becomes zero and must be excluded.",
+        "analysis": "The radical condition is correct, but the student weakened the logarithmic requirement from strict positivity to nonnegativity, incorrectly retaining $x=2$ where the logarithm has argument zero.",
+        "steps": [
+          "The inner radical $\\sqrt{x-1}$ requires $x-1\\ge 0$, so $x\\ge 1$.",
+          "The outer logarithm requires $1-\\sqrt{x-1}>0$, not $\\ge 0$.",
+          "Thus $\\sqrt{x-1}<1$. Both sides are nonnegative, so squaring gives $x-1<1$, or $x<2$.",
+          "Combining $x\\ge 1$ and $x<2$ gives the correct domain $[1,2)$.",
+          "At $x=2$, the logarithm argument is $1-1=0$, and $\\ln0$ is undefined; this is the extra endpoint in the student's answer."
+        ],
+        "pitfalls": [
+          "confusing the radical condition $\\ge 0$ with the logarithmic condition $>0$",
+          "solving inequalities without substituting candidate endpoints back into the original expression"
+        ],
+        "verification": "At $x=1, F(1)=\\ln1=0$ is defined. For $1<x<2$ the logarithm argument lies in $(0,1)$. At $x=2$ it becomes zero and must be excluded.",
         "takeaway": "Strict inequalities are a major source of domain errors; test every boundary point in the original formula.",
-        "extension": "If the outer function were √(1-√(x-1)), a zero outer radicand would be allowed and the domain would indeed be [1,2]."
+        "extension": "If the outer function were $\\sqrt{1-\\sqrt{x-1}}, a$ zero outer radicand would be allowed and the domain would indeed be $[1,2]$."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "domain / logarithmic composition",
+      "relation": "Independently authored synthesis combining domain / logarithmic composition; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v1-1.1-functions"
+      ]
     }
   },
   {
@@ -502,57 +777,99 @@
     "difficulty": "standard",
     "type": "single_choice",
     "tags": {
-      "zh": ["周期函数", "最小正周期", "三角函数"],
-      "en": ["periodic function", "least positive period", "trigonometric functions"]
+      "zh": [
+        "周期函数",
+        "最小正周期",
+        "三角函数"
+      ],
+      "en": [
+        "periodic function",
+        "least positive period",
+        "trigonometric functions"
+      ]
     },
     "minutes": 6,
     "space": "M",
     "classic_method": false,
     "zh": {
       "title": "确定和函数的最小正周期",
-      "prompt": "函数 p(x)=sin(2x)+cos(4x) 的最小正周期是（ ）。",
-      "choices": ["A. π/4", "B. π/2", "C. π", "D. 2π"],
+      "prompt": "函数 $p(x)=\\sin(2x)+\\cos(4x)$ 的最小正周期是（ ）。",
+      "choices": [
+        "A. $\\frac{\\pi}{4}$",
+        "B. $\\frac{\\pi}{2}$",
+        "C. $\\pi$",
+        "D. $2\\pi$"
+      ],
       "answer": "C",
       "solution": {
-        "knowledge": ["正弦与余弦的周期", "公共周期", "最小正周期"],
-        "analysis": "两个分量的周期说明 π 是和函数的一个周期，但找到公共周期并不足以证明它最小，而且一般不能直接断言和函数的每个周期都是各分量的周期。为严格证明最小性，设 T>0 是和函数的任意周期，再用两个特殊点的函数值约束 sin(2T) 与 cos(2T)。",
-        "steps": [
-          "sin(2x) 的最小正周期 T₁ 满足 2T₁=2π，所以 T₁=π。",
-          "cos(4x) 的最小正周期 T₂ 满足 4T₂=2π，所以 T₂=π/2。",
-          "π 同时是两个分量的周期，因此 p(x+π)=p(x)，所以 π 确实是 p 的一个正周期。",
-          "设 T>0 是 p 的任意周期。由 p(T)=p(0)=1，令 s=sin(2T)，并用 cos(4T)=1-2s²，得 s+1-2s²=1，所以 s∈{0,1/2}。",
-          "又 p(π/4)=0，故 p(π/4+T)=0。令 c=cos(2T)，则 p(π/4+T)=c-cos(4T)=c-(2c²-1)=0，所以 c∈{1,-1/2}。",
-          "结合恒等式 s²+c²=1，在上述候选中只有 s=0、c=1 可能。因此 sin(2T)=0 且 cos(2T)=1，从而 2T=2kπ，即 T=kπ。",
-          "任意正周期都是 π 的正整数倍，而 π 本身是周期，所以最小正周期为 π。"
+        "knowledge": [
+          "正弦与余弦的周期",
+          "公共周期",
+          "最小正周期"
         ],
-        "pitfalls": ["直接取两个最小正周期中较小者", "误以为和函数的任意周期必然分别是每个分量的周期", "只排除 π/2 而没有排除其他小于 π 的正数"],
-        "verification": "直接代入可验证 p(x+π)=p(x)。反向论证又证明任意周期 T 必满足 T=kπ，因此不仅排除了 π/2，也排除了所有其他小于 π 的正数。",
+        "analysis": "两个分量的周期说明 $\\pi$ 是和函数的一个周期，但找到公共周期并不足以证明它最小，而且一般不能直接断言和函数的每个周期都是各分量的周期。为严格证明最小性，设 $T>0$ 是和函数的任意周期，再用两个特殊点的函数值约束 $\\sin(2T)$ 与 $\\cos(2T)$。",
+        "steps": [
+          "$\\sin(2x)$ 的最小正周期 $T_{1}$ 满足 $2T_{1}=2\\pi$，所以 $T_{1}=\\pi$。",
+          "$\\cos(4x)$ 的最小正周期 $T_{2}$ 满足 $4T_{2}=2\\pi$，所以 $T_{2}=\\frac{\\pi}{2}$。",
+          "$\\pi$ 同时是两个分量的周期，因此 $p(x+\\pi)=p(x)$，所以 $\\pi$ 确实是 p 的一个正周期。",
+          "设 $T>0$ 是 p 的任意周期。由 $p(T)=p(0)=1$，令 $s=\\sin(2T)$，并用 $\\cos(4T)=1-2s^{2}$，得 $s+1-2s^{2}=1$，所以 $s\\in {0,\\frac{1}{2}}$。",
+          "又 $p(\\frac{\\pi}{4})=0$，故 $p(\\frac{\\pi}{4}+T)=0$。令 $c=\\cos(2T)$，则 $p(\\frac{\\pi}{4}+T)=c-\\cos(4T)=c-(2c^{2}-1)=0$，所以 $c\\in {1,-\\frac{1}{2}}$。",
+          "结合恒等式 $s^{2}+c^{2}=1$，在上述候选中只有 $s=0$、$c=1$ 可能。因此 $\\sin(2T)=0$ 且 $\\cos(2T)=1$，从而 $2T=2k\\pi$，即 $T=k\\pi$。",
+          "任意正周期都是 $\\pi$ 的正整数倍，而 $\\pi$ 本身是周期，所以最小正周期为 $\\pi$。"
+        ],
+        "pitfalls": [
+          "直接取两个最小正周期中较小者",
+          "误以为和函数的任意周期必然分别是每个分量的周期",
+          "只排除 $\\frac{\\pi}{2}$ 而没有排除其他小于 $\\pi$ 的正数"
+        ],
+        "verification": "直接代入可验证 $p(x+\\pi)=p(x)$。反向论证又证明任意周期 T 必满足 $T=k\\pi$，因此不仅排除了 $\\frac{\\pi}{2}$，也排除了所有其他小于 $\\pi$ 的正数。",
         "takeaway": "公共周期只能证明“它是周期”；证明最小正周期还要对任意候选周期作严格约束。",
-        "extension": "若改为 sin(4x)+cos(4x)，两个分量的最小正周期都为 π/2，和函数的最小正周期也是 π/2。"
+        "extension": "若改为 $\\sin(4x)+\\cos(4x)$，两个分量的最小正周期都为 $\\frac{\\pi}{2}$，和函数的最小正周期也是 $\\frac{\\pi}{2}$。"
       }
     },
     "en": {
       "title": "Find the Least Positive Period of a Sum",
-      "prompt": "What is the least positive period of p(x)=sin(2x)+cos(4x)?",
-      "choices": ["A. π/4", "B. π/2", "C. π", "D. 2π"],
+      "prompt": "What is the least positive period of $p(x)=\\sin(2x)+\\cos(4x)$?",
+      "choices": [
+        "A. $\\frac{\\pi}{4}$",
+        "B. $\\frac{\\pi}{2}$",
+        "C. $\\pi$",
+        "D. $2\\pi$"
+      ],
       "answer": "C",
       "solution": {
-        "knowledge": ["periods of sine and cosine", "common periods", "least positive period"],
-        "analysis": "The component periods show that π is a period of the sum, but a common period does not by itself prove minimality, and in general one may not assume that every period of a sum is a period of each summand. For a rigorous proof, let T>0 be an arbitrary period of the sum and use values at two special points to constrain sin(2T) and cos(2T).",
-        "steps": [
-          "For sin(2x), 2T₁=2π gives the least positive period T₁=π.",
-          "For cos(4x), 4T₂=2π gives the least positive period T₂=π/2.",
-          "π is a period of both terms, so p(x+π)=p(x); hence π is indeed a positive period of p.",
-          "Let T>0 be any period of p. From p(T)=p(0)=1, set s=sin(2T) and use cos(4T)=1-2s². Then s+1-2s²=1, so s∈{0,1/2}.",
-          "Also p(π/4)=0, so p(π/4+T)=0. With c=cos(2T), we have p(π/4+T)=c-cos(4T)=c-(2c²-1)=0, hence c∈{1,-1/2}.",
-          "Combining these candidates with s²+c²=1 leaves only s=0 and c=1. Thus sin(2T)=0 and cos(2T)=1, so 2T=2kπ and T=kπ.",
-          "Every positive period is therefore a positive integer multiple of π, while π itself is a period. Hence the least positive period is π."
+        "knowledge": [
+          "periods of sine and cosine",
+          "common periods",
+          "least positive period"
         ],
-        "pitfalls": ["taking the smaller component period automatically", "assuming that every period of a sum must separately be a period of each summand", "ruling out only π/2 while leaving other positive numbers below π untreated"],
-        "verification": "Direct substitution verifies p(x+π)=p(x). The converse argument proves that every period T must have T=kπ, ruling out not only π/2 but every other positive number below π.",
+        "analysis": "The component periods show that $\\pi$ is a period of the sum, but a common period does not by itself prove minimality, and in general one may not assume that every period of a sum is a period of each summand. For a rigorous proof, let $T>0$ be an arbitrary period of the sum and use values at two special points to constrain $\\sin(2T)$ and $\\cos(2T)$.",
+        "steps": [
+          "For $\\sin(2x), 2T_{1}=2\\pi$ gives the least positive period $T_{1}=\\pi$.",
+          "For $\\cos(4x), 4T_{2}=2\\pi$ gives the least positive period $T_{2}=\\frac{\\pi}{2}$.",
+          "$\\pi$ is a period of both terms, so $p(x+\\pi)=p(x)$; hence $\\pi$ is indeed a positive period of p.",
+          "Let $T>0$ be any period of p. From $p(T)=p(0)=1$, set $s=\\sin(2T)$ and use $\\cos(4T)=1-2s^{2}$. Then $s+1-2s^{2}=1$, so $s\\in {0,\\frac{1}{2}}$.",
+          "Also $p(\\frac{\\pi}{4})=0$, so $p(\\frac{\\pi}{4}+T)=0$. With $c=\\cos(2T)$, we have $p(\\frac{\\pi}{4}+T)=c-\\cos(4T)=c-(2c^{2}-1)=0$, hence $c\\in {1,-\\frac{1}{2}}$.",
+          "Combining these candidates with $s^{2}+c^{2}=1$ leaves only $s=0$ and $c=1$. Thus $\\sin(2T)=0$ and $\\cos(2T)=1$, so $2T=2k\\pi$ and $T=k\\pi$.",
+          "Every positive period is therefore a positive integer multiple of $\\pi$, while $\\pi$ itself is a period. Hence the least positive period is $\\pi$."
+        ],
+        "pitfalls": [
+          "taking the smaller component period automatically",
+          "assuming that every period of a sum must separately be a period of each summand",
+          "ruling out only $\\frac{\\pi}{2}$ while leaving other positive numbers below $\\pi$ untreated"
+        ],
+        "verification": "Direct substitution verifies $p(x+\\pi)=p(x)$. The converse argument proves that every period T must have $T=k\\pi$, ruling out not only $\\frac{\\pi}{2}$ but every other positive number below $\\pi$.",
         "takeaway": "A common period proves only that it is a period; minimality requires a rigorous constraint on an arbitrary candidate period.",
-        "extension": "For sin(4x)+cos(4x), both components have least positive period π/2, so the sum also has least positive period π/2."
+        "extension": "For $\\sin(4x)+\\cos(4x)$, both components have least positive period $\\frac{\\pi}{2}$, so the sum also has least positive period $\\frac{\\pi}{2}$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "periodic function / least positive period",
+      "relation": "Independently authored variant of the widely taught periodic function / least positive period method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v1-1.1-functions"
+      ]
     }
   },
   {
@@ -562,53 +879,88 @@
     "difficulty": "hard",
     "type": "proof",
     "tags": {
-      "zh": ["双射", "复合映射", "逆映射", "证明"],
-      "en": ["bijection", "composition", "inverse mapping", "proof"]
+      "zh": [
+        "双射",
+        "复合映射",
+        "逆映射",
+        "证明"
+      ],
+      "en": [
+        "bijection",
+        "composition",
+        "inverse mapping",
+        "proof"
+      ]
     },
     "minutes": 16,
     "space": "XL",
     "classic_method": false,
     "zh": {
       "title": "复合双射的逆映射",
-      "prompt": "设 f:A→B 与 g:B→C 都是双射。证明 g∘f:A→C 也是双射，并证明 (g∘f)⁻¹=f⁻¹∘g⁻¹。",
-      "answer": "g∘f 既为单射又为满射，故为双射；对任意 c∈C，(f⁻¹∘g⁻¹)(c) 先由 g⁻¹ 回到 B，再由 f⁻¹ 回到 A，它与 g∘f 双向复合均为恒等映射，因此就是 (g∘f)⁻¹。",
+      "prompt": "设 $f:A\\to B$ 与 $g:B\\to C$ 都是双射。证明 $g\\circ f:A\\to C$ 也是双射，并证明 $(g\\circ f)^{-1}=f^{-1}\\circ g^{-1}$。",
+      "answer": "$g\\circ f$ 既为单射又为满射，故为双射；对任意 $c\\in C$，$(f^{-1}\\circ g^{-1})(c)$ 先由 $g^{-1}$ 回到 B，再由 $f^{-1}$ 回到 A，它与 $g\\circ f$ 双向复合均为恒等映射，因此就是 $(g\\circ f)^{-1}$。",
       "solution": {
-        "knowledge": ["单射与满射", "双射", "复合映射", "逆映射的复合次序"],
+        "knowledge": [
+          "单射与满射",
+          "双射",
+          "复合映射",
+          "逆映射的复合次序"
+        ],
         "analysis": "先分别证明复合映射的单射性和满射性。逆映射的次序必须反转，因为返回时要先撤销最后执行的 g，再撤销先执行的 f。",
         "steps": [
-          "证明单射：若 (g∘f)(a₁)=(g∘f)(a₂)，则 g(f(a₁))=g(f(a₂))。g 为单射，故 f(a₁)=f(a₂)；f 也为单射，故 a₁=a₂。",
-          "证明满射：任取 c∈C。因 g 满射，存在 b∈B 使 g(b)=c；因 f 满射，存在 a∈A 使 f(a)=b，于是 (g∘f)(a)=c。",
-          "由前两步，g∘f 既单射又满射，因此是从 A 到 C 的双射，逆映射存在。",
-          "令 H=f⁻¹∘g⁻¹。对任意 c∈C，有 (g∘f)(H(c))=g(f(f⁻¹(g⁻¹(c))))=g(g⁻¹(c))=c。",
-          "对任意 a∈A，有 H((g∘f)(a))=f⁻¹(g⁻¹(g(f(a))))=f⁻¹(f(a))=a。",
-          "H 与 g∘f 的左右复合都是相应集合上的恒等映射，所以 H=(g∘f)⁻¹，即 (g∘f)⁻¹=f⁻¹∘g⁻¹。"
+          "证明单射：若 $(g\\circ f)(a_{1})=(g\\circ f)(a_{2})$，则 $g(f(a_{1}))=g(f(a_{2}))$。g 为单射，故 $f(a_{1})=f(a_{2})$；f 也为单射，故 $a_{1}=a_{2}$。",
+          "证明满射：任取 $c\\in C$。因 g 满射，存在 $b\\in B$ 使 $g(b)=c$；因 f 满射，存在 $a\\in A$ 使 $f(a)=b$，于是 $(g\\circ f)(a)=c$。",
+          "由前两步，$g\\circ f$ 既单射又满射，因此是从 A 到 C 的双射，逆映射存在。",
+          "令 $H=f^{-1}\\circ g^{-1}$。对任意 $c\\in C$，有 $(g\\circ f)(H(c))=g(f(f^{-1}(g^{-1}(c))))=g(g^{-1}(c))=c$。",
+          "对任意 $a\\in A$，有 $H((g\\circ f)(a))=f^{-1}(g^{-1}(g(f(a))))=f^{-1}(f(a))=a$。",
+          "H 与 $g\\circ f$ 的左右复合都是相应集合上的恒等映射，所以 $H=(g\\circ f)^{-1}$，即 $(g\\circ f)^{-1}=f^{-1}\\circ g^{-1}$。"
         ],
-        "pitfalls": ["把逆映射公式误写成 g⁻¹∘f⁻¹", "只说明复合可逆，却没有分别证明单射和满射或验证双向复合"],
-        "verification": "集合流向为 A --f→ B --g→ C；逆向必须为 C --g⁻¹→ B --f⁻¹→ A，正好对应 f⁻¹∘g⁻¹。",
+        "pitfalls": [
+          "把逆映射公式误写成 $g^{-1}\\circ f^{-1}$",
+          "只说明复合可逆，却没有分别证明单射和满射或验证双向复合"
+        ],
+        "verification": "集合流向为 $A --f\\to B --g\\to C$；逆向必须为 $C --g^{-1}\\to B --f^{-1}\\to A$，正好对应 $f^{-1}\\circ g^{-1}$。",
         "takeaway": "复合映射求逆遵循“后做的先撤销”，与代数中乘积求逆的次序反转相同。",
-        "extension": "同理，三个双射的复合满足 (h∘g∘f)⁻¹=f⁻¹∘g⁻¹∘h⁻¹。"
+        "extension": "同理，三个双射的复合满足 $(h\\circ g\\circ f)^{-1}=f^{-1}\\circ g^{-1}\\circ h^{-1}$。"
       }
     },
     "en": {
       "title": "Inverse of a Composition of Bijections",
-      "prompt": "Let f:A→B and g:B→C be bijections. Prove that g∘f:A→C is a bijection and that (g∘f)⁻¹=f⁻¹∘g⁻¹.",
-      "answer": "The composition g∘f is both injective and surjective, hence bijective. For any c∈C, f⁻¹∘g⁻¹ first sends c back to B through g⁻¹ and then back to A through f⁻¹. Its compositions with g∘f in both orders are identity maps, so it equals (g∘f)⁻¹.",
+      "prompt": "Let $f:A\\to B$ and $g:B\\to C$ be bijections. Prove that $g\\circ f:A\\to C$ is a bijection and that $(g\\circ f)^{-1}=f^{-1}\\circ g^{-1}$.",
+      "answer": "The composition $g\\circ f$ is both injective and surjective, hence bijective. For any $c\\in C, f^{-1}\\circ g^{-1}$ first sends c back to B through $g^{-1}$ and then back to A through $f^{-1}$. Its compositions with $g\\circ f$ in both orders are identity maps, so it equals $(g\\circ f)^{-1}$.",
       "solution": {
-        "knowledge": ["injectivity and surjectivity", "bijections", "composition", "order of inverse maps"],
+        "knowledge": [
+          "injectivity and surjectivity",
+          "bijections",
+          "composition",
+          "order of inverse maps"
+        ],
         "analysis": "First prove injectivity and surjectivity separately. The inverse order reverses because one must undo the last-applied map g before undoing the first-applied map f.",
         "steps": [
-          "Injectivity: if (g∘f)(a₁)=(g∘f)(a₂), then g(f(a₁))=g(f(a₂)). Injectivity of g gives f(a₁)=f(a₂), and injectivity of f gives a₁=a₂.",
-          "Surjectivity: take any c∈C. Since g is surjective, some b∈B satisfies g(b)=c. Since f is surjective, some a∈A satisfies f(a)=b. Thus (g∘f)(a)=c.",
-          "Therefore g∘f is both injective and surjective, so it is a bijection from A to C and has an inverse.",
-          "Let H=f⁻¹∘g⁻¹. For every c∈C, (g∘f)(H(c))=g(f(f⁻¹(g⁻¹(c))))=g(g⁻¹(c))=c.",
-          "For every a∈A, H((g∘f)(a))=f⁻¹(g⁻¹(g(f(a))))=f⁻¹(f(a))=a.",
-          "Since H composes with g∘f in both orders to give the relevant identity maps, H=(g∘f)⁻¹; hence (g∘f)⁻¹=f⁻¹∘g⁻¹."
+          "Injectivity: if $(g\\circ f)(a_{1})=(g\\circ f)(a_{2})$, then $g(f(a_{1}))=g(f(a_{2}))$. Injectivity of g gives $f(a_{1})=f(a_{2})$, and injectivity of f gives $a_{1}=a_{2}$.",
+          "Surjectivity: take any $c\\in C$. Since g is surjective, some $b\\in B$ satisfies $g(b)=c$. Since f is surjective, some $a\\in A$ satisfies $f(a)=b$. Thus $(g\\circ f)(a)=c$.",
+          "Therefore $g\\circ f$ is both injective and surjective, so it is a bijection from A to C and has an inverse.",
+          "Let $H=f^{-1}\\circ g^{-1}$. For every $c\\in C, (g\\circ f)(H(c))=g(f(f^{-1}(g^{-1}(c))))=g(g^{-1}(c))=c$.",
+          "For every $a\\in A, H((g\\circ f)(a))=f^{-1}(g^{-1}(g(f(a))))=f^{-1}(f(a))=a$.",
+          "Since H composes with $g\\circ f$ in both orders to give the relevant identity maps, $H=(g\\circ f)^{-1}$; hence $(g\\circ f)^{-1}=f^{-1}\\circ g^{-1}$."
         ],
-        "pitfalls": ["writing the inverse in the unreversed order g⁻¹∘f⁻¹", "claiming invertibility without proving injectivity and surjectivity or checking both compositions"],
-        "verification": "The set flow is A --f→ B --g→ C. Reversing it must give C --g⁻¹→ B --f⁻¹→ A, exactly the composition f⁻¹∘g⁻¹.",
+        "pitfalls": [
+          "writing the inverse in the unreversed order $g^{-1}\\circ f^{-1}$",
+          "claiming invertibility without proving injectivity and surjectivity or checking both compositions"
+        ],
+        "verification": "The set flow is $A --f\\to B --g\\to C$. Reversing it must give $C --g^{-1}\\to B --f^{-1}\\to A$, exactly the composition $f^{-1}\\circ g^{-1}$.",
         "takeaway": "To invert a composition, undo the maps in reverse order: the last operation is undone first.",
-        "extension": "Likewise, for three bijections, (h∘g∘f)⁻¹=f⁻¹∘g⁻¹∘h⁻¹."
+        "extension": "Likewise, for three bijections, $(h\\circ g\\circ f)^{-1}=f^{-1}\\circ g^{-1}\\circ h^{-1}$."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "bijection / composition",
+      "relation": "Independently authored synthesis combining bijection / composition; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v1-1.1-functions",
+        "openstax-v1-1.4-inverse-functions"
+      ]
     }
   },
   {
@@ -618,61 +970,91 @@
     "difficulty": "basic",
     "type": "single_choice",
     "tags": {
-      "zh": ["数列极限", "ε-N定义", "量词"],
-      "en": ["sequence limit", "epsilon-N definition", "quantifiers"]
+      "zh": [
+        "数列极限",
+        "$\\varepsilon$-$N$定义",
+        "量词"
+      ],
+      "en": [
+        "sequence limit",
+        "$\\varepsilon$-$N$ definition",
+        "quantifiers"
+      ]
     },
     "minutes": 5,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "识别数列极限的严格定义",
-      "prompt": "“数列 {aₙ} 收敛于 A”的正确 ε-N 表述是（ ）。",
+      "prompt": "“数列 $\\{a_{n}\\}$ 收敛于 A”的正确 $\\varepsilon$-$N$ 表述是（ ）。",
       "choices": [
-        "A. 对任意 ε>0，存在正整数 N，使当 n>N 时恒有 |aₙ-A|<ε",
-        "B. 存在正整数 N，使对任意 ε>0，当 n>N 时恒有 |aₙ-A|<ε",
-        "C. 对任意 ε>0 和任意正整数 n，都有 |aₙ-A|<ε",
-        "D. 存在 ε>0，使对每个正整数 N，都能找到 n>N 满足 |aₙ-A|<ε"
+        "A. 对任意 $\\varepsilon >0$，存在正整数 N，使当 $n>N$ 时恒有 $|a_{n}-A|<\\varepsilon$",
+        "B. 存在正整数 N，使对任意 $\\varepsilon >0$，当 $n>N$ 时恒有 $|a_{n}-A|<\\varepsilon$",
+        "C. 对任意 $\\varepsilon >0$ 和任意正整数 n，都有 $|a_{n}-A|<\\varepsilon$",
+        "D. 存在 $\\varepsilon >0$，使对每个正整数 N，都能找到 $n>N$ 满足 $|a_{n}-A|<\\varepsilon$"
       ],
       "answer": "A",
       "solution": {
-        "knowledge": ["数列极限的 ε-N 定义", "量词先后次序", "尾项控制"],
-        "analysis": "极限定义允许 N 随精度 ε 改变，但一旦选定 N，所有 n>N 的尾项都必须进入以 A 为中心、半径 ε 的邻域。",
+        "knowledge": [
+          "数列极限的 $\\varepsilon$-$N$ 定义",
+          "量词先后次序",
+          "尾项控制"
+        ],
+        "analysis": "极限定义允许 N 随精度 $\\varepsilon$ 改变，但一旦选定 N，所有 $n>N$ 的尾项都必须进入以 A 为中心、半径 $\\varepsilon$ 的邻域。",
         "steps": [
-          "先给定任意精度 ε>0，这是定义中的第一个全称量词。",
-          "随后允许根据该 ε 选择一个正整数 N=N(ε)。",
-          "要求不是找到某一个 n，而是所有满足 n>N 的项都满足 |aₙ-A|<ε。",
+          "先给定任意精度 $\\varepsilon >0$，这是定义中的第一个全称量词。",
+          "随后允许根据该 $\\varepsilon$ 选择一个正整数 $N=N(\\varepsilon)$。",
+          "要求不是找到某一个 n，而是所有满足 $n>N$ 的项都满足 $|a_{n}-A|<\\varepsilon$。",
           "A 完整保留了上述量词顺序和尾项要求；B、C 过强，D 只保证零散项接近 A，均不等价。"
         ],
-        "pitfalls": ["把 N 选在 ε 之前，使同一个 N 被迫适用于所有精度", "把“所有充分大的 n”误写成“存在某个充分大的 n”"],
-        "verification": "A 的量词结构可写为 ∀ε>0，∃N∈N⁺，∀n>N：|aₙ-A|<ε，正是标准定义。",
-        "takeaway": "记住顺序：先任给 ε，再选 N，最后控制全部尾项。",
-        "extension": "把最后的 |aₙ-A|<ε 改成 aₙ∈(A-ε,A+ε)，得到完全等价的邻域表述。"
+        "pitfalls": [
+          "把 N 选在 $\\varepsilon$ 之前，使同一个 N 被迫适用于所有精度",
+          "把“所有充分大的 n”误写成“存在某个充分大的 n”"
+        ],
+        "verification": "A 的量词结构可写为 $\\forall \\varepsilon >0$，$\\exists N\\in N^{+}$，$\\forall n>N$：$|a_{n}-A|<\\varepsilon$，正是标准定义。",
+        "takeaway": "记住顺序：先任给 $\\varepsilon$，再选 N，最后控制全部尾项。",
+        "extension": "把最后的 $|a_{n}-A|<\\varepsilon$ 改成 $a_{n}\\in (A-\\varepsilon,A+\\varepsilon)$，得到完全等价的邻域表述。"
       }
     },
     "en": {
       "title": "Recognize the Rigorous Definition of a Sequence Limit",
-      "prompt": "Which epsilon-N statement correctly expresses that the sequence {aₙ} converges to A?",
+      "prompt": "Which $\\varepsilon$-$N$ statement correctly expresses that the sequence $\\{a_{n}\\}$ converges to A?",
       "choices": [
-        "A. For every ε>0, there exists a positive integer N such that |aₙ-A|<ε whenever n>N",
-        "B. There exists a positive integer N such that, for every ε>0, |aₙ-A|<ε whenever n>N",
-        "C. For every ε>0 and every positive integer n, |aₙ-A|<ε",
-        "D. There exists ε>0 such that, for every positive integer N, one can find n>N with |aₙ-A|<ε"
+        "A. For every $\\varepsilon >0$, there exists a positive integer N such that $|a_{n}-A|<\\varepsilon$ whenever $n>N$",
+        "B. There exists a positive integer N such that, for every $\\varepsilon >0, |a_{n}-A|<\\varepsilon$ whenever $n>N$",
+        "C. For every $\\varepsilon >0$ and every positive integer $n, |a_{n}-A|<\\varepsilon$",
+        "D. There exists $\\varepsilon >0$ such that, for every positive integer N, one can find $n>N$ with $|a_{n}-A|<\\varepsilon$"
       ],
       "answer": "A",
       "solution": {
-        "knowledge": ["epsilon-N definition of sequence convergence", "order of quantifiers", "control of the tail"],
-        "analysis": "The definition allows N to depend on the requested accuracy ε. Once N is chosen, every term with n>N must lie in the ε-neighborhood of A.",
+        "knowledge": [
+          "$\\varepsilon$-$N$ definition of sequence convergence",
+          "order of quantifiers",
+          "control of the tail"
+        ],
+        "analysis": "The definition allows N to depend on the requested accuracy $\\varepsilon$. Once N is chosen, every term with $n>N$ must lie in the $\\varepsilon$-neighborhood of A.",
         "steps": [
-          "First, an arbitrary accuracy ε>0 is prescribed; this is the initial universal quantifier.",
-          "One may then choose a positive integer N=N(ε) depending on that ε.",
-          "The requirement concerns every n>N, not merely one selected index: all tail terms satisfy |aₙ-A|<ε.",
+          "First, an arbitrary accuracy $\\varepsilon >0$ is prescribed; this is the initial universal quantifier.",
+          "One may then choose a positive integer $N=N(\\varepsilon)$ depending on that $\\varepsilon$.",
+          "The requirement concerns every $n>N$, not merely one selected index: all tail terms satisfy $|a_{n}-A|<\\varepsilon$.",
           "A has exactly this quantifier order and tail condition. B and C are too strong, while D allows only scattered close terms."
         ],
-        "pitfalls": ["choosing N before ε and forcing one N to work for all accuracies", "replacing all sufficiently large indices by the existence of one large index"],
-        "verification": "The quantifier form of A is ∀ε>0, ∃N∈N⁺, ∀n>N: |aₙ-A|<ε, which is the standard definition.",
-        "takeaway": "Remember the order: prescribe ε, choose N, then control every term in the tail.",
-        "extension": "Replacing |aₙ-A|<ε by aₙ∈(A-ε,A+ε) gives an equivalent neighborhood formulation."
+        "pitfalls": [
+          "choosing N before $\\varepsilon$ and forcing one N to work for all accuracies",
+          "replacing all sufficiently large indices by the existence of one large index"
+        ],
+        "verification": "The quantifier form of A is $\\forall \\varepsilon >0, \\exists N\\in N^{+}, \\forall n>N: |a_{n}-A|<\\varepsilon$, which is the standard definition.",
+        "takeaway": "Remember the order: prescribe $\\varepsilon$, choose N, then control every term in the tail.",
+        "extension": "Replacing $|a_{n}-A|<\\varepsilon$ by $a_{n}\\in (A-\\varepsilon,A+\\varepsilon)$ gives an equivalent neighborhood formulation."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "sequence limit / $\\varepsilon$-$N$ definition",
+      "relation": "Independently authored variant of the widely taught sequence limit / $\\varepsilon$-$N$ definition method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v2-5.1-sequences"
+      ]
     }
   },
   {
@@ -682,49 +1064,79 @@
     "difficulty": "basic",
     "type": "fill_blank",
     "tags": {
-      "zh": ["数列极限", "ε-N估计", "绝对值"],
-      "en": ["sequence limit", "epsilon-N estimate", "absolute value"]
+      "zh": [
+        "数列极限",
+        "$\\varepsilon$-$N$估计",
+        "绝对值"
+      ],
+      "en": [
+        "sequence limit",
+        "$\\varepsilon$-$N$ estimate",
+        "absolute value"
+      ]
     },
     "minutes": 6,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "为指定精度选择 N",
-      "prompt": "数列 aₙ=(-1)ⁿ/n 的极限为 ______；当 ε=0.01 且定义采用 n>N 时，可取 N=______。",
+      "prompt": "数列 $a_{n}=\\frac{(-1)^{n}}{n}$ 的极限为 $\\underline{\\qquad}$；当 $\\varepsilon =0.01$ 且定义采用 $n>N$ 时，可取 $N=\\underline{\\qquad}$。",
       "answer": "0；100。",
       "solution": {
-        "knowledge": ["振荡符号不影响绝对值估计", "ε-N定义", "严格不等式"],
-        "analysis": "虽然 (-1)ⁿ 交替变号，但与极限 0 的距离恒为 1/n。要让距离严格小于 0.01，只需令 n>100。",
-        "steps": [
-          "计算与候选极限 0 的距离：|aₙ-0|=|(-1)ⁿ|/n=1/n。",
-          "要求 1/n<0.01=1/100，等价于 n>100。",
-          "定义使用 n>N，因此选择 N=100 后，所有 n>N 都满足所需严格不等式。",
-          "由于对任意 ε>0 都可类似取 N≥1/ε，故 aₙ→0；本题两空为 0 与 100。"
+        "knowledge": [
+          "振荡符号不影响绝对值估计",
+          "$\\varepsilon$-$N$定义",
+          "严格不等式"
         ],
-        "pitfalls": ["被正负交替迷惑，误判数列发散", "在 n>N 的约定下误以为必须取 N=101"],
-        "verification": "n=101 时 |a₁₀₁|=1/101<0.01；而 n=100 时等于 0.01，但 n=100 不属于 n>N 的尾项。",
+        "analysis": "虽然 $(-1)^{n}$ 交替变号，但与极限 0 的距离恒为 $\\frac{1}{n}$。要让距离严格小于 0.01，只需令 $n>100$。",
+        "steps": [
+          "计算与候选极限 0 的距离：$|a_{n}-0|=\\frac{|(-1)^{n}|}{n}=\\frac{1}{n}$。",
+          "要求 $\\frac{1}{n}<0.01=\\frac{1}{100}$，等价于 $n>100$。",
+          "定义使用 $n>N$，因此选择 $N=100$ 后，所有 $n>N$ 都满足所需严格不等式。",
+          "由于对任意 $\\varepsilon >0$ 都可类似取 $N\\ge\\frac{1}{\\varepsilon}$，故 $a_{n}\\to 0$；本题两空为 0 与 100。"
+        ],
+        "pitfalls": [
+          "被正负交替迷惑，误判数列发散",
+          "在 $n>N$ 的约定下误以为必须取 $N=101$"
+        ],
+        "verification": "$n=101$ 时 $|a_{101}|=\\frac{1}{101}<0.01$；而 $n=100$ 时等于 0.01，但 $n=100$ 不属于 $n>N$ 的尾项。",
         "takeaway": "极限控制的是距离；交替符号可通过绝对值消除。",
-        "extension": "若教材采用 n≥N 的写法，为保证严格小于 0.01，可取 N=101。"
+        "extension": "若教材采用 $n\\ge N$ 的写法，为保证严格小于 0.01，可取 $N=101$。"
       }
     },
     "en": {
       "title": "Choose N for a Prescribed Accuracy",
-      "prompt": "For aₙ=(-1)ⁿ/n, the limit is ______. When ε=0.01 and the definition uses n>N, one may take N=______.",
+      "prompt": "For $a_{n}=\\frac{(-1)^{n}}{n}$, the limit is $\\underline{\\qquad}$. When $\\varepsilon =0.01$ and the definition uses $n>N$, one may take $N=\\underline{\\qquad}$.",
       "answer": "0; 100.",
       "solution": {
-        "knowledge": ["an alternating sign disappears in an absolute-value estimate", "epsilon-N definition", "strict inequality"],
-        "analysis": "Although (-1)ⁿ alternates in sign, the distance from 0 is always 1/n. To make this distance strictly smaller than 0.01, it is enough to require n>100.",
-        "steps": [
-          "Compute the distance from the candidate limit 0: |aₙ-0|=|(-1)ⁿ|/n=1/n.",
-          "The condition 1/n<0.01=1/100 is equivalent to n>100.",
-          "Because the definition uses n>N, choosing N=100 makes every n>N satisfy the strict inequality.",
-          "The same reasoning works for every ε>0 by choosing N≥1/ε, so aₙ→0; the blanks are 0 and 100."
+        "knowledge": [
+          "an alternating sign disappears in an absolute-value estimate",
+          "$\\varepsilon$-$N$ definition",
+          "strict inequality"
         ],
-        "pitfalls": ["mistaking alternating signs for divergence even when magnitudes go to zero", "thinking N must be 101 even though the convention is n>N"],
-        "verification": "At n=101, |a₁₀₁|=1/101<0.01. At n=100 the value equals 0.01, but n=100 is not part of the tail n>N.",
+        "analysis": "Although $(-1)^{n}$ alternates in sign, the distance from 0 is always $\\frac{1}{n}$. To make this distance strictly smaller than 0.01, it is enough to require $n>100$.",
+        "steps": [
+          "Compute the distance from the candidate limit $0: |a_{n}-0|=\\frac{|(-1)^{n}|}{n}=\\frac{1}{n}$.",
+          "The condition $\\frac{1}{n}<0.01=\\frac{1}{100}$ is equivalent to $n>100$.",
+          "Because the definition uses $n>N$, choosing $N=100$ makes every $n>N$ satisfy the strict inequality.",
+          "The same reasoning works for every $\\varepsilon >0$ by choosing $N\\ge\\frac{1}{\\varepsilon}$, so $a_{n}\\to 0$; the blanks are 0 and 100."
+        ],
+        "pitfalls": [
+          "mistaking alternating signs for divergence even when magnitudes go to zero",
+          "thinking N must be 101 even though the convention is $n>N$"
+        ],
+        "verification": "At $n=101, |a_{101}|=\\frac{1}{101}<0.01$. At $n=100$ the value equals 0.01, but $n=100$ is not part of the tail $n>N$.",
         "takeaway": "Convergence controls distance; absolute values remove the alternating sign.",
-        "extension": "If the convention were n≥N, one could choose N=101 to preserve the strict inequality."
+        "extension": "If the convention were $n\\ge N$, one could choose $N=101$ to preserve the strict inequality."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "sequence limit / $\\varepsilon$-$N$ estimate",
+      "relation": "Independently authored variant of the widely taught sequence limit / $\\varepsilon$-$N$ estimate method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v2-5.1-sequences"
+      ]
     }
   },
   {
@@ -734,8 +1146,16 @@
     "difficulty": "basic",
     "type": "true_false",
     "tags": {
-      "zh": ["有界数列", "收敛数列", "反例"],
-      "en": ["bounded sequence", "convergent sequence", "counterexample"]
+      "zh": [
+        "有界数列",
+        "收敛数列",
+        "反例"
+      ],
+      "en": [
+        "bounded sequence",
+        "convergent sequence",
+        "counterexample"
+      ]
     },
     "minutes": 4,
     "space": "M",
@@ -743,18 +1163,25 @@
     "zh": {
       "title": "有界是否足以保证收敛",
       "prompt": "判断正误：每个有界数列都收敛。",
-      "answer": "错误。反例 aₙ=(-1)ⁿ 有界但不收敛。",
+      "answer": "错误。反例 $a_{n}=(-1)^{n}$ 有界但不收敛。",
       "solution": {
-        "knowledge": ["收敛数列必有界", "逆命题不成立", "奇偶子列反例"],
+        "knowledge": [
+          "收敛数列必有界",
+          "逆命题不成立",
+          "奇偶子列反例"
+        ],
         "analysis": "教材性质是“收敛推出有界”，不能任意倒置。构造在两个值之间持续振荡的数列即可否定逆命题。",
         "steps": [
-          "取 aₙ=(-1)ⁿ，则对所有 n 都有 |aₙ|=1，所以数列有界。",
-          "偶数项子列 a₂ₖ=1，故该子列极限为 1。",
-          "奇数项子列 a₂ₖ₋₁=-1，故该子列极限为 -1。",
+          "取 $a_{n}=(-1)^{n}$，则对所有 n 都有 $|a_{n}|=1$，所以数列有界。",
+          "偶数项子列 $a_{2k}=1$，故该子列极限为 1。",
+          "奇数项子列 $a_{2k-1}=-1$，故该子列极限为 $-1$。",
           "若原数列收敛，则其所有子列应收敛到同一极限；两个子列极限不同，故原数列不收敛，命题错误。"
         ],
-        "pitfalls": ["把充分条件和必要条件互换", "只说数列振荡而不给出可验证的发散依据"],
-        "verification": "数列所有项都落在 [-1,1]，证实有界；但距离任一候选极限都不可能使正、负两类尾项同时任意小。",
+        "pitfalls": [
+          "把充分条件和必要条件互换",
+          "只说数列振荡而不给出可验证的发散依据"
+        ],
+        "verification": "数列所有项都落在 $[-1,1]$，证实有界；但距离任一候选极限都不可能使正、负两类尾项同时任意小。",
         "takeaway": "收敛必有界，但有界只限制大小，不能排除持续振荡。",
         "extension": "增加“单调”条件后，单调有界数列必收敛，这是本章后续的极限存在准则。"
       }
@@ -762,21 +1189,36 @@
     "en": {
       "title": "Does Boundedness Guarantee Convergence?",
       "prompt": "True or false: Every bounded sequence converges.",
-      "answer": "False. The sequence aₙ=(-1)ⁿ is bounded but divergent.",
+      "answer": "False. The sequence $a_{n}=(-1)^{n}$ is bounded but divergent.",
       "solution": {
-        "knowledge": ["every convergent sequence is bounded", "the converse is false", "counterexample using even and odd subsequences"],
+        "knowledge": [
+          "every convergent sequence is bounded",
+          "the converse is false",
+          "counterexample using even and odd subsequences"
+        ],
         "analysis": "The valid theorem says convergence implies boundedness; it cannot be reversed. A sequence that keeps oscillating between two values gives a direct counterexample.",
         "steps": [
-          "Let aₙ=(-1)ⁿ. Then |aₙ|=1 for every n, so the sequence is bounded.",
-          "Its even subsequence satisfies a₂ₖ=1 and therefore converges to 1.",
-          "Its odd subsequence satisfies a₂ₖ₋₁=-1 and therefore converges to -1.",
+          "Let $a_{n}=(-1)^{n}$. Then $|a_{n}|=1$ for every n, so the sequence is bounded.",
+          "Its even subsequence satisfies $a_{2k}=1$ and therefore converges to 1.",
+          "Its odd subsequence satisfies $a_{2k-1}=-1$ and therefore converges to $-1$.",
           "If the original sequence converged, all subsequences would have the same limit. Since these two limits differ, the original sequence diverges and the statement is false."
         ],
-        "pitfalls": ["reversing a necessary consequence into a sufficient condition", "claiming oscillation without a verifiable argument for divergence"],
-        "verification": "All terms lie in [-1,1], confirming boundedness, but no candidate limit can make both positive and negative tail terms arbitrarily close to it.",
+        "pitfalls": [
+          "reversing a necessary consequence into a sufficient condition",
+          "claiming oscillation without a verifiable argument for divergence"
+        ],
+        "verification": "All terms lie in $[-1,1]$, confirming boundedness, but no candidate limit can make both positive and negative tail terms arbitrarily close to it.",
         "takeaway": "Convergence implies boundedness, but boundedness controls size only and does not prevent perpetual oscillation.",
         "extension": "Adding monotonicity changes the conclusion: every monotone bounded sequence converges, an existence criterion developed later in the chapter."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "bounded sequence / convergent sequence",
+      "relation": "Independently authored variant of the widely taught bounded sequence / convergent sequence method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v2-5.1-sequences"
+      ]
     }
   },
   {
@@ -786,49 +1228,79 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["有理数列极限", "最高次项", "极限运算法则"],
-      "en": ["rational sequence limit", "leading terms", "limit laws"]
+      "zh": [
+        "有理数列极限",
+        "最高次项",
+        "极限运算法则"
+      ],
+      "en": [
+        "rational sequence limit",
+        "leading terms",
+        "limit laws"
+      ]
     },
     "minutes": 7,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "同次数有理数列的极限",
-      "prompt": "求极限 lim(n→∞) (5n²-3n+1)/(2n²+n-4)。",
-      "answer": "5/2。",
+      "prompt": "求极限 $\\lim_{n\\to \\infty} \\frac{5n^{2}-3n+1}{2n^{2}+n-4}$。",
+      "answer": "$\\frac{5}{2}$。",
       "solution": {
-        "knowledge": ["分子分母同除最高次幂", "数列极限四则运算", "分母极限非零"],
-        "analysis": "分子、分母同为二次多项式。同除 n² 后，低次项都化为 1/n 或 1/n²，它们趋于 0，极限由最高次项系数决定。",
-        "steps": [
-          "对 n≥1，分子分母同时除以 n²。",
-          "原式化为 (5-3/n+1/n²)/(2+1/n-4/n²)。",
-          "当 n→∞ 时，1/n→0 且 1/n²→0，因此分子趋于 5，分母趋于 2。",
-          "分母极限 2≠0，可用商的极限法则，得到极限 5/2。"
+        "knowledge": [
+          "分子分母同除最高次幂",
+          "数列极限四则运算",
+          "分母极限非零"
         ],
-        "pitfalls": ["只写“看最高次项”而不展示合法化简", "忘记商法则要求分母极限非零"],
-        "verification": "取 n=100，原比值为 49701/20096≈2.4732，已接近 2.5；低次项继续减小时趋近 5/2。",
+        "analysis": "分子、分母同为二次多项式。同除 $n^{2}$ 后，低次项都化为 $\\frac{1}{n}$ 或 $\\frac{1}{n^{2}}$，它们趋于 0，极限由最高次项系数决定。",
+        "steps": [
+          "对 $n\\ge 1$，分子分母同时除以 $n^{2}$。",
+          "原式化为 $\\frac{5-\\frac{3}{n}+\\frac{1}{n^{2}}}{2+\\frac{1}{n}-\\frac{4}{n^{2}}}$。",
+          "当 $n\\to \\infty$ 时，$\\frac{1}{n}\\to 0$ 且 $\\frac{1}{n^{2}}\\to 0$，因此分子趋于 5，分母趋于 2。",
+          "分母极限 $2\\ne 0$，可用商的极限法则，得到极限 $\\frac{5}{2}$。"
+        ],
+        "pitfalls": [
+          "只写“看最高次项”而不展示合法化简",
+          "忘记商法则要求分母极限非零"
+        ],
+        "verification": "取 $n=100$，原比值为 $\\frac{49701}{20096}\\approx 2.4732$，已接近 2.5；低次项继续减小时趋近 $\\frac{5}{2}$。",
         "takeaway": "同次数多项式之比在无穷远处趋于最高次项系数之比。",
         "extension": "若分子次数低于分母次数，类似同除分母最高次幂可得到极限 0。"
       }
     },
     "en": {
       "title": "Limit of a Rational Sequence with Equal Degrees",
-      "prompt": "Evaluate lim(n→∞) (5n²-3n+1)/(2n²+n-4).",
-      "answer": "5/2.",
+      "prompt": "Evaluate $\\lim_{n\\to \\infty} \\frac{5n^{2}-3n+1}{2n^{2}+n-4}$.",
+      "answer": "$\\frac{5}{2}$.",
       "solution": {
-        "knowledge": ["divide by the highest power", "limit laws for sequences", "nonzero denominator limit"],
-        "analysis": "Both numerator and denominator are quadratic. Dividing by n² converts all lower-degree terms into multiples of 1/n or 1/n², which vanish, leaving the ratio of leading coefficients.",
-        "steps": [
-          "For n≥1, divide both numerator and denominator by n².",
-          "The expression becomes (5-3/n+1/n²)/(2+1/n-4/n²).",
-          "As n→∞, both 1/n and 1/n² tend to 0, so the numerator tends to 5 and the denominator to 2.",
-          "Since the denominator limit is 2≠0, the quotient law gives the limit 5/2."
+        "knowledge": [
+          "divide by the highest power",
+          "limit laws for sequences",
+          "nonzero denominator limit"
         ],
-        "pitfalls": ["writing only 'compare leading terms' without showing the valid normalization", "forgetting that the quotient law requires a nonzero denominator limit"],
-        "verification": "At n=100 the ratio is 49701/20096≈2.4732, already close to 2.5; the lower-order corrections continue to shrink.",
+        "analysis": "Both numerator and denominator are quadratic. Dividing by $n^{2}$ converts all lower-degree terms into multiples of $\\frac{1}{n}$ or $\\frac{1}{n^{2}}$, which vanish, leaving the ratio of leading coefficients.",
+        "steps": [
+          "For $n\\ge 1$, divide both numerator and denominator by $n^{2}$.",
+          "The expression becomes $\\frac{5-\\frac{3}{n}+\\frac{1}{n^{2}}}{2+\\frac{1}{n}-\\frac{4}{n^{2}}}$.",
+          "As $n\\to \\infty$, both $\\frac{1}{n}$ and $\\frac{1}{n^{2}}$ tend to 0, so the numerator tends to 5 and the denominator to 2.",
+          "Since the denominator limit is $2\\ne 0$, the quotient law gives the limit $\\frac{5}{2}$."
+        ],
+        "pitfalls": [
+          "writing only 'compare leading terms' without showing the valid normalization",
+          "forgetting that the quotient law requires a nonzero denominator limit"
+        ],
+        "verification": "At $n=100$ the ratio is $\\frac{49701}{20096}\\approx 2.4732$, already close to 2.5; the lower-order corrections continue to shrink.",
         "takeaway": "For equal-degree polynomial ratios at infinity, the limit is the ratio of leading coefficients.",
         "extension": "If the numerator degree were lower than the denominator degree, the same normalization would give limit 0."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "rational sequence limit / leading terms",
+      "relation": "Independently authored variant of the widely taught rational sequence limit / leading terms method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v2-5.1-sequences"
+      ]
     }
   },
   {
@@ -838,51 +1310,81 @@
     "difficulty": "standard",
     "type": "proof",
     "tags": {
-      "zh": ["ε-N证明", "有理数列", "极限定义"],
-      "en": ["epsilon-N proof", "rational sequence", "definition of limit"]
+      "zh": [
+        "$\\varepsilon$-$N$证明",
+        "有理数列",
+        "极限定义"
+      ],
+      "en": [
+        "$\\varepsilon$-$N$ proof",
+        "rational sequence",
+        "definition of limit"
+      ]
     },
     "minutes": 11,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "用定义证明有理数列收敛",
-      "prompt": "用 ε-N 定义证明 lim(n→∞) (3n-2)/(n+1)=3。",
-      "answer": "任给 ε>0，取 N=⌈5/ε⌉。当 n>N 时，|(3n-2)/(n+1)-3|=5/(n+1)<ε，故极限为 3。",
+      "prompt": "用 $\\varepsilon$-$N$ 定义证明 $\\lim_{n\\to \\infty} \\frac{3n-2}{n+1}=3$。",
+      "answer": "任给 $\\varepsilon >0$，取 $N=\\lceil\\frac{5}{\\varepsilon}\\rceil$。当 $n>N$ 时，$|\\frac{3n-2}{n+1}-3|=\\frac{5}{n+1}<\\varepsilon$，故极限为 3。",
       "solution": {
-        "knowledge": ["ε-N证明结构", "反推 N 的选择", "严格不等式"],
-        "analysis": "先把数列与目标 3 的差化简成只含 n 的正量，再从 5/(n+1)<ε 反推出足够大的 N。",
-        "steps": [
-          "任给 ε>0，计算 |(3n-2)/(n+1)-3|。",
-          "通分得 |(3n-2-3n-3)/(n+1)|=5/(n+1)。",
-          "为使 5/(n+1)<ε，只需 n+1>5/ε。取 N=⌈5/ε⌉ 是一个方便且安全的选择。",
-          "当 n>N 时，n>⌈5/ε⌉≥5/ε，故 n+1>5/ε，进而 5/(n+1)<ε。",
-          "这对任意 ε>0 都成立，依 ε-N 定义，(3n-2)/(n+1)→3。"
+        "knowledge": [
+          "$\\varepsilon$-$N$证明结构",
+          "反推 N 的选择",
+          "严格不等式"
         ],
-        "pitfalls": ["只给出 N 而不证明它确实推出目标不等式", "让 N 依赖 n，而不是只依赖 ε"],
-        "verification": "例如 ε=0.1 时可取 N=50；若 n>50，则 5/(n+1)≤5/51<0.1，估计成立。",
-        "takeaway": "定义证明的标准路线是“化简误差—反推 n 条件—给出 N(ε)—正向验证”。",
-        "extension": "对一般式 (an+b)/(n+c)→a，可将误差化为 |b-ac|/|n+c| 后采用同样方法。"
+        "analysis": "先把数列与目标 3 的差化简成只含 n 的正量，再从 $\\frac{5}{n+1}<\\varepsilon$ 反推出足够大的 N。",
+        "steps": [
+          "任给 $\\varepsilon >0$，计算 $|\\frac{3n-2}{n+1}-3|$。",
+          "通分得 $|\\frac{3n-2-3n-3}{n+1}|=\\frac{5}{n+1}$。",
+          "为使 $\\frac{5}{n+1}<\\varepsilon$，只需 $n+1>\\frac{5}{\\varepsilon}$。取 $N=\\lceil\\frac{5}{\\varepsilon}\\rceil$ 是一个方便且安全的选择。",
+          "当 $n>N$ 时，$n>\\lceil\\frac{5}{\\varepsilon}\\rceil \\ge\\frac{5}{\\varepsilon}$，故 $n+1>\\frac{5}{\\varepsilon}$，进而 $\\frac{5}{n+1}<\\varepsilon$。",
+          "这对任意 $\\varepsilon >0$ 都成立，依 $\\varepsilon$-$N$ 定义，$\\frac{3n-2}{n+1}\\to 3$。"
+        ],
+        "pitfalls": [
+          "只给出 N 而不证明它确实推出目标不等式",
+          "让 N 依赖 n，而不是只依赖 $\\varepsilon$"
+        ],
+        "verification": "例如 $\\varepsilon =0.1$ 时可取 $N=50$；若 $n>50$，则 $\\frac{5}{n+1}\\le\\frac{5}{51}<0.1$，估计成立。",
+        "takeaway": "定义证明的标准路线是“化简误差—反推 n 条件—给出 $N(\\varepsilon)$—正向验证”。",
+        "extension": "对一般式 $\\frac{an+b}{n+c}\\to a$，可将误差化为 $\\frac{|b-ac|}{|n+c|}$ 后采用同样方法。"
       }
     },
     "en": {
       "title": "Prove Convergence of a Rational Sequence from the Definition",
-      "prompt": "Use the epsilon-N definition to prove lim(n→∞) (3n-2)/(n+1)=3.",
-      "answer": "Given ε>0, choose N=⌈5/ε⌉. If n>N, then |(3n-2)/(n+1)-3|=5/(n+1)<ε, so the limit is 3.",
+      "prompt": "Use the $\\varepsilon$-$N$ definition to prove $\\lim_{n\\to \\infty} \\frac{3n-2}{n+1}=3$.",
+      "answer": "Given $\\varepsilon >0$, choose $N=\\lceil\\frac{5}{\\varepsilon}\\rceil$. If $n>N$, then $|\\frac{3n-2}{n+1}-3|=\\frac{5}{n+1}<\\varepsilon$, so the limit is 3.",
       "solution": {
-        "knowledge": ["structure of an epsilon-N proof", "working backward to choose N", "strict inequality"],
-        "analysis": "First simplify the distance between the sequence and the target 3. Then solve the desired inequality 5/(n+1)<ε for a sufficient lower bound on n.",
-        "steps": [
-          "Let ε>0 be arbitrary and compute |(3n-2)/(n+1)-3|.",
-          "Combining the terms gives |(3n-2-3n-3)/(n+1)|=5/(n+1).",
-          "To obtain 5/(n+1)<ε, it is enough that n+1>5/ε. Choose the convenient safe value N=⌈5/ε⌉.",
-          "If n>N, then n>⌈5/ε⌉≥5/ε, so n+1>5/ε and consequently 5/(n+1)<ε.",
-          "Since this works for every ε>0, the epsilon-N definition gives (3n-2)/(n+1)→3."
+        "knowledge": [
+          "structure of an $\\varepsilon$-$N$ proof",
+          "working backward to choose N",
+          "strict inequality"
         ],
-        "pitfalls": ["stating a value of N without verifying that it implies the desired inequality", "allowing N to depend on n instead of only on ε"],
-        "verification": "For ε=0.1, take N=50. If n>50, then 5/(n+1)≤5/51<0.1, confirming the estimate.",
-        "takeaway": "A definition proof follows the chain: simplify the error, solve backward for n, choose N(ε), and verify forward.",
-        "extension": "For the general sequence (an+b)/(n+c)→a, simplify the error to |b-ac|/|n+c| and use the same pattern."
+        "analysis": "First simplify the distance between the sequence and the target 3. Then solve the desired inequality $\\frac{5}{n+1}<\\varepsilon$ for a sufficient lower bound on n.",
+        "steps": [
+          "Let $\\varepsilon >0$ be arbitrary and compute $|\\frac{3n-2}{n+1}-3|$.",
+          "Combining the terms gives $|\\frac{3n-2-3n-3}{n+1}|=\\frac{5}{n+1}$.",
+          "To obtain $\\frac{5}{n+1}<\\varepsilon$, it is enough that $n+1>\\frac{5}{\\varepsilon}$. Choose the convenient safe value $N=\\lceil\\frac{5}{\\varepsilon}\\rceil$.",
+          "If $n>N$, then $n>\\lceil\\frac{5}{\\varepsilon}\\rceil \\ge\\frac{5}{\\varepsilon}$, so $n+1>\\frac{5}{\\varepsilon}$ and consequently $\\frac{5}{n+1}<\\varepsilon$.",
+          "Since this works for every $\\varepsilon >0$, the $\\varepsilon$-$N$ definition gives $\\frac{3n-2}{n+1}\\to 3$."
+        ],
+        "pitfalls": [
+          "stating a value of N without verifying that it implies the desired inequality",
+          "allowing N to depend on n instead of only on $\\varepsilon$"
+        ],
+        "verification": "For $\\varepsilon =0.1$, take $N=50$. If $n>50$, then $\\frac{5}{n+1}\\le\\frac{5}{51}<0.1$, confirming the estimate.",
+        "takeaway": "A definition proof follows the chain: simplify the error, solve backward for n, choose $N(\\varepsilon)$, and verify forward.",
+        "extension": "For the general sequence $\\frac{an+b}{n+c}\\to a$, simplify the error to $\\frac{|b-ac|}{|n+c|}$ and use the same pattern."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "$\\varepsilon$-$N$ proof / rational sequence",
+      "relation": "Independently authored variant of the widely taught $\\varepsilon$-$N$ proof / rational sequence method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v2-5.1-sequences"
+      ]
     }
   },
   {
@@ -892,51 +1394,81 @@
     "difficulty": "advanced",
     "type": "calculation",
     "tags": {
-      "zh": ["根式数列极限", "有理化", "无穷减无穷型"],
-      "en": ["radical sequence limit", "rationalization", "infinity-minus-infinity form"]
+      "zh": [
+        "根式数列极限",
+        "有理化",
+        "无穷减无穷型"
+      ],
+      "en": [
+        "radical sequence limit",
+        "rationalization",
+        "infinity-minus-infinity form"
+      ]
     },
     "minutes": 10,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "根式差的有理化",
-      "prompt": "求极限 lim(n→∞) [√(n²+3n)-n]。",
-      "answer": "3/2。",
+      "prompt": "求极限 $\\lim_{n\\to \\infty} [\\sqrt{n^{2}+3n}-n]$。",
+      "answer": "$\\frac{3}{2}$。",
       "solution": {
-        "knowledge": ["共轭有理化", "根式中提取 n²", "极限运算法则"],
+        "knowledge": [
+          "共轭有理化",
+          "根式中提取 $n^{2}$",
+          "极限运算法则"
+        ],
         "analysis": "原式是两个都趋于无穷的量之差，不能拆开求极限。乘以共轭式可消去相减造成的抵消，再归一化。",
         "steps": [
-          "乘以共轭式，得到 √(n²+3n)-n=[(n²+3n)-n²]/[√(n²+3n)+n]。",
-          "化简分子为 3n，所以原式等于 3n/[√(n²+3n)+n]。",
-          "因 n>0，从根式中提出 n：√(n²+3n)=n√(1+3/n)。",
-          "约去 n，得到 3/[√(1+3/n)+1]。",
-          "当 n→∞ 时 3/n→0，故分母趋于 2，极限为 3/2。"
+          "乘以共轭式，得到 $\\sqrt{n^{2}+3n}-n=\\frac{(n^{2}+3n)-n^{2}}{\\sqrt{n^{2}+3n}+n}$。",
+          "化简分子为 3n，所以原式等于 $\\frac{3n}{\\sqrt{n^{2}+3n}+n}$。",
+          "因 $n>0$，从根式中提出 n：$\\sqrt{n^{2}+3n}=n\\sqrt{1+\\frac{3}{n}}$。",
+          "约去 n，得到 $\\frac{3}{\\sqrt{1+\\frac{3}{n}}+1}$。",
+          "当 $n\\to \\infty$ 时 $\\frac{3}{n}\\to 0$，故分母趋于 2，极限为 $\\frac{3}{2}$。"
         ],
-        "pitfalls": ["把两个无穷大的极限直接相减", "从 √(n²+3n) 提取 n 时不说明 n>0"],
-        "verification": "取 n=100，原式 √10300-100≈1.4889，接近 1.5；有理化后的表达式也给出相同数值。",
+        "pitfalls": [
+          "把两个无穷大的极限直接相减",
+          "从 $\\sqrt{n^{2}+3n}$ 提取 n 时不说明 $n>0$"
+        ],
+        "verification": "取 $n=100$，原式 $\\sqrt{10300}-100\\approx 1.4889$，接近 1.5；有理化后的表达式也给出相同数值。",
         "takeaway": "根式差出现强烈抵消时，先乘共轭式，把差转化为可比较的商。",
-        "extension": "把 3n 改为 cn，可同样得到 lim[√(n²+cn)-n]=c/2。"
+        "extension": "把 3n 改为 cn，可同样得到 $\\lim[\\sqrt{n^{2}+cn}-n]=\\frac{c}{2}$。"
       }
     },
     "en": {
       "title": "Rationalize a Difference of Radicals",
-      "prompt": "Evaluate lim(n→∞) [√(n²+3n)-n].",
-      "answer": "3/2.",
+      "prompt": "Evaluate $\\lim_{n\\to \\infty} [\\sqrt{n^{2}+3n}-n]$.",
+      "answer": "$\\frac{3}{2}$.",
       "solution": {
-        "knowledge": ["conjugate rationalization", "factoring n² from a radical", "limit laws"],
+        "knowledge": [
+          "conjugate rationalization",
+          "factoring $n^{2}$ from a radical",
+          "limit laws"
+        ],
         "analysis": "The original expression is a difference of two quantities that both grow without bound, so their limits cannot be subtracted. Multiplying by the conjugate removes the cancellation and permits normalization.",
         "steps": [
-          "Multiply by the conjugate: √(n²+3n)-n=[(n²+3n)-n²]/[√(n²+3n)+n].",
-          "The numerator simplifies to 3n, so the expression is 3n/[√(n²+3n)+n].",
-          "Since n>0, factor n from the radical: √(n²+3n)=n√(1+3/n).",
-          "Cancel n to obtain 3/[√(1+3/n)+1].",
-          "As n→∞, 3/n→0, so the denominator tends to 2 and the limit is 3/2."
+          "Multiply by the conjugate: $\\sqrt{n^{2}+3n}-n=\\frac{(n^{2}+3n)-n^{2}}{\\sqrt{n^{2}+3n}+n}$.",
+          "The numerator simplifies to 3n, so the expression is $\\frac{3n}{\\sqrt{n^{2}+3n}+n}$.",
+          "Since $n>0$, factor n from the radical: $\\sqrt{n^{2}+3n}=n\\sqrt{1+\\frac{3}{n}}$.",
+          "Cancel n to obtain $\\frac{3}{\\sqrt{1+\\frac{3}{n}}+1}$.",
+          "As $n\\to \\infty,\\frac{3}{n}\\to 0$, so the denominator tends to 2 and the limit is $\\frac{3}{2}$."
         ],
-        "pitfalls": ["subtracting the two infinite limits directly", "factoring n from √(n²+3n) without noting that n is positive"],
-        "verification": "At n=100, the original expression is √10300-100≈1.4889, close to 1.5; the rationalized form gives the same value.",
+        "pitfalls": [
+          "subtracting the two infinite limits directly",
+          "factoring n from $\\sqrt{n^{2}+3n}$ without noting that n is positive"
+        ],
+        "verification": "At $n=100$, the original expression is $\\sqrt{10300}-100\\approx 1.4889$, close to 1.5; the rationalized form gives the same value.",
         "takeaway": "When a difference of radicals contains strong cancellation, use the conjugate to turn it into a manageable quotient.",
-        "extension": "Replacing 3n by cn gives, by the same argument, lim[√(n²+cn)-n]=c/2."
+        "extension": "Replacing 3n by cn gives, by the same argument, $\\lim[\\sqrt{n^{2}+cn}-n]=\\frac{c}{2}$."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "radical sequence limit / rationalization",
+      "relation": "Independently authored synthesis combining radical sequence limit / rationalization; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v2-5.1-sequences"
+      ]
     }
   },
   {
@@ -946,49 +1478,79 @@
     "difficulty": "advanced",
     "type": "proof",
     "tags": {
-      "zh": ["收敛数列性质", "保号性", "ε-N证明"],
-      "en": ["properties of convergent sequences", "eventual sign", "epsilon-N proof"]
+      "zh": [
+        "收敛数列性质",
+        "保号性",
+        "$\\varepsilon$-$N$证明"
+      ],
+      "en": [
+        "properties of convergent sequences",
+        "eventual sign",
+        "$\\varepsilon$-$N$ proof"
+      ]
     },
     "minutes": 10,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "正极限的最终保号性",
-      "prompt": "设 aₙ→a 且 a>0。证明：存在正整数 N，使当 n>N 时，aₙ>a/2。",
-      "answer": "取 ε=a/2。由 aₙ→a，存在 N 使 n>N 时 |aₙ-a|<a/2，于是 aₙ>a-a/2=a/2。",
+      "prompt": "设 $a_{n}\\to a$ 且 $a>0$。证明：存在正整数 N，使当 $n>N$ 时，$a_{n}>\\frac{a}{2}$。",
+      "answer": "取 $\\varepsilon =\\frac{a}{2}$。由 $a_{n}\\to a$，存在 N 使 $n>N$ 时 $|a_{n}-a|<\\frac{a}{2}$，于是 $a_{n}>a-\\frac{a}{2}=\\frac{a}{2}$。",
       "solution": {
-        "knowledge": ["收敛定义", "保号性", "由绝对值不等式取得单边界"],
-        "analysis": "目标是让 aₙ 保持正且离 0 有明确距离。把允许误差取为正极限 a 的一半，可使 aₙ 落在 (a/2,3a/2) 内。",
-        "steps": [
-          "由于 a>0，可合法选取 ε=a/2>0。",
-          "由 aₙ→a 的定义，存在正整数 N，使 n>N 时 |aₙ-a|<a/2。",
-          "绝对值不等式等价于 -a/2<aₙ-a<a/2。",
-          "取左半边得 aₙ>a-a/2=a/2，因此所有充分大的项均大于 a/2。"
+        "knowledge": [
+          "收敛定义",
+          "保号性",
+          "由绝对值不等式取得单边界"
         ],
-        "pitfalls": ["直接说 aₙ 最终为正而不给出 ε 的具体选择", "从 |aₙ-a|<a/2 错误推出 aₙ>a"],
-        "verification": "所得邻域是 (a-a/2,a+a/2)=(a/2,3a/2)，其左端点严格大于 0，结论比“最终为正”更强。",
-        "takeaway": "证明保号性时，把 ε 取成极限绝对值的一部分，便可让尾项远离零。",
-        "extension": "若 a<0，取 ε=|a|/2 可同理证明充分大的 aₙ<a/2<0。"
+        "analysis": "目标是让 $a_{n}$ 保持正且离 0 有明确距离。把允许误差取为正极限 a 的一半，可使 $a_{n}$ 落在 $(\\frac{a}{2},\\frac{3a}{2})$ 内。",
+        "steps": [
+          "由于 $a>0$，可合法选取 $\\varepsilon =\\frac{a}{2}>0$。",
+          "由 $a_{n}\\to a$ 的定义，存在正整数 N，使 $n>N$ 时 $|a_{n}-a|<\\frac{a}{2}$。",
+          "绝对值不等式等价于 $-\\frac{a}{2}<a_{n}-a<\\frac{a}{2}$。",
+          "取左半边得 $a_{n}>a-\\frac{a}{2}=\\frac{a}{2}$，因此所有充分大的项均大于 $\\frac{a}{2}$。"
+        ],
+        "pitfalls": [
+          "直接说 $a_{n}$ 最终为正而不给出 $\\varepsilon$ 的具体选择",
+          "从 $|a_{n}-a|<\\frac{a}{2}$ 错误推出 $a_{n}>a$"
+        ],
+        "verification": "所得邻域是 $(a-\\frac{a}{2},a+\\frac{a}{2})=(\\frac{a}{2},\\frac{3a}{2})$，其左端点严格大于 0，结论比“最终为正”更强。",
+        "takeaway": "证明保号性时，把 $\\varepsilon$ 取成极限绝对值的一部分，便可让尾项远离零。",
+        "extension": "若 $a<0$，取 $\\varepsilon =\\frac{|a|}{2}$ 可同理证明充分大的 $a_{n}<\\frac{a}{2}<0$。"
       }
     },
     "en": {
       "title": "Eventual Positivity from a Positive Limit",
-      "prompt": "Suppose aₙ→a and a>0. Prove that there exists a positive integer N such that aₙ>a/2 whenever n>N.",
-      "answer": "Choose ε=a/2. Since aₙ→a, some N satisfies |aₙ-a|<a/2 for n>N. Hence aₙ>a-a/2=a/2.",
+      "prompt": "Suppose $a_{n}\\to a$ and $a>0$. Prove that there exists a positive integer N such that $a_{n}>\\frac{a}{2}$ whenever $n>N$.",
+      "answer": "Choose $\\varepsilon =\\frac{a}{2}$. Since $a_{n}\\to a$, some N satisfies $|a_{n}-a|<\\frac{a}{2}$ for $n>N$. Hence $a_{n}>a-\\frac{a}{2}=\\frac{a}{2}$.",
       "solution": {
-        "knowledge": ["definition of convergence", "eventual sign preservation", "extracting a one-sided bound from an absolute-value inequality"],
-        "analysis": "We want the tail to stay positive by a definite margin. Choosing the allowed error to be half of the positive limit places aₙ inside (a/2,3a/2).",
-        "steps": [
-          "Because a>0, the choice ε=a/2 is valid and positive.",
-          "From aₙ→a, there exists a positive integer N such that |aₙ-a|<a/2 whenever n>N.",
-          "This absolute-value inequality is equivalent to -a/2<aₙ-a<a/2.",
-          "Using its left half gives aₙ>a-a/2=a/2 for every n>N."
+        "knowledge": [
+          "definition of convergence",
+          "eventual sign preservation",
+          "extracting a one-sided bound from an absolute-value inequality"
         ],
-        "pitfalls": ["claiming eventual positivity without specifying a useful ε", "incorrectly concluding aₙ>a from |aₙ-a|<a/2"],
-        "verification": "The resulting neighborhood is (a-a/2,a+a/2)=(a/2,3a/2), whose left endpoint is strictly positive; the conclusion is stronger than mere eventual positivity.",
-        "takeaway": "To preserve a nonzero sign, choose ε as a fixed fraction of the absolute value of the limit.",
-        "extension": "If a<0, choosing ε=|a|/2 similarly proves that sufficiently large terms satisfy aₙ<a/2<0."
+        "analysis": "We want the tail to stay positive by a definite margin. Choosing the allowed error to be half of the positive limit places $a_{n}$ inside $(\\frac{a}{2},\\frac{3a}{2})$.",
+        "steps": [
+          "Because $a>0$, the choice $\\varepsilon =\\frac{a}{2}$ is valid and positive.",
+          "From $a_{n}\\to a$, there exists a positive integer N such that $|a_{n}-a|<\\frac{a}{2}$ whenever $n>N$.",
+          "This absolute-value inequality is equivalent to $-\\frac{a}{2}<a_{n}-a<\\frac{a}{2}$.",
+          "Using its left half gives $a_{n}>a-\\frac{a}{2}=\\frac{a}{2}$ for every $n>N$."
+        ],
+        "pitfalls": [
+          "claiming eventual positivity without specifying a useful $\\varepsilon$",
+          "incorrectly concluding $a_{n}>a$ from $|a_{n}-a|<\\frac{a}{2}$"
+        ],
+        "verification": "The resulting neighborhood is $(a-\\frac{a}{2},a+\\frac{a}{2})=(\\frac{a}{2},\\frac{3a}{2})$, whose left endpoint is strictly positive; the conclusion is stronger than mere eventual positivity.",
+        "takeaway": "To preserve a nonzero sign, choose $\\varepsilon$ as a fixed fraction of the absolute value of the limit.",
+        "extension": "If $a<0$, choosing $\\varepsilon =\\frac{|a|}{2}$ similarly proves that sufficiently large terms satisfy $a_{n}<\\frac{a}{2}<0$."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "properties of convergent sequences / eventual sign",
+      "relation": "Independently authored synthesis combining properties of convergent sequences / eventual sign; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v2-5.1-sequences"
+      ]
     }
   },
   {
@@ -998,61 +1560,95 @@
     "difficulty": "advanced",
     "type": "multiple_choice",
     "tags": {
-      "zh": ["收敛数列性质", "子列", "保号性", "有界性"],
-      "en": ["convergent sequence properties", "subsequences", "eventual sign", "boundedness"]
+      "zh": [
+        "收敛数列性质",
+        "子列",
+        "保号性",
+        "有界性"
+      ],
+      "en": [
+        "convergent sequence properties",
+        "subsequences",
+        "eventual sign",
+        "boundedness"
+      ]
     },
     "minutes": 8,
     "space": "L",
     "classic_method": false,
     "zh": {
       "title": "从极限推出必然性质",
-      "prompt": "已知 aₙ→2。下列结论中必然正确的是哪些？",
+      "prompt": "已知 $a_{n}\\to 2$。下列结论中必然正确的是哪些？",
       "choices": [
-        "A. {aₙ} 有界",
-        "B. 存在 N，使 n>N 时 aₙ>0",
-        "C. 存在 N，使 n>N 时 aₙ 严格递增",
-        "D. {aₙ} 的每个子列都收敛于 2"
+        "A. $\\{a_{n}\\}$ 有界",
+        "B. 存在 N，使 $n>N$ 时 $a_{n}>0$",
+        "C. 存在 N，使 $n>N$ 时 $a_{n}$ 严格递增",
+        "D. $\\{a_{n}\\}$ 的每个子列都收敛于 2"
       ],
       "answer": "A、B、D",
       "solution": {
-        "knowledge": ["收敛数列有界性", "正极限保号性", "子列极限", "收敛不蕴含单调"],
+        "knowledge": [
+          "收敛数列有界性",
+          "正极限保号性",
+          "子列极限",
+          "收敛不蕴含单调"
+        ],
         "analysis": "收敛能控制尾项靠近 2，因此带来有界、最终为正和所有子列同极限；但尾项仍可在 2 两侧微小振荡，不必单调。",
         "steps": [
           "收敛数列必有界，所以 A 必然正确。",
-          "取 ε=1，由 aₙ→2，充分大时 |aₙ-2|<1，从而 aₙ>1>0，故 B 正确。",
-          "例如 aₙ=2+(-1)ⁿ/n 收敛于 2，却不断上下交替，因此不可能最终严格递增，C 不必成立。",
+          "取 $\\varepsilon =1$，由 $a_{n}\\to 2$，充分大时 $|a_{n}-2|<1$，从而 $a_{n}>1>0$，故 B 正确。",
+          "例如 $a_{n}=2+\\frac{(-1)^{n}}{n}$ 收敛于 2，却不断上下交替，因此不可能最终严格递增，C 不必成立。",
           "原数列收敛于 2 时，任意子列的指标也趋于无穷，仍满足同一尾项估计，所以每个子列都收敛于 2，D 正确。"
         ],
-        "pitfalls": ["把“越来越接近极限”误解为数值必须单调", "只记得有界性而忽略子列继承原极限"],
-        "verification": "反例 2+(-1)ⁿ/n 的偶数项大于 2、奇数项小于 2，且误差 1/n→0，明确验证 C 非必然。",
+        "pitfalls": [
+          "把“越来越接近极限”误解为数值必须单调",
+          "只记得有界性而忽略子列继承原极限"
+        ],
+        "verification": "反例 $2+\\frac{(-1)^{n}}{n}$ 的偶数项大于 2、奇数项小于 2，且误差 $\\frac{1}{n}\\to 0$，明确验证 C 非必然。",
         "takeaway": "收敛描述距离趋零，不规定接近极限的方向或单调方式。",
         "extension": "若某个子列极限不等于 2，则可立即断定原数列不可能收敛于 2。"
       }
     },
     "en": {
       "title": "Necessary Consequences of a Known Limit",
-      "prompt": "Suppose aₙ→2. Which conclusions must be true?",
+      "prompt": "Suppose $a_{n}\\to 2$. Which conclusions must be true?",
       "choices": [
-        "A. {aₙ} is bounded",
-        "B. There exists N such that aₙ>0 whenever n>N",
-        "C. There exists N such that the tail aₙ is strictly increasing",
-        "D. Every subsequence of {aₙ} converges to 2"
+        "A. $\\{a_{n}\\}$ is bounded",
+        "B. There exists N such that $a_{n}>0$ whenever $n>N$",
+        "C. There exists N such that the tail $a_{n}$ is strictly increasing",
+        "D. Every subsequence of $\\{a_{n}\\}$ converges to 2"
       ],
       "answer": "A, B, D",
       "solution": {
-        "knowledge": ["boundedness of convergent sequences", "eventual sign from a positive limit", "limits of subsequences", "convergence does not imply monotonicity"],
+        "knowledge": [
+          "boundedness of convergent sequences",
+          "eventual sign from a positive limit",
+          "limits of subsequences",
+          "convergence does not imply monotonicity"
+        ],
         "analysis": "Convergence keeps the tail close to 2, which ensures boundedness, eventual positivity, and the same limit for every subsequence. However, terms may still oscillate slightly around 2 and need not be monotone.",
         "steps": [
           "Every convergent sequence is bounded, so A must be true.",
-          "Choose ε=1. For all sufficiently large n, |aₙ-2|<1, hence aₙ>1>0; therefore B is true.",
-          "The sequence aₙ=2+(-1)ⁿ/n converges to 2 but alternates above and below 2, so it is not eventually strictly increasing; C need not hold.",
+          "Choose $\\varepsilon =1$. For all sufficiently large $n, |a_{n}-2|<1$, hence $a_{n}>1>0$; therefore B is true.",
+          "The sequence $a_{n}=2+\\frac{(-1)^{n}}{n}$ converges to 2 but alternates above and below 2, so it is not eventually strictly increasing; C need not hold.",
           "For any subsequence, its indices still tend to infinity and therefore satisfy the same tail estimates; every subsequence converges to 2, so D is true."
         ],
-        "pitfalls": ["interpreting 'closer and closer' as numerical monotonicity", "remembering boundedness but overlooking that every subsequence inherits the original limit"],
-        "verification": "In the counterexample 2+(-1)ⁿ/n, even terms lie above 2, odd terms below 2, and the error 1/n tends to 0, directly disproving the necessity of C.",
+        "pitfalls": [
+          "interpreting 'closer and closer' as numerical monotonicity",
+          "remembering boundedness but overlooking that every subsequence inherits the original limit"
+        ],
+        "verification": "In the counterexample $2+\\frac{(-1)^{n}}{n}$, even terms lie above 2, odd terms below 2, and the error $\\frac{1}{n}$ tends to 0, directly disproving the necessity of C.",
         "takeaway": "Convergence controls distance to the limit, not the direction or monotone pattern of approach.",
         "extension": "If any subsequence has a limit different from 2, the original sequence cannot converge to 2."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "convergent sequence properties / subsequences",
+      "relation": "Independently authored synthesis combining convergent sequence properties / subsequences; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v2-5.1-sequences"
+      ]
     }
   },
   {
@@ -1062,53 +1658,87 @@
     "difficulty": "hard",
     "type": "error_diagnosis",
     "tags": {
-      "zh": ["递推数列", "单调有界", "先证收敛", "错解诊断"],
-      "en": ["recursive sequence", "monotone bounded principle", "prove convergence first", "error diagnosis"]
+      "zh": [
+        "递推数列",
+        "单调有界",
+        "先证收敛",
+        "错解诊断"
+      ],
+      "en": [
+        "recursive sequence",
+        "monotone bounded principle",
+        "prove convergence first",
+        "error diagnosis"
+      ]
     },
     "minutes": 20,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "不能用极限方程替代收敛证明",
-      "prompt": "设 a₁=2，aₙ₊₁=√(3+aₙ)。一名同学写道：“设 aₙ→L，则 L=√(3+L)，所以 L=(1+√13)/2。因此数列收敛到该值。”指出逻辑错误，并补全严格证明。",
-      "answer": "原解只说明“若收敛，则极限只能是 (1+√13)/2”，没有证明收敛。令 L=(1+√13)/2，可归纳证明 0<aₙ<L 且 aₙ₊₁>aₙ；故数列单调递增且有上界 L，因而收敛。再由递推式取极限得极限为 L。",
+      "prompt": "设 $a_{1}=2$，$a_{n+1}=\\sqrt{3+a_{n}}$。一名同学写道：“设 $a_{n}\\to L$，则 $L=\\sqrt{3+L}$，所以 $L=\\frac{1+\\sqrt{13}}{2}$。因此数列收敛到该值。”指出逻辑错误，并补全严格证明。",
+      "answer": "原解只说明“若收敛，则极限只能是 $\\frac{1+\\sqrt{13}}{2}$”，没有证明收敛。令 $L=\\frac{1+\\sqrt{13}}{2}$，可归纳证明 $0<a_{n}<L$ 且 $a_{n+1}>a_{n}$；故数列单调递增且有上界 L，因而收敛。再由递推式取极限得极限为 L。",
       "solution": {
-        "knowledge": ["递推数列极限", "单调有界准则", "数学归纳法", "极限方程只给候选值"],
+        "knowledge": [
+          "递推数列极限",
+          "单调有界准则",
+          "数学归纳法",
+          "极限方程只给候选值"
+        ],
         "analysis": "代入极限方程的前提是极限已经存在。正确顺序是先借助方程的正根构造上界并证明单调，再用单调有界准则确认收敛，最后求极限。",
         "steps": [
-          "原推理的漏洞是把“假设收敛后得到的必要条件”当成了“收敛的充分证明”。令 L=(1+√13)/2，则 L>2 且 L²=L+3。",
-          "证明上界：a₁=2<L。若 0<aₙ<L，则 aₙ₊₁=√(3+aₙ)<√(3+L)=√(L²)=L；归纳得 0<aₙ<L。",
-          "证明单调：因 0<aₙ<L，而多项式 t²-t-3 在 0<t<L 时为负，所以 aₙ²<aₙ+3。",
-          "两边均为正，开方得 aₙ<√(aₙ+3)=aₙ₊₁，因此 {aₙ} 严格递增。",
-          "数列严格递增且以上界 L 有界，故由单调有界准则知它收敛。设其极限为 ℓ。",
-          "递推式两边取极限得 ℓ=√(3+ℓ)，即 ℓ²-ℓ-3=0。又 ℓ>0，所以 ℓ=(1+√13)/2=L。"
+          "原推理的漏洞是把“假设收敛后得到的必要条件”当成了“收敛的充分证明”。令 $L=\\frac{1+\\sqrt{13}}{2}$，则 $L>2$ 且 $L^{2}=L+3$。",
+          "证明上界：$a_{1}=2<L$。若 $0<a_{n}<L$，则 $a_{n+1}=\\sqrt{3+a_{n}}<\\sqrt{3+L}=\\sqrt{L^{2}}=L$；归纳得 $0<a_{n}<L$。",
+          "证明单调：因 $0<a_{n}<L$，而多项式 $t^{2}-t-3$ 在 $0<t<L$ 时为负，所以 $a_{n}^{2}<a_{n}+3$。",
+          "两边均为正，开方得 $a_{n}<\\sqrt{a_{n}+3}=a_{n+1}$，因此 $\\{a_{n}\\}$ 严格递增。",
+          "数列严格递增且以上界 L 有界，故由单调有界准则知它收敛。设其极限为 $\\ell$。",
+          "递推式两边取极限得 $\\ell =\\sqrt{3+\\ell}$，即 $\\ell ^{2}-\\ell -3=0$。又 $\\ell >0$，所以 $\\ell =\\frac{1+\\sqrt{13}}{2}=L$。"
         ],
-        "pitfalls": ["未证明极限存在便对递推式直接取极限", "解出极限方程后忘记排除不符合数列符号的根"],
-        "verification": "前几项为 2，√5≈2.236，√(3+√5)≈2.288，确实递增且小于 L≈2.303；代回 L²=L+3 验证递推固定点。",
+        "pitfalls": [
+          "未证明极限存在便对递推式直接取极限",
+          "解出极限方程后忘记排除不符合数列符号的根"
+        ],
+        "verification": "前几项为 2，$\\sqrt{5}\\approx 2.236$，$\\sqrt{3+\\sqrt{5}}\\approx 2.288$，确实递增且小于 $L\\approx 2.303$；代回 $L^{2}=L+3$ 验证递推固定点。",
         "takeaway": "递推数列必须遵循“先证收敛、后求极限”；极限方程只能筛选候选值。",
-        "extension": "对 aₙ₊₁=√(c+aₙ) 的类似问题，可先求正固定点，再尝试用它构造不变区间和上界。"
+        "extension": "对 $a_{n+1}=\\sqrt{c+a_{n}}$ 的类似问题，可先求正固定点，再尝试用它构造不变区间和上界。"
       }
     },
     "en": {
       "title": "A Limit Equation Cannot Replace a Convergence Proof",
-      "prompt": "Let a₁=2 and aₙ₊₁=√(3+aₙ). A student writes: “Assume aₙ→L. Then L=√(3+L), so L=(1+√13)/2. Therefore the sequence converges to this value.” Identify the logical error and complete a rigorous proof.",
-      "answer": "The work shows only that, if the sequence converges, its limit must be (1+√13)/2; it does not prove convergence. Let L=(1+√13)/2. Induction gives 0<aₙ<L, and one can prove aₙ₊₁>aₙ. Thus the sequence is increasing and bounded above by L, so it converges. Passing to the limit in the recurrence then gives the limit L.",
+      "prompt": "Let $a_{1}=2$ and $a_{n+1}=\\sqrt{3+a_{n}}$. A student writes: “Assume $a_{n}\\to L$. Then $L=\\sqrt{3+L}$, so $L=\\frac{1+\\sqrt{13}}{2}$. Therefore the sequence converges to this value.” Identify the logical error and complete a rigorous proof.",
+      "answer": "The work shows only that, if the sequence converges, its limit must be $\\frac{1+\\sqrt{13}}{2}$; it does not prove convergence. Let $L=\\frac{1+\\sqrt{13}}{2}$. Induction gives $0<a_{n}<L$, and one can prove $a_{n+1}>a_{n}$. Thus the sequence is increasing and bounded above by L, so it converges. Passing to the limit in the recurrence then gives the limit L.",
       "solution": {
-        "knowledge": ["limits of recursive sequences", "monotone bounded principle", "mathematical induction", "a limit equation supplies only candidates"],
+        "knowledge": [
+          "limits of recursive sequences",
+          "monotone bounded principle",
+          "mathematical induction",
+          "a limit equation supplies only candidates"
+        ],
         "analysis": "Passing to a limit assumes that a limit exists. The correct order is to use the positive fixed point as an upper bound, prove monotonicity, invoke monotone bounded convergence, and only then determine the limit.",
         "steps": [
-          "The gap is treating a necessary condition under an assumed convergence as proof of convergence. Let L=(1+√13)/2; then L>2 and L²=L+3.",
-          "Upper bound: a₁=2<L. If 0<aₙ<L, then aₙ₊₁=√(3+aₙ)<√(3+L)=√(L²)=L. Induction gives 0<aₙ<L.",
-          "Monotonicity: because 0<aₙ<L and t²-t-3<0 for 0<t<L, we have aₙ²<aₙ+3.",
-          "Both sides are positive, so taking square roots yields aₙ<√(aₙ+3)=aₙ₊₁. Hence the sequence is strictly increasing.",
-          "The sequence is increasing and bounded above by L, so the monotone bounded principle guarantees convergence. Denote its limit by ℓ.",
-          "Now pass to the limit in the recurrence: ℓ=√(3+ℓ), so ℓ²-ℓ-3=0. Since ℓ>0, ℓ=(1+√13)/2=L."
+          "The gap is treating a necessary condition under an assumed convergence as proof of convergence. Let $L=\\frac{1+\\sqrt{13}}{2}$; then $L>2$ and $L^{2}=L+3$.",
+          "Upper bound: $a_{1}=2<L$. If $0<a_{n}<L$, then $a_{n+1}=\\sqrt{3+a_{n}}<\\sqrt{3+L}=\\sqrt{L^{2}}=L$. Induction gives $0<a_{n}<L$.",
+          "Monotonicity: because $0<a_{n}<L$ and $t^{2}-t-3<0$ for $0<t<L$, we have $a_{n}^{2}<a_{n}+3$.",
+          "Both sides are positive, so taking square roots yields $a_{n}<\\sqrt{a_{n}+3}=a_{n+1}$. Hence the sequence is strictly increasing.",
+          "The sequence is increasing and bounded above by L, so the monotone bounded principle guarantees convergence. Denote its limit by $\\ell$.",
+          "Now pass to the limit in the recurrence: $\\ell =\\sqrt{3+\\ell}$, so $\\ell ^{2}-\\ell -3=0$. Since $\\ell >0, \\ell =\\frac{1+\\sqrt{13}}{2}=L$."
         ],
-        "pitfalls": ["passing to a limit in a recurrence before proving that the limit exists", "solving the fixed-point equation without rejecting a root incompatible with the signs of the sequence"],
-        "verification": "The first terms are 2, √5≈2.236, and √(3+√5)≈2.288; they increase and remain below L≈2.303. Also L²=L+3 verifies the fixed point.",
+        "pitfalls": [
+          "passing to a limit in a recurrence before proving that the limit exists",
+          "solving the fixed-point equation without rejecting a root incompatible with the signs of the sequence"
+        ],
+        "verification": "The first terms are $2, \\sqrt{5}\\approx 2.236$, and $\\sqrt{3+\\sqrt{5}}\\approx 2.288$; they increase and remain below $L\\approx 2.303$. Also $L^{2}=L+3$ verifies the fixed point.",
         "takeaway": "For a recursive sequence, prove convergence first and determine the limit second; a fixed-point equation only identifies candidates.",
-        "extension": "For recurrences aₙ₊₁=√(c+aₙ), first find a positive fixed point and test whether it creates an invariant interval and a useful upper bound."
+        "extension": "For recurrences $a_{n+1}=\\sqrt{c+a_{n}}$, first find a positive fixed point and test whether it creates an invariant interval and a useful upper bound."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "recursive sequence / monotone bounded principle",
+      "relation": "Independently authored synthesis combining recursive sequence / monotone bounded principle; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v2-5.1-sequences"
+      ]
     }
   },
   {
@@ -1118,53 +1748,87 @@
     "difficulty": "challenge",
     "type": "comprehensive",
     "tags": {
-      "zh": ["分段数列", "子列", "收敛充要条件", "ε-N证明"],
-      "en": ["piecewise sequence", "subsequences", "necessary and sufficient condition", "epsilon-N proof"]
+      "zh": [
+        "分段数列",
+        "子列",
+        "收敛充要条件",
+        "$\\varepsilon$-$N$证明"
+      ],
+      "en": [
+        "piecewise sequence",
+        "subsequences",
+        "necessary and sufficient condition",
+        "$\\varepsilon$-$N$ proof"
+      ]
     },
     "minutes": 28,
     "space": "XL",
     "classic_method": false,
     "zh": {
       "title": "由奇偶子列刻画参数收敛性",
-      "prompt": "给定实数 p、q，定义 a₂ₖ=p+1/k，a₂ₖ₋₁=q-1/k（k=1,2,…）。求 {aₙ} 收敛的充要条件；在收敛情形写出极限，并用 ε-N 定义完成证明。",
-      "answer": "{aₙ} 收敛当且仅当 p=q；此时极限为 p=q。",
+      "prompt": "给定实数 p、q，定义 $a_{2k}=p+\\frac{1}{k}$，$a_{2k-1}=q-\\frac{1}{k}$（$k=1,2$,…）。求 $\\{a_{n}\\}$ 收敛的充要条件；在收敛情形写出极限，并用 $\\varepsilon$-$N$ 定义完成证明。",
+      "answer": "$\\{a_{n}\\}$ 收敛当且仅当 $p=q$；此时极限为 $p=q$。",
       "solution": {
-        "knowledge": ["偶子列与奇子列", "子列继承极限", "充要条件证明", "统一控制两类指标"],
+        "knowledge": [
+          "偶子列与奇子列",
+          "子列继承极限",
+          "充要条件证明",
+          "统一控制两类指标"
+        ],
         "analysis": "必要性由两个自然子列的极限必须相同得到；充分性则不能只说两个子列同极限，还应给出一个同时控制奇、偶项的 N。",
         "steps": [
-          "先证必要性。若 {aₙ} 收敛于 A，则偶子列和奇子列都必须收敛于 A。",
-          "由 a₂ₖ=p+1/k 得 lim(k→∞)a₂ₖ=p；由 a₂ₖ₋₁=q-1/k 得 lim(k→∞)a₂ₖ₋₁=q。因此必须有 p=q=A。",
-          "再证充分性。设 p=q=r。任给 ε>0，取正整数 K>1/ε，并令 N=2K。",
-          "若 n>N 且 n 为偶数，写 n=2k，则 k>K，故 |aₙ-r|=1/k<ε。",
-          "若 n>N 且 n 为奇数，写 n=2k-1。由 2k-1>2K 得 k>K+1/2，特别有 k>K，故 |aₙ-r|=1/k<ε。",
-          "无论 n 奇偶，只要 n>N 都有 |aₙ-r|<ε，因此由 ε-N 定义 aₙ→r。综上，收敛充要条件为 p=q，极限为该共同值。"
+          "先证必要性。若 $\\{a_{n}\\}$ 收敛于 A，则偶子列和奇子列都必须收敛于 A。",
+          "由 $a_{2k}=p+\\frac{1}{k}$ 得 $\\lim_{k\\to \\infty}a_{2k}=p$；由 $a_{2k-1}=q-\\frac{1}{k}$ 得 $\\lim_{k\\to \\infty}a_{2k-1}=q$。因此必须有 $p=q=A$。",
+          "再证充分性。设 $p=q=r$。任给 $\\varepsilon >0$，取正整数 $K>\\frac{1}{\\varepsilon}$，并令 $N=2K$。",
+          "若 $n>N$ 且 n 为偶数，写 $n=2k$，则 $k>K$，故 $|a_{n}-r|=\\frac{1}{k}<\\varepsilon$。",
+          "若 $n>N$ 且 n 为奇数，写 $n=2k-1$。由 $2k-1>2K$ 得 $k>K+\\frac{1}{2}$，特别有 $k>K$，故 $|a_{n}-r|=\\frac{1}{k}<\\varepsilon$。",
+          "无论 n 奇偶，只要 $n>N$ 都有 $|a_{n}-r|<\\varepsilon$，因此由 $\\varepsilon$-$N$ 定义 $a_{n}\\to r$。综上，收敛充要条件为 $p=q$，极限为该共同值。"
         ],
-        "pitfalls": ["只求出两个子列极限而没有明确说明原数列收敛时它们必须相等", "充分性证明对奇、偶项各选一个阈值，却没有合并成统一的 N"],
-        "verification": "若 p≠q，取 ε=|p-q|/4，则足够大的偶项落在 p 附近、奇项落在 q 附近，两邻域互不相交，不可能共同靠近同一极限。",
+        "pitfalls": [
+          "只求出两个子列极限而没有明确说明原数列收敛时它们必须相等",
+          "充分性证明对奇、偶项各选一个阈值，却没有合并成统一的 N"
+        ],
+        "verification": "若 $p\\ne q$，取 $\\varepsilon =\\frac{|p-q|}{4}$，则足够大的偶项落在 p 附近、奇项落在 q 附近，两邻域互不相交，不可能共同靠近同一极限。",
         "takeaway": "分段数列的参数问题常用子列给必要条件，再用统一尾项估计证明充分性。",
-        "extension": "若把 1/k 换成任意趋于 0 的正数 bₖ，结论仍为 p=q，证明只需用 bₖ→0 替代具体估计。"
+        "extension": "若把 $\\frac{1}{k}$ 换成任意趋于 0 的正数 $b_{k}$，结论仍为 $p=q$，证明只需用 $b_{k}\\to 0$ 替代具体估计。"
       }
     },
     "en": {
       "title": "Characterize Parameter Convergence Using Even and Odd Subsequences",
-      "prompt": "For real p and q, define a₂ₖ=p+1/k and a₂ₖ₋₁=q-1/k for k=1,2,…. Find a necessary and sufficient condition for {aₙ} to converge. In the convergent case, state the limit and prove it using the epsilon-N definition.",
-      "answer": "{aₙ} converges if and only if p=q; in that case its limit is the common value p=q.",
+      "prompt": "For real p and q, define $a_{2k}=p+\\frac{1}{k}$ and $a_{2k-1}=q-\\frac{1}{k}$ for $k=1,2$,…. Find a necessary and sufficient condition for $\\{a_{n}\\}$ to converge. In the convergent case, state the limit and prove it using the $\\varepsilon$-$N$ definition.",
+      "answer": "$\\{a_{n}\\}$ converges if and only if $p=q$; in that case its limit is the common value $p=q$.",
       "solution": {
-        "knowledge": ["even and odd subsequences", "subsequences inherit the original limit", "proof of an if-and-only-if statement", "uniform control of both index classes"],
+        "knowledge": [
+          "even and odd subsequences",
+          "subsequences inherit the original limit",
+          "proof of an if-and-only-if statement",
+          "uniform control of both index classes"
+        ],
         "analysis": "Necessity follows because the two natural subsequences of a convergent sequence must have the same limit. For sufficiency, one should provide a single N that controls both even and odd terms.",
         "steps": [
-          "Necessity: if {aₙ} converges to A, then both its even and odd subsequences must also converge to A.",
-          "Since a₂ₖ=p+1/k, lim(k→∞)a₂ₖ=p. Since a₂ₖ₋₁=q-1/k, lim(k→∞)a₂ₖ₋₁=q. Thus p=q=A is necessary.",
-          "Sufficiency: suppose p=q=r. Given ε>0, choose a positive integer K>1/ε and set N=2K.",
-          "If n>N is even, write n=2k. Then k>K, so |aₙ-r|=1/k<ε.",
-          "If n>N is odd, write n=2k-1. From 2k-1>2K we get k>K+1/2, hence k>K and |aₙ-r|=1/k<ε.",
-          "Thus |aₙ-r|<ε for every n>N, regardless of parity. The epsilon-N definition gives aₙ→r. Therefore convergence occurs exactly when p=q, with that common value as the limit."
+          "Necessity: if $\\{a_{n}\\}$ converges to A, then both its even and odd subsequences must also converge to A.",
+          "Since $a_{2k}=p+\\frac{1}{k}, \\lim_{k\\to \\infty}a_{2k}=p$. Since $a_{2k-1}=q-\\frac{1}{k}, \\lim_{k\\to \\infty}a_{2k-1}=q$. Thus $p=q=A$ is necessary.",
+          "Sufficiency: suppose $p=q=r$. Given $\\varepsilon >0$, choose a positive integer $K>\\frac{1}{\\varepsilon}$ and set $N=2K$.",
+          "If $n>N$ is even, write $n=2k$. Then $k>K$, so $|a_{n}-r|=\\frac{1}{k}<\\varepsilon$.",
+          "If $n>N$ is odd, write $n=2k-1$. From $2k-1>2K$ we get $k>K+\\frac{1}{2}$, hence $k>K$ and $|a_{n}-r|=\\frac{1}{k}<\\varepsilon$.",
+          "Thus $|a_{n}-r|<\\varepsilon$ for every $n>N$, regardless of parity. The $\\varepsilon$-$N$ definition gives $a_{n}\\to r$. Therefore convergence occurs exactly when $p=q$, with that common value as the limit."
         ],
-        "pitfalls": ["computing the two subsequence limits without stating why convergence of the original forces them to agree", "choosing separate thresholds for even and odd terms without combining them into one N"],
-        "verification": "If p≠q, choose ε=|p-q|/4. Sufficiently large even terms lie near p and odd terms near q; these neighborhoods are disjoint, so the full sequence cannot approach one limit.",
+        "pitfalls": [
+          "computing the two subsequence limits without stating why convergence of the original forces them to agree",
+          "choosing separate thresholds for even and odd terms without combining them into one N"
+        ],
+        "verification": "If $p\\ne q$, choose $\\varepsilon =\\frac{|p-q|}{4}$. Sufficiently large even terms lie near p and odd terms near q; these neighborhoods are disjoint, so the full sequence cannot approach one limit.",
         "takeaway": "For a parity-defined sequence, use subsequences to obtain necessary parameter conditions, then prove sufficiency with one tail estimate covering both parities.",
-        "extension": "If 1/k is replaced by any positive sequence bₖ→0, the same condition p=q remains valid; use bₖ→0 in place of the explicit reciprocal estimate."
+        "extension": "If $\\frac{1}{k}$ is replaced by any positive sequence $b_{k}\\to 0$, the same condition $p=q$ remains valid; use $b_{k}\\to 0$ in place of the explicit reciprocal estimate."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "piecewise sequence / subsequences",
+      "relation": "Independently authored synthesis combining piecewise sequence / subsequences; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v2-5.1-sequences"
+      ]
     }
   },
   {
@@ -1174,51 +1838,91 @@
     "difficulty": "basic",
     "type": "single_choice",
     "tags": {
-      "zh": ["函数极限", "可去间断型表达式", "点值与极限"],
-      "en": ["function limit", "removable-hole expression", "point value versus limit"]
+      "zh": [
+        "函数极限",
+        "可去间断型表达式",
+        "点值与极限"
+      ],
+      "en": [
+        "function limit",
+        "removable-hole expression",
+        "point value versus limit"
+      ]
     },
     "minutes": 5,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "点值是否影响函数极限",
-      "prompt": "定义 f(1)=7；当 x≠1 时，f(x)=(x²-1)/(x-1)。则 lim(x→1) f(x) 等于（ ）。",
-      "choices": ["A. 0", "B. 1", "C. 2", "D. 7"],
+      "prompt": "定义 $f(1)=7$；当 $x\\ne 1$ 时，$f(x)=\\frac{x^{2}-1}{x-1}$。则 $\\lim_{x\\to 1} f(x)$ 等于（ ）。",
+      "choices": [
+        "A. 0",
+        "B. 1",
+        "C. 2",
+        "D. 7"
+      ],
       "answer": "C",
       "solution": {
-        "knowledge": ["极限只考察去心邻域", "因式分解约去公因子", "函数点值与极限可以不同"],
-        "analysis": "x→1 时只研究 x 接近但不等于 1 的函数值，因此使用 x≠1 时的公式。f(1)=7 不参与极限计算。",
-        "steps": [
-          "对 x≠1，有 x²-1=(x-1)(x+1)。",
-          "在去心邻域中可以约去 x-1，得到 f(x)=x+1。",
-          "于是当 x→1 时，f(x)=x+1→2。",
-          "虽然 f(1)=7，但单点取值不改变邻近点的趋向，所以正确选项为 C。"
+        "knowledge": [
+          "极限只考察去心邻域",
+          "因式分解约去公因子",
+          "函数点值与极限可以不同"
         ],
-        "pitfalls": ["看到 x→1 就直接代入人为规定的 f(1)=7", "在 x=1 处也声称原分式等于 x+1，而忽略约分只对 x≠1 有效"],
-        "verification": "取 x=0.99 和 x=1.01，分别有 f(x)=1.99 与 2.01，均接近 2，而不是 7。",
+        "analysis": "$x\\to 1$ 时只研究 x 接近但不等于 1 的函数值，因此使用 $x\\ne 1$ 时的公式。$f(1)=7$ 不参与极限计算。",
+        "steps": [
+          "对 $x\\ne 1$，有 $x^{2}-1=(x-1)(x+1)$。",
+          "在去心邻域中可以约去 $x-1$，得到 $f(x)=x+1$。",
+          "于是当 $x\\to 1$ 时，$f(x)=x+1\\to 2$。",
+          "虽然 $f(1)=7$，但单点取值不改变邻近点的趋向，所以正确选项为 C。"
+        ],
+        "pitfalls": [
+          "看到 $x\\to 1$ 就直接代入人为规定的 $f(1)=7$",
+          "在 $x=1$ 处也声称原分式等于 $x+1$，而忽略约分只对 $x\\ne 1$ 有效"
+        ],
+        "verification": "取 $x=0.99$ 和 $x=1.01$，分别有 $f(x)=1.99$ 与 2.01，均接近 2，而不是 7。",
         "takeaway": "有限点极限由去心邻域内的函数值决定，与该点本身如何定义无关。",
-        "extension": "若把 f(1) 改成 2，函数在 x=1 处会连续；改成任何其他数，极限仍为 2。"
+        "extension": "若把 $f(1)$ 改成 2，函数在 $x=1$ 处会连续；改成任何其他数，极限仍为 2。"
       }
     },
     "en": {
       "title": "Does a Point Value Affect a Function Limit?",
-      "prompt": "Define f(1)=7, and for x≠1 let f(x)=(x²-1)/(x-1). What is lim(x→1) f(x)?",
-      "choices": ["A. 0", "B. 1", "C. 2", "D. 7"],
+      "prompt": "Define $f(1)=7$, and for $x\\ne 1$ let $f(x)=\\frac{x^{2}-1}{x-1}$. What is $\\lim_{x\\to 1} f(x)$?",
+      "choices": [
+        "A. 0",
+        "B. 1",
+        "C. 2",
+        "D. 7"
+      ],
       "answer": "C",
       "solution": {
-        "knowledge": ["a limit examines a deleted neighborhood", "factor and cancel a common factor", "a point value may differ from the limit"],
-        "analysis": "As x→1, only values with x close to but different from 1 are relevant. Therefore the formula for x≠1 is used, and the assigned value f(1)=7 does not enter the limit.",
-        "steps": [
-          "For x≠1, factor x²-1=(x-1)(x+1).",
-          "Within the deleted neighborhood, cancel x-1 to obtain f(x)=x+1.",
-          "Therefore, as x→1, f(x)=x+1→2.",
-          "Although f(1)=7, changing one point does not alter the nearby trend, so the correct choice is C."
+        "knowledge": [
+          "a limit examines a deleted neighborhood",
+          "factor and cancel a common factor",
+          "a point value may differ from the limit"
         ],
-        "pitfalls": ["substituting the assigned value f(1)=7 merely because x approaches 1", "claiming the original quotient equals x+1 at x=1, even though cancellation is valid only for x≠1"],
-        "verification": "At x=0.99 and x=1.01, the values are 1.99 and 2.01, both close to 2 rather than 7.",
+        "analysis": "As $x\\to 1$, only values with x close to but different from 1 are relevant. Therefore the formula for $x\\ne 1$ is used, and the assigned value $f(1)=7$ does not enter the limit.",
+        "steps": [
+          "For $x\\ne 1$, factor $x^{2}-1=(x-1)(x+1)$.",
+          "Within the deleted neighborhood, cancel $x-1$ to obtain $f(x)=x+1$.",
+          "Therefore, as $x\\to 1, f(x)=x+1\\to 2$.",
+          "Although $f(1)=7$, changing one point does not alter the nearby trend, so the correct choice is C."
+        ],
+        "pitfalls": [
+          "substituting the assigned value $f(1)=7$ merely because x approaches 1",
+          "claiming the original quotient equals $x+1$ at $x=1$, even though cancellation is valid only for $x\\ne 1$"
+        ],
+        "verification": "At $x=0.99$ and $x=1.01$, the values are 1.99 and 2.01, both close to 2 rather than 7.",
         "takeaway": "A finite-point limit is determined by values in a deleted neighborhood and is independent of the function value at the point itself.",
-        "extension": "If f(1) were changed to 2, the function would be continuous at 1. Any other point value would leave the limit equal to 2."
+        "extension": "If $f(1)$ were changed to 2, the function would be continuous at 1. Any other point value would leave the limit equal to 2."
       }
+    },
+    "source_lineage": {
+      "category": "open_text_adaptation",
+      "method_family": "function limit / removable-hole expression",
+      "relation": "Independently rewritten around an openly documented function limit / removable-hole expression pattern; the references establish method-level lineage, not verbatim reproduction of a source problem.",
+      "references": [
+        "openstax-v1-2.2-function-limits"
+      ]
     }
   },
   {
@@ -1228,49 +1932,79 @@
     "difficulty": "basic",
     "type": "true_false",
     "tags": {
-      "zh": ["单侧极限", "双侧极限", "存在条件"],
-      "en": ["one-sided limits", "two-sided limit", "existence criterion"]
+      "zh": [
+        "单侧极限",
+        "双侧极限",
+        "存在条件"
+      ],
+      "en": [
+        "one-sided limits",
+        "two-sided limit",
+        "existence criterion"
+      ]
     },
     "minutes": 4,
     "space": "M",
     "classic_method": false,
     "zh": {
       "title": "左右极限都存在是否足够",
-      "prompt": "判断正误：若 lim(x→a⁻)f(x) 与 lim(x→a⁺)f(x) 都存在且有限，则 lim(x→a)f(x) 必存在。",
+      "prompt": "判断正误：若 $\\lim_{x\\to a^{-}}f(x)$ 与 $\\lim_{x\\to a^{+}}f(x)$ 都存在且有限，则 $\\lim_{x\\to a}f(x)$ 必存在。",
       "answer": "错误。还必须要求左右极限相等。",
       "solution": {
-        "knowledge": ["双侧极限存在的充要条件", "左右极限", "反例"],
+        "knowledge": [
+          "双侧极限存在的充要条件",
+          "左右极限",
+          "反例"
+        ],
         "analysis": "两个单侧极限各自存在，只能说明左右两边分别有稳定趋势。要形成同一个双侧极限，这两个趋势还必须指向同一数值。",
         "steps": [
           "双侧极限存在的条件是左右极限都存在，并且二者相等。",
           "题目只给出了存在和有限，没有给出相等条件。",
-          "反例：令 f(x)=0（x<a），f(x)=1（x≥a）。则左极限为 0，右极限为 1。",
+          "反例：令 $f(x)=0$（$x<a$），$f(x)=1$（$x\\ge a$）。则左极限为 0，右极限为 1。",
           "两个单侧极限都存在且有限，但不相等，所以双侧极限不存在，命题错误。"
         ],
-        "pitfalls": ["只检查左右极限是否能算出，而不比较它们", "把函数在 a 点的取值误认为能弥补左右极限不相等"],
-        "verification": "沿 x<a 接近 a 时函数值恒为 0，沿 x>a 接近时恒为 1；任何同一候选极限都不能同时匹配两侧。",
-        "takeaway": "双侧极限存在等价于“左极限=右极限=同一有限值”。",
-        "extension": "即使重新定义 f(a)，也无法改变本反例的左右极限，因此无法使双侧极限存在。"
+        "pitfalls": [
+          "只检查左右极限是否能算出，而不比较它们",
+          "把函数在 a 点的取值误认为能弥补左右极限不相等"
+        ],
+        "verification": "沿 $x<a$ 接近 a 时函数值恒为 0，沿 $x>a$ 接近时恒为 1；任何同一候选极限都不能同时匹配两侧。",
+        "takeaway": "双侧极限存在等价于“$\\text{左极限}=\\text{右极限}=\\text{同一有限值}$”。",
+        "extension": "即使重新定义 $f(a)$，也无法改变本反例的左右极限，因此无法使双侧极限存在。"
       }
     },
     "en": {
       "title": "Are Two Existing One-Sided Limits Sufficient?",
-      "prompt": "True or false: If lim(x→a⁻)f(x) and lim(x→a⁺)f(x) both exist and are finite, then lim(x→a)f(x) must exist.",
+      "prompt": "True or false: If $\\lim_{x\\to a^{-}}f(x)$ and $\\lim_{x\\to a^{+}}f(x)$ both exist and are finite, then $\\lim_{x\\to a}f(x)$ must exist.",
       "answer": "False. The two one-sided limits must also be equal.",
       "solution": {
-        "knowledge": ["criterion for a two-sided limit", "one-sided limits", "counterexample"],
+        "knowledge": [
+          "criterion for a two-sided limit",
+          "one-sided limits",
+          "counterexample"
+        ],
         "analysis": "Existence of the two one-sided limits gives a stable trend on each side separately. A single two-sided limit exists only when both trends approach the same value.",
         "steps": [
           "A two-sided limit exists exactly when both one-sided limits exist and are equal.",
           "The statement assumes existence and finiteness but omits equality.",
-          "For a counterexample, let f(x)=0 for x<a and f(x)=1 for x≥a. The left-hand limit is 0 and the right-hand limit is 1.",
+          "For a counterexample, let $f(x)=0$ for $x<a$ and $f(x)=1$ for $x\\ge a$. The left-hand limit is 0 and the right-hand limit is 1.",
           "Both one-sided limits exist and are finite, but they are unequal, so the two-sided limit does not exist; the statement is false."
         ],
-        "pitfalls": ["computing both one-sided limits without comparing them", "thinking that the value assigned at a can repair unequal one-sided limits"],
-        "verification": "Approaching through x<a gives only the value 0, while approaching through x>a gives only 1; no single candidate limit can fit both sides.",
+        "pitfalls": [
+          "computing both one-sided limits without comparing them",
+          "thinking that the value assigned at a can repair unequal one-sided limits"
+        ],
+        "verification": "Approaching through $x<a$ gives only the value 0, while approaching through $x>a$ gives only 1; no single candidate limit can fit both sides.",
         "takeaway": "A two-sided limit exists precisely when the left and right limits exist and equal the same finite value.",
-        "extension": "Redefining f(a) cannot change either one-sided limit in this counterexample and therefore cannot create a two-sided limit."
+        "extension": "Redefining $f(a)$ cannot change either one-sided limit in this counterexample and therefore cannot create a two-sided limit."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "one-sided limits / two-sided limit",
+      "relation": "Independently authored variant of the widely taught one-sided limits / two-sided limit method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v1-2.2-function-limits"
+      ]
     }
   },
   {
@@ -1280,49 +2014,79 @@
     "difficulty": "standard",
     "type": "fill_blank",
     "tags": {
-      "zh": ["分段函数极限", "参数", "左右极限"],
-      "en": ["piecewise-function limit", "parameter", "one-sided limits"]
+      "zh": [
+        "分段函数极限",
+        "参数",
+        "左右极限"
+      ],
+      "en": [
+        "piecewise-function limit",
+        "parameter",
+        "one-sided limits"
+      ]
     },
     "minutes": 7,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "由左右极限确定参数",
-      "prompt": "设 f(x)={2x+a，当 x<1；x²+1，当 x>1}。要使 lim(x→1)f(x) 存在，应有 a=______，此时极限为______。",
+      "prompt": "设 $f(x)=\\begin{cases}2x+a,&x<1,\\\\x^{2}+1,&x>1.\\end{cases}$ 要使 $\\lim_{x\\to 1}f(x)$ 存在，应有 $a=\\underline{\\qquad}$，此时极限为 $\\underline{\\qquad}$。",
       "answer": "0；2。",
       "solution": {
-        "knowledge": ["分段函数的单侧极限", "双侧极限存在条件", "参数方程"],
-        "analysis": "x→1⁻ 时使用左段，x→1⁺ 时使用右段。双侧极限存在要求两侧结果相等；f(1) 是否定义不影响本题。",
-        "steps": [
-          "左极限为 lim(x→1⁻)(2x+a)=2+a。",
-          "右极限为 lim(x→1⁺)(x²+1)=2。",
-          "令左右极限相等：2+a=2，解得 a=0。",
-          "代回后两侧极限均为 2，因此 lim(x→1)f(x)=2。"
+        "knowledge": [
+          "分段函数的单侧极限",
+          "双侧极限存在条件",
+          "参数方程"
         ],
-        "pitfalls": ["把 x=1 代入错误的分段或要求题目先给出 f(1)", "求出 a 后忘记写共同极限值"],
-        "verification": "a=0 时，左侧表达式 2x→2，右侧表达式 x²+1→2；若 a≠0，两者相差 a，双侧极限不能存在。",
-        "takeaway": "分段函数连接点的极限参数由“左极限=右极限”确定，与点值无关。",
-        "extension": "若再定义 f(1)=b，要使函数在 1 处连续，还需额外令 b=2。"
+        "analysis": "$x\\to 1^{-}$ 时使用左段，$x\\to 1^{+}$ 时使用右段。双侧极限存在要求两侧结果相等；$f(1)$ 是否定义不影响本题。",
+        "steps": [
+          "左极限为 $\\lim_{x\\to 1^{-}}(2x+a)=2+a$。",
+          "右极限为 $\\lim_{x\\to 1^{+}}(x^{2}+1)=2$。",
+          "令左右极限相等：$2+a=2$，解得 $a=0$。",
+          "代回后两侧极限均为 2，因此 $\\lim_{x\\to 1}f(x)=2$。"
+        ],
+        "pitfalls": [
+          "把 $x=1$ 代入错误的分段或要求题目先给出 $f(1)$",
+          "求出 a 后忘记写共同极限值"
+        ],
+        "verification": "$a=0$ 时，左侧表达式 $2x\\to 2$，右侧表达式 $x^{2}+1\\to 2$；若 $a\\ne 0$，两者相差 a，双侧极限不能存在。",
+        "takeaway": "分段函数连接点的极限参数由“$\\text{左极限}=\\text{右极限}$”确定，与点值无关。",
+        "extension": "若再定义 $f(1)=b$，要使函数在 1 处连续，还需额外令 $b=2$。"
       }
     },
     "en": {
       "title": "Determine a Parameter from One-Sided Limits",
-      "prompt": "Let f(x)={2x+a for x<1; x²+1 for x>1}. For lim(x→1)f(x) to exist, a must equal ______, and the limit is then ______.",
+      "prompt": "Let $f(x)=\\begin{cases}2x+a,&x<1,\\\\x^{2}+1,&x>1.\\end{cases}$ For $\\lim_{x\\to 1}f(x)$ to exist, $a$ must equal $\\underline{\\qquad}$, and the limit is then $\\underline{\\qquad}$.",
       "answer": "0; 2.",
       "solution": {
-        "knowledge": ["one-sided limits of a piecewise function", "existence criterion for a two-sided limit", "parameter equation"],
-        "analysis": "Use the left piece as x→1⁻ and the right piece as x→1⁺. The two-sided limit exists when the two results agree; whether f(1) is defined is irrelevant here.",
-        "steps": [
-          "The left-hand limit is lim(x→1⁻)(2x+a)=2+a.",
-          "The right-hand limit is lim(x→1⁺)(x²+1)=2.",
-          "Set the one-sided limits equal: 2+a=2, which gives a=0.",
-          "With a=0, both one-sided limits equal 2, so lim(x→1)f(x)=2."
+        "knowledge": [
+          "one-sided limits of a piecewise function",
+          "existence criterion for a two-sided limit",
+          "parameter equation"
         ],
-        "pitfalls": ["substituting x=1 into the wrong branch or demanding that f(1) be specified", "finding a but omitting the common limit value"],
-        "verification": "When a=0, the left expression 2x tends to 2 and the right expression x²+1 tends to 2. If a≠0, the two limits differ by a.",
+        "analysis": "Use the left piece as $x\\to 1^{-}$ and the right piece as $x\\to 1^{+}$. The two-sided limit exists when the two results agree; whether $f(1)$ is defined is irrelevant here.",
+        "steps": [
+          "The left-hand limit is $\\lim_{x\\to 1^{-}}(2x+a)=2+a$.",
+          "The right-hand limit is $\\lim_{x\\to 1^{+}}(x^{2}+1)=2$.",
+          "Set the one-sided limits equal: $2+a=2$, which gives $a=0$.",
+          "With $a=0$, both one-sided limits equal 2, so $\\lim_{x\\to 1}f(x)=2$."
+        ],
+        "pitfalls": [
+          "substituting $x=1$ into the wrong branch or demanding that $f(1)$ be specified",
+          "finding a but omitting the common limit value"
+        ],
+        "verification": "When $a=0$, the left expression 2x tends to 2 and the right expression $x^{2}+1$ tends to 2. If $a\\ne 0$, the two limits differ by a.",
         "takeaway": "At a piecewise junction, a limit parameter is determined by equality of the left and right limits, independently of the point value.",
-        "extension": "If f(1)=b is added and continuity at 1 is required, one must also set b=2."
+        "extension": "If $f(1)=b$ is added and continuity at 1 is required, one must also set $b=2$."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "piecewise-function limit / parameter",
+      "relation": "Independently authored variant of the widely taught piecewise-function limit / parameter method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v1-2.2-function-limits"
+      ]
     }
   },
   {
@@ -1332,49 +2096,79 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["绝对值函数", "单侧极限", "极限不存在"],
-      "en": ["absolute-value function", "one-sided limits", "nonexistent limit"]
+      "zh": [
+        "绝对值函数",
+        "单侧极限",
+        "极限不存在"
+      ],
+      "en": [
+        "absolute-value function",
+        "one-sided limits",
+        "nonexistent limit"
+      ]
     },
     "minutes": 7,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "用单侧极限判断不存在",
-      "prompt": "求 lim(x→0) |x|/x；若极限不存在，请说明原因。",
-      "answer": "极限不存在；左极限为 -1，右极限为 1。",
+      "prompt": "求 $\\lim_{x\\to 0} \\frac{|x|}{x}$；若极限不存在，请说明原因。",
+      "answer": "极限不存在；左极限为 $-1$，右极限为 1。",
       "solution": {
-        "knowledge": ["绝对值分段表示", "左右极限", "双侧极限存在条件"],
-        "analysis": "|x| 在 0 两侧的表达式不同。应先分左右化简，再比较两个单侧极限，不能把 x=0 直接代入。",
-        "steps": [
-          "当 x<0 时，|x|=-x，所以 |x|/x=-1。",
-          "因此 lim(x→0⁻)|x|/x=-1。",
-          "当 x>0 时，|x|=x，所以 |x|/x=1，从而 lim(x→0⁺)|x|/x=1。",
-          "左右极限分别为 -1 与 1，不相等，因此 lim(x→0)|x|/x 不存在。"
+        "knowledge": [
+          "绝对值分段表示",
+          "左右极限",
+          "双侧极限存在条件"
         ],
-        "pitfalls": ["把 |x|/x 错误约成 1 而忽略 x<0 的情形", "仅因 x=0 处分母为零就断言极限不存在，不计算邻近趋势"],
-        "verification": "取序列 xₙ=1/n 时函数值恒为 1；取 yₙ=-1/n 时函数值恒为 -1。两条趋近方式给出不同结果。",
+        "analysis": "$|x|$ 在 0 两侧的表达式不同。应先分左右化简，再比较两个单侧极限，不能把 $x=0$ 直接代入。",
+        "steps": [
+          "当 $x<0$ 时，$|x|=-x$，所以 $\\frac{|x|}{x}=-1$。",
+          "因此 $\\lim_{x\\to 0^{-}}\\frac{|x|}{x}=-1$。",
+          "当 $x>0$ 时，$|x|=x$，所以 $\\frac{|x|}{x}=1$，从而 $\\lim_{x\\to 0^{+}}\\frac{|x|}{x}=1$。",
+          "左右极限分别为 $-1$ 与 1，不相等，因此 $\\lim_{x\\to 0}\\frac{|x|}{x}$ 不存在。"
+        ],
+        "pitfalls": [
+          "把 $\\frac{|x|}{x}$ 错误约成 1 而忽略 $x<0$ 的情形",
+          "仅因 $x=0$ 处分母为零就断言极限不存在，不计算邻近趋势"
+        ],
+        "verification": "取序列 $x_{n}=\\frac{1}{n}$ 时函数值恒为 1；取 $y_{n}=-\\frac{1}{n}$ 时函数值恒为 $-1$。两条趋近方式给出不同结果。",
         "takeaway": "含绝对值的极限常需按符号分侧；左右极限不等即可判定双侧极限不存在。",
-        "extension": "右极限本身存在且等于 1，左极限存在且等于 -1，因此该函数在 0 处表现为跳跃。"
+        "extension": "右极限本身存在且等于 1，左极限存在且等于 $-1$，因此该函数在 0 处表现为跳跃。"
       }
     },
     "en": {
       "title": "Use One-Sided Limits to Show Nonexistence",
-      "prompt": "Evaluate lim(x→0) |x|/x. If it does not exist, explain why.",
-      "answer": "The limit does not exist; the left-hand limit is -1 and the right-hand limit is 1.",
+      "prompt": "Evaluate $\\lim_{x\\to 0} \\frac{|x|}{x}$. If it does not exist, explain why.",
+      "answer": "The limit does not exist; the left-hand limit is $-1$ and the right-hand limit is 1.",
       "solution": {
-        "knowledge": ["piecewise representation of absolute value", "one-sided limits", "criterion for a two-sided limit"],
-        "analysis": "|x| has different formulas on the two sides of 0. Simplify separately on each side and compare the one-sided limits; direct substitution at x=0 is not appropriate.",
-        "steps": [
-          "For x<0, |x|=-x, so |x|/x=-1.",
-          "Therefore lim(x→0⁻)|x|/x=-1.",
-          "For x>0, |x|=x, so |x|/x=1 and lim(x→0⁺)|x|/x=1.",
-          "The one-sided limits -1 and 1 are unequal, so lim(x→0)|x|/x does not exist."
+        "knowledge": [
+          "piecewise representation of absolute value",
+          "one-sided limits",
+          "criterion for a two-sided limit"
         ],
-        "pitfalls": ["canceling |x|/x to 1 and ignoring negative x", "claiming nonexistence only because the denominator is zero at x=0, without examining nearby values"],
-        "verification": "Along xₙ=1/n the function values are always 1, while along yₙ=-1/n they are always -1. The two approaches give different results.",
+        "analysis": "$|x|$ has different formulas on the two sides of 0. Simplify separately on each side and compare the one-sided limits; direct substitution at $x=0$ is not appropriate.",
+        "steps": [
+          "For $x<0, |x|=-x$, so $\\frac{|x|}{x}=-1$.",
+          "Therefore $\\lim_{x\\to 0^{-}}\\frac{|x|}{x}=-1$.",
+          "For $x>0, |x|=x$, so $\\frac{|x|}{x}=1$ and $\\lim_{x\\to 0^{+}}\\frac{|x|}{x}=1$.",
+          "The one-sided limits $-1$ and 1 are unequal, so $\\lim_{x\\to 0}\\frac{|x|}{x}$ does not exist."
+        ],
+        "pitfalls": [
+          "canceling $\\frac{|x|}{x}$ to 1 and ignoring negative x",
+          "claiming nonexistence only because the denominator is zero at $x=0$, without examining nearby values"
+        ],
+        "verification": "Along $x_{n}=\\frac{1}{n}$ the function values are always 1, while along $y_{n}=-\\frac{1}{n}$ they are always $-1$. The two approaches give different results.",
         "takeaway": "Limits involving absolute values often require sign-based one-sided analysis; unequal one-sided limits rule out a two-sided limit.",
-        "extension": "The right-hand limit exists and equals 1, and the left-hand limit exists and equals -1, so the behavior at 0 is a jump."
+        "extension": "The right-hand limit exists and equals 1, and the left-hand limit exists and equals $-1$, so the behavior at 0 is a jump."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "absolute-value function / one-sided limits",
+      "relation": "Independently authored variant of the widely taught absolute-value function / one-sided limits method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v1-2.2-function-limits"
+      ]
     }
   },
   {
@@ -1384,53 +2178,84 @@
     "difficulty": "advanced",
     "type": "proof",
     "tags": {
-      "zh": ["ε-δ证明", "函数极限定义", "二次函数"],
-      "en": ["epsilon-delta proof", "definition of a function limit", "quadratic function"]
+      "zh": [
+        "$\\varepsilon -\\delta$证明",
+        "函数极限定义",
+        "二次函数"
+      ],
+      "en": [
+        "epsilon-delta proof",
+        "definition of a function limit",
+        "quadratic function"
+      ]
     },
     "minutes": 14,
     "space": "XL",
     "classic_method": true,
     "zh": {
-      "title": "用 ε-δ 定义证明二次函数极限",
-      "prompt": "用 ε-δ 定义证明 lim(x→2)(x²+1)=5。",
-      "answer": "任给 ε>0，取 δ=min{1,ε/5}。若 0<|x-2|<δ，则 |x+2|<5，从而 |(x²+1)-5|=|x-2||x+2|<5δ≤ε。",
+      "title": "用 $\\varepsilon -\\delta$ 定义证明二次函数极限",
+      "prompt": "用 $\\varepsilon -\\delta$ 定义证明 $\\lim_{x\\to 2}(x^{2}+1)=5$。",
+      "answer": "任给 $\\varepsilon >0$，取 $\\delta =\\min\\{1,\\frac{\\varepsilon}{5}\\}$。若 $0<|x-2|<\\delta$，则 $|x+2|<5$，从而 $|(x^{2}+1)-5|=|x-2||x+2|<5\\delta \\le \\varepsilon$。",
       "solution": {
-        "knowledge": ["ε-δ定义", "先限制邻域控制附加因子", "乘积误差估计"],
-        "analysis": "误差分解为 |x-2||x+2|。第一因子可由 δ 直接控制；第二因子随 x 变化，需要先把 x 限制在 2 的一个固定邻域内，得到统一上界。",
-        "steps": [
-          "任给 ε>0，目标是使 |(x²+1)-5|<ε。",
-          "因式分解误差：|(x²+1)-5|=|x²-4|=|x-2||x+2|。",
-          "先要求 |x-2|<1，则 1<x<3，因而 3<x+2<5，所以 |x+2|<5。",
-          "为同时满足固定邻域和精度要求，取 δ=min{1,ε/5}。",
-          "若 0<|x-2|<δ，则 |(x²+1)-5|<5|x-2|<5δ≤ε。",
-          "因此对任意 ε>0 都存在这样的 δ，依定义 lim(x→2)(x²+1)=5。"
+        "knowledge": [
+          "$\\varepsilon -\\delta$定义",
+          "先限制邻域控制附加因子",
+          "乘积误差估计"
         ],
-        "pitfalls": ["直接令 δ=ε/|x+2|，使 δ 依赖正在变化的 x", "只完成反向估计，没有从所选 δ 正向验证"],
-        "verification": "例如 ε=0.1 时 δ=min{1,0.02}=0.02；若 |x-2|<0.02，则 |x+2|<4.02<5，误差小于 5×0.02=0.1。",
-        "takeaway": "多项式的 ε-δ 证明常先固定一个小邻域控制附加因子，再用 δ 完成精度控制。",
-        "extension": "更紧的估计可用 |x+2|<4+δ，但 min 技巧更清晰且足够完成证明。"
+        "analysis": "误差分解为 $|x-2||x+2|$。第一因子可由 $\\delta$ 直接控制；第二因子随 x 变化，需要先把 x 限制在 2 的一个固定邻域内，得到统一上界。",
+        "steps": [
+          "任给 $\\varepsilon >0$，目标是使 $|(x^{2}+1)-5|<\\varepsilon$。",
+          "因式分解误差：$|(x^{2}+1)-5|=|x^{2}-4|=|x-2||x+2|$。",
+          "先要求 $|x-2|<1$，则 $1<x<3$，因而 $3<x+2<5$，所以 $|x+2|<5$。",
+          "为同时满足固定邻域和精度要求，取 $\\delta =\\min\\{1,\\frac{\\varepsilon}{5}\\}$。",
+          "若 $0<|x-2|<\\delta$，则 $|(x^{2}+1)-5|<5|x-2|<5\\delta \\le \\varepsilon$。",
+          "因此对任意 $\\varepsilon >0$ 都存在这样的 $\\delta$，依定义 $\\lim_{x\\to 2}(x^{2}+1)=5$。"
+        ],
+        "pitfalls": [
+          "直接令 $\\delta =\\frac{\\varepsilon}{|x+2|}$，使 $\\delta$ 依赖正在变化的 x",
+          "只完成反向估计，没有从所选 $\\delta$ 正向验证"
+        ],
+        "verification": "例如 $\\varepsilon =0.1$ 时 $\\delta =\\min\\{1,0.02\\}=0.02$；若 $|x-2|<0.02$，则 $|x+2|<4.02<5$，误差小于 $5\\times 0.02=0.1$。",
+        "takeaway": "多项式的 $\\varepsilon -\\delta$ 证明常先固定一个小邻域控制附加因子，再用 $\\delta$ 完成精度控制。",
+        "extension": "更紧的估计可用 $|x+2|<4+\\delta$，但 min 技巧更清晰且足够完成证明。"
       }
     },
     "en": {
       "title": "An Epsilon-Delta Proof for a Quadratic Limit",
-      "prompt": "Use the epsilon-delta definition to prove lim(x→2)(x²+1)=5.",
-      "answer": "Given ε>0, choose δ=min{1,ε/5}. If 0<|x-2|<δ, then |x+2|<5, and |(x²+1)-5|=|x-2||x+2|<5δ≤ε.",
+      "prompt": "Use the epsilon-delta definition to prove $\\lim_{x\\to 2}(x^{2}+1)=5$.",
+      "answer": "Given $\\varepsilon >0$, choose $\\delta =\\min\\{1,\\frac{\\varepsilon}{5}\\}$. If $0<|x-2|<\\delta$, then $|x+2|<5$, and $|(x^{2}+1)-5|=|x-2||x+2|<5\\delta \\le \\varepsilon$.",
       "solution": {
-        "knowledge": ["epsilon-delta definition", "use a fixed neighborhood to bound an extra factor", "product error estimate"],
-        "analysis": "The error factors as |x-2||x+2|. The first factor is directly controlled by δ, while the second varies with x and must first be bounded uniformly in a fixed neighborhood of 2.",
-        "steps": [
-          "Let ε>0 be arbitrary; the goal is to make |(x²+1)-5|<ε.",
-          "Factor the error: |(x²+1)-5|=|x²-4|=|x-2||x+2|.",
-          "First require |x-2|<1. Then 1<x<3, so 3<x+2<5 and hence |x+2|<5.",
-          "To satisfy both the fixed-neighborhood bound and the accuracy requirement, choose δ=min{1,ε/5}.",
-          "If 0<|x-2|<δ, then |(x²+1)-5|<5|x-2|<5δ≤ε.",
-          "Thus an appropriate δ exists for every ε>0, and the definition yields lim(x→2)(x²+1)=5."
+        "knowledge": [
+          "epsilon-delta definition",
+          "use a fixed neighborhood to bound an extra factor",
+          "product error estimate"
         ],
-        "pitfalls": ["setting δ=ε/|x+2| and thereby allowing δ to depend on the varying x", "working backward only and failing to verify the chosen δ in the forward direction"],
-        "verification": "For ε=0.1, choose δ=min{1,0.02}=0.02. If |x-2|<0.02, then |x+2|<4.02<5 and the error is below 5×0.02=0.1.",
-        "takeaway": "In polynomial epsilon-delta proofs, first use a fixed small neighborhood to bound extra factors, then use δ to meet the requested accuracy.",
-        "extension": "A sharper estimate can use |x+2|<4+δ, but the minimum construction is clearer and fully sufficient."
+        "analysis": "The error factors as $|x-2||x+2|$. The first factor is directly controlled by $\\delta$, while the second varies with x and must first be bounded uniformly in a fixed neighborhood of 2.",
+        "steps": [
+          "Let $\\varepsilon >0$ be arbitrary; the goal is to make $|(x^{2}+1)-5|<\\varepsilon$.",
+          "Factor the error: $|(x^{2}+1)-5|=|x^{2}-4|=|x-2||x+2|$.",
+          "First require $|x-2|<1$. Then $1<x<3$, so $3<x+2<5$ and hence $|x+2|<5$.",
+          "To satisfy both the fixed-neighborhood bound and the accuracy requirement, choose $\\delta =\\min\\{1,\\frac{\\varepsilon}{5}\\}$.",
+          "If $0<|x-2|<\\delta$, then $|(x^{2}+1)-5|<5|x-2|<5\\delta \\le \\varepsilon$.",
+          "Thus an appropriate $\\delta$ exists for every $\\varepsilon >0$, and the definition yields $\\lim_{x\\to 2}(x^{2}+1)=5$."
+        ],
+        "pitfalls": [
+          "setting $\\delta =\\frac{\\varepsilon}{|x+2|}$ and thereby allowing $\\delta$ to depend on the varying x",
+          "working backward only and failing to verify the chosen $\\delta$ in the forward direction"
+        ],
+        "verification": "For $\\varepsilon =0.1$, choose $\\delta =\\min\\{1,0.02\\}=0.02$. If $|x-2|<0.02$, then $|x+2|<4.02<5$ and the error is below $5\\times 0.02=0.1$.",
+        "takeaway": "In polynomial epsilon-delta proofs, first use a fixed small neighborhood to bound extra factors, then use $\\delta$ to meet the requested accuracy.",
+        "extension": "A sharper estimate can use $|x+2|<4+\\delta$, but the minimum construction is clearer and fully sufficient."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "epsilon-delta proof / definition of a function limit",
+      "relation": "Independently authored synthesis combining epsilon-delta proof / definition of a function limit; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v1-2.2-function-limits",
+        "openstax-v1-2.5-precise-limit"
+      ]
     }
   },
   {
@@ -1440,49 +2265,79 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["无穷远极限", "根式", "符号"],
-      "en": ["limit at infinity", "radical", "sign"]
+      "zh": [
+        "无穷远极限",
+        "根式",
+        "符号"
+      ],
+      "en": [
+        "limit at infinity",
+        "radical",
+        "sign"
+      ]
     },
     "minutes": 9,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "负无穷方向的根式符号",
-      "prompt": "求极限 lim(x→-∞) (2x-1)/√(x²+1)。",
-      "answer": "-2。",
+      "prompt": "求极限 $\\lim_{x\\to -\\infty} \\frac{2x-1}{\\sqrt{x^{2}+1}}$。",
+      "answer": "$-2$。",
       "solution": {
-        "knowledge": ["无穷远极限", "√(x²)=|x|", "负方向符号处理"],
-        "analysis": "关键不是简单把 √(x²) 写成 x，而是写成 |x|。在 x→-∞ 时 |x|=-x，这会决定最终符号。",
-        "steps": [
-          "分子分母同除以 |x|，得到 [(2x-1)/|x|]/√(1+1/x²)。",
-          "当 x→-∞ 时，x<0，故 |x|=-x，从而 x/|x|=-1。",
-          "因此 (2x-1)/|x|=2x/|x|-1/|x|→-2-0=-2。",
-          "同时 √(1+1/x²)→1，所以商的极限为 -2/1=-2。"
+        "knowledge": [
+          "无穷远极限",
+          "$\\sqrt{x^{2}}=|x|$",
+          "负方向符号处理"
         ],
-        "pitfalls": ["把 √(x²) 直接写成 x，导致分母在负方向被错误处理", "只比较最高次系数而忽略根式带来的绝对值"],
-        "verification": "取 x=-100，原式 (-201)/√10001≈-2.0099，接近 -2；若误得 +2，会与数值符号直接冲突。",
-        "takeaway": "含 √(x²) 的无穷远极限必须使用 |x|，再按趋近方向决定 |x|=±x。",
-        "extension": "同一表达式在 x→+∞ 时的极限为 2，说明正、负无穷方向需要分别处理。"
+        "analysis": "关键不是简单把 $\\sqrt{x^{2}}$ 写成 x，而是写成 $|x|$。在 $x\\to -\\infty$ 时 $|x|=-x$，这会决定最终符号。",
+        "steps": [
+          "分子分母同除以 $|x|$，得到 $\\frac{\\frac{2x-1}{|x|}}{\\sqrt{1+\\frac{1}{x^{2}}}}$。",
+          "当 $x\\to -\\infty$ 时，$x<0$，故 $|x|=-x$，从而 $\\frac{x}{|x|}=-1$。",
+          "因此 $\\frac{2x-1}{|x|}=\\frac{2x}{|x|}-\\frac{1}{|x|}\\to -2-0=-2$。",
+          "同时 $\\sqrt{1+\\frac{1}{x^{2}}}\\to 1$，所以商的极限为 $-\\frac{2}{1}=-2$。"
+        ],
+        "pitfalls": [
+          "把 $\\sqrt{x^{2}}$ 直接写成 x，导致分母在负方向被错误处理",
+          "只比较最高次系数而忽略根式带来的绝对值"
+        ],
+        "verification": "取 $x=-100$，原式 $\\frac{-201}{\\sqrt{10001}}\\approx -2.0099$，接近 $-2$；若误得 $+2$，会与数值符号直接冲突。",
+        "takeaway": "含 $\\sqrt{x^{2}}$ 的无穷远极限必须使用 $|x|$，再按趋近方向决定 $|x|=\\pm x$。",
+        "extension": "同一表达式在 $x\\to +\\infty$ 时的极限为 2，说明正、负无穷方向需要分别处理。"
       }
     },
     "en": {
       "title": "Handle the Sign of a Radical as x Approaches Negative Infinity",
-      "prompt": "Evaluate lim(x→-∞) (2x-1)/√(x²+1).",
-      "answer": "-2.",
+      "prompt": "Evaluate $\\lim_{x\\to -\\infty} \\frac{2x-1}{\\sqrt{x^{2}+1}}$.",
+      "answer": "$-2$.",
       "solution": {
-        "knowledge": ["limits at infinity", "√(x²)=|x|", "sign on the negative direction"],
-        "analysis": "The crucial identity is √(x²)=|x|, not x. As x→-∞, |x|=-x, and this determines the sign of the limit.",
-        "steps": [
-          "Divide numerator and denominator by |x| to obtain [(2x-1)/|x|]/√(1+1/x²).",
-          "As x→-∞, x<0, so |x|=-x and therefore x/|x|=-1.",
-          "Hence (2x-1)/|x|=2x/|x|-1/|x|→-2-0=-2.",
-          "Also √(1+1/x²)→1, so the quotient tends to -2/1=-2."
+        "knowledge": [
+          "limits at infinity",
+          "$\\sqrt{x^{2}}=|x|$",
+          "sign on the negative direction"
         ],
-        "pitfalls": ["replacing √(x²) by x and mishandling the negative direction", "comparing leading coefficients while ignoring the absolute value introduced by the square root"],
-        "verification": "At x=-100, the value is (-201)/√10001≈-2.0099, close to -2. A result of +2 would immediately contradict the numerical sign.",
-        "takeaway": "Whenever √(x²) appears in an infinite limit, write |x| first and then use the direction to decide whether |x| equals x or -x.",
-        "extension": "For the same expression as x→+∞, the limit is 2, showing why the two infinite directions must be treated separately."
+        "analysis": "The crucial identity is $\\sqrt{x^{2}}=|x|$, not x. As $x\\to -\\infty, |x|=-x$, and this determines the sign of the limit.",
+        "steps": [
+          "Divide numerator and denominator by $|x|$ to obtain $\\frac{\\frac{2x-1}{|x|}}{\\sqrt{1+\\frac{1}{x^{2}}}}$.",
+          "As $x\\to -\\infty, x<0$, so $|x|=-x$ and therefore $\\frac{x}{|x|}=-1$.",
+          "Hence $\\frac{2x-1}{|x|}=\\frac{2x}{|x|}-\\frac{1}{|x|}\\to -2-0=-2$.",
+          "Also $\\sqrt{1+\\frac{1}{x^{2}}}\\to 1$, so the quotient tends to $-\\frac{2}{1}=-2$."
+        ],
+        "pitfalls": [
+          "replacing $\\sqrt{x^{2}}$ by x and mishandling the negative direction",
+          "comparing leading coefficients while ignoring the absolute value introduced by the square root"
+        ],
+        "verification": "At $x=-100$, the value is $\\frac{-201}{\\sqrt{10001}}\\approx -2.0099$, close to $-2$. A result of $+2$ would immediately contradict the numerical sign.",
+        "takeaway": "Whenever $\\sqrt{x^{2}}$ appears in an infinite limit, write $|x|$ first and then use the direction to decide whether $|x|$ equals x or $-x$.",
+        "extension": "For the same expression as $x\\to +\\infty$, the limit is 2, showing why the two infinite directions must be treated separately."
       }
+    },
+    "source_lineage": {
+      "category": "classic_method_variant",
+      "method_family": "limit at infinity / radical",
+      "relation": "Independently authored variant of the widely taught limit at infinity / radical method; the references document the method family rather than this exact problem.",
+      "references": [
+        "openstax-v1-2.2-function-limits"
+      ]
     }
   },
   {
@@ -1492,49 +2347,79 @@
     "difficulty": "advanced",
     "type": "fill_blank",
     "tags": {
-      "zh": ["无穷极限", "单侧极限", "符号分析"],
-      "en": ["infinite limit", "one-sided limits", "sign analysis"]
+      "zh": [
+        "无穷极限",
+        "单侧极限",
+        "符号分析"
+      ],
+      "en": [
+        "infinite limit",
+        "one-sided limits",
+        "sign analysis"
+      ]
     },
     "minutes": 7,
     "space": "M",
     "classic_method": true,
     "zh": {
       "title": "竖直趋近中的符号差异",
-      "prompt": "填空：lim(x→2⁻)1/(x-2)=______，lim(x→2⁺)1/(x-2)=______，因此 lim(x→2)1/(x-2)______。",
-      "answer": "-∞；+∞；不存在。",
+      "prompt": "填空：$\\lim_{x\\to 2^{-}}\\frac{1}{x-2}=\\underline{\\qquad}$，$\\lim_{x\\to 2^{+}}\\frac{1}{x-2}=\\underline{\\qquad}$，因此 $\\lim_{x\\to 2}\\frac{1}{x-2}\\underline{\\qquad}$。",
+      "answer": "$-\\infty$；$+\\infty$；不存在。",
       "solution": {
-        "knowledge": ["无穷极限", "左右趋近时分母符号", "双侧极限存在条件"],
+        "knowledge": [
+          "无穷极限",
+          "左右趋近时分母符号",
+          "双侧极限存在条件"
+        ],
         "analysis": "分母的绝对值在两侧都趋于 0，但符号相反：左侧为负的小量，右侧为正的小量，所以倒数分别向负、正无穷发散。",
         "steps": [
-          "当 x→2⁻ 时，x-2<0 且 |x-2|→0，所以 1/(x-2) 为绝对值越来越大的负数。",
-          "因此 lim(x→2⁻)1/(x-2)=-∞。",
-          "当 x→2⁺ 时，x-2>0 且 x-2→0，所以倒数为越来越大的正数，右极限为 +∞。",
+          "当 $x\\to 2^{-}$ 时，$x-2<0$ 且 $|x-2|\\to 0$，所以 $\\frac{1}{x-2}$ 为绝对值越来越大的负数。",
+          "因此 $\\lim_{x\\to 2^{-}}\\frac{1}{x-2}=-\\infty$。",
+          "当 $x\\to 2^{+}$ 时，$x-2>0$ 且 $x-2\\to 0$，所以倒数为越来越大的正数，右极限为 $+\\infty$。",
           "左右两侧的广义极限符号相反，不能形成同一个双侧极限，因此双侧极限不存在。"
         ],
-        "pitfalls": ["只看到分母趋于 0 就笼统写成 ∞", "认为 -∞ 与 +∞ 都是“无穷大”所以可以视为相等"],
-        "verification": "取 x=1.99 得 -100，取 x=2.01 得 100；继续靠近 2 时绝对值增大而符号始终相反。",
+        "pitfalls": [
+          "只看到分母趋于 0 就笼统写成 $\\infty$",
+          "认为 $-\\infty$ 与 $+\\infty$ 都是“无穷大”所以可以视为相等"
+        ],
+        "verification": "取 $x=1.99$ 得 $-100$，取 $x=2.01$ 得 100；继续靠近 2 时绝对值增大而符号始终相反。",
         "takeaway": "倒数型无穷极限必须同时检查分母趋零的方向和符号。",
-        "extension": "对 1/(x-2)²，两侧分母均为正，左右极限都为 +∞，可写双侧极限为 +∞。"
+        "extension": "对 $\\frac{1}{(x-2)^{2}}$，两侧分母均为正，左右极限都为 $+\\infty$，可写双侧极限为 $+\\infty$。"
       }
     },
     "en": {
       "title": "Opposite Signs Near a Vertical Blow-Up",
-      "prompt": "Fill in the blanks: lim(x→2⁻)1/(x-2)=______, lim(x→2⁺)1/(x-2)=______, and therefore lim(x→2)1/(x-2) ______.",
-      "answer": "-∞; +∞; does not exist.",
+      "prompt": "Fill in the blanks: $\\lim_{x\\to 2^{-}}\\frac{1}{x-2}=\\underline{\\qquad}$, $\\lim_{x\\to 2^{+}}\\frac{1}{x-2}=\\underline{\\qquad}$, and therefore $\\lim_{x\\to 2}\\frac{1}{x-2}\\,\\underline{\\qquad}$.",
+      "answer": "$-\\infty; +\\infty$; does not exist.",
       "solution": {
-        "knowledge": ["infinite limits", "sign of the denominator from each side", "criterion for a two-sided limit"],
+        "knowledge": [
+          "infinite limits",
+          "sign of the denominator from each side",
+          "criterion for a two-sided limit"
+        ],
         "analysis": "The denominator tends to zero in magnitude on both sides, but its sign differs: it is a small negative quantity on the left and a small positive quantity on the right. Their reciprocals diverge in opposite directions.",
         "steps": [
-          "As x→2⁻, x-2<0 and |x-2|→0, so 1/(x-2) is negative with increasing magnitude.",
-          "Thus lim(x→2⁻)1/(x-2)=-∞.",
-          "As x→2⁺, x-2>0 and tends to zero, so its reciprocal becomes arbitrarily large and positive; the right-hand limit is +∞.",
+          "As $x\\to 2^{-}, x-2<0$ and $|x-2|\\to 0$, so $\\frac{1}{x-2}$ is negative with increasing magnitude.",
+          "Thus $\\lim_{x\\to 2^{-}}\\frac{1}{x-2}=-\\infty$.",
+          "As $x\\to 2^{+}, x-2>0$ and tends to zero, so its reciprocal becomes arbitrarily large and positive; the right-hand limit is $+\\infty$.",
           "The one-sided infinite limits have opposite signs and cannot form one two-sided limit, so the two-sided limit does not exist."
         ],
-        "pitfalls": ["writing simply ∞ whenever a denominator tends to zero", "treating -∞ and +∞ as equal because both are unbounded"],
-        "verification": "At x=1.99 the value is -100, while at x=2.01 it is 100. Closer inputs increase the magnitudes but retain opposite signs.",
+        "pitfalls": [
+          "writing simply $\\infty$ whenever a denominator tends to zero",
+          "treating $-\\infty$ and $+\\infty$ as equal because both are unbounded"
+        ],
+        "verification": "At $x=1.99$ the value is $-100$, while at $x=2.01$ it is 100. Closer inputs increase the magnitudes but retain opposite signs.",
         "takeaway": "For reciprocal blow-ups, inspect both the direction toward zero and the sign of the denominator.",
-        "extension": "For 1/(x-2)² the denominator is positive on both sides, so both one-sided limits are +∞ and the two-sided infinite limit is +∞."
+        "extension": "For $\\frac{1}{(x-2)^{2}}$ the denominator is positive on both sides, so both one-sided limits are $+\\infty$ and the two-sided infinite limit is $+\\infty$."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "infinite limit / one-sided limits",
+      "relation": "Independently authored synthesis combining infinite limit / one-sided limits; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v1-2.2-function-limits"
+      ]
     }
   },
   {
@@ -1544,49 +2429,79 @@
     "difficulty": "advanced",
     "type": "calculation",
     "tags": {
-      "zh": ["根式极限", "有理化", "0/0型"],
-      "en": ["radical limit", "rationalization", "zero-over-zero form"]
+      "zh": [
+        "根式极限",
+        "有理化",
+        "$\\frac{0}{0}$型"
+      ],
+      "en": [
+        "radical limit",
+        "rationalization",
+        "zero-over-zero form"
+      ]
     },
     "minutes": 10,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "双根式之差的极限",
-      "prompt": "求极限 lim(x→0) [√(1+x)-√(1-x)]/x。",
+      "prompt": "求极限 $\\lim_{x\\to 0} \\frac{\\sqrt{1+x}-\\sqrt{1-x}}{x}$。",
       "answer": "1。",
       "solution": {
-        "knowledge": ["共轭有理化", "去心邻域约分", "极限运算法则"],
-        "analysis": "直接代入得到 0/0。分子是两个根式之差，乘以它们的和作为共轭因子，可把分子化为 2x 并约去 x。",
-        "steps": [
-          "原式乘以共轭因子 [√(1+x)+√(1-x)]/[√(1+x)+√(1-x)]。",
-          "分子化为 (1+x)-(1-x)=2x。",
-          "在 x≠0 的去心邻域内约去 x，得到 2/[√(1+x)+√(1-x)]。",
-          "当 x→0 时，两根式分别趋于 1，分母趋于 2，因此极限为 2/2=1。"
+        "knowledge": [
+          "共轭有理化",
+          "去心邻域约分",
+          "极限运算法则"
         ],
-        "pitfalls": ["把 √(1+x)-√(1-x) 拆成两个极限后停在 0/0", "约去 x 后忘记说明极限研究的是 x≠0 的去心邻域"],
-        "verification": "取 x=0.01，原式约为 (√1.01-√0.99)/0.01≈1.0000，与结果 1 一致。",
-        "takeaway": "根式差产生 0/0 时，共轭有理化通常能显露可约去的主因子。",
-        "extension": "把 1±x 改为 1±ax，可用同样方法得到极限 a。"
+        "analysis": "直接代入得到 $\\frac{0}{0}$。分子是两个根式之差，乘以它们的和作为共轭因子，可把分子化为 2x 并约去 x。",
+        "steps": [
+          "原式乘以共轭因子 $\\frac{\\sqrt{1+x}+\\sqrt{1-x}}{\\sqrt{1+x}+\\sqrt{1-x}}$。",
+          "分子化为 $(1+x)-(1-x)=2x$。",
+          "在 $x\\ne 0$ 的去心邻域内约去 x，得到 $\\frac{2}{\\sqrt{1+x}+\\sqrt{1-x}}$。",
+          "当 $x\\to 0$ 时，两根式分别趋于 1，分母趋于 2，因此极限为 $\\frac{2}{2}=1$。"
+        ],
+        "pitfalls": [
+          "把 $\\sqrt{1+x}-\\sqrt{1-x}$ 拆成两个极限后停在 $\\frac{0}{0}$",
+          "约去 x 后忘记说明极限研究的是 $x\\ne 0$ 的去心邻域"
+        ],
+        "verification": "取 $x=0.01$，原式约为 $\\frac{\\sqrt{1.01}-\\sqrt{0.99}}{0.01}\\approx 1.0000$，与结果 1 一致。",
+        "takeaway": "根式差产生 $\\frac{0}{0}$ 时，共轭有理化通常能显露可约去的主因子。",
+        "extension": "把 $1\\pm x$ 改为 $1\\pm ax$，可用同样方法得到极限 a。"
       }
     },
     "en": {
       "title": "Limit of a Difference of Two Radicals",
-      "prompt": "Evaluate lim(x→0) [√(1+x)-√(1-x)]/x.",
+      "prompt": "Evaluate $\\lim_{x\\to 0} \\frac{\\sqrt{1+x}-\\sqrt{1-x}}{x}$.",
       "answer": "1.",
       "solution": {
-        "knowledge": ["conjugate rationalization", "cancellation in a deleted neighborhood", "limit laws"],
-        "analysis": "Direct substitution gives 0/0. Because the numerator is a difference of radicals, multiplying by the conjugate sum changes the numerator to 2x, which can then be canceled.",
-        "steps": [
-          "Multiply by [√(1+x)+√(1-x)]/[√(1+x)+√(1-x)].",
-          "The numerator becomes (1+x)-(1-x)=2x.",
-          "For x≠0 in the deleted neighborhood, cancel x to obtain 2/[√(1+x)+√(1-x)].",
-          "As x→0, both radicals tend to 1, so the denominator tends to 2 and the limit is 2/2=1."
+        "knowledge": [
+          "conjugate rationalization",
+          "cancellation in a deleted neighborhood",
+          "limit laws"
         ],
-        "pitfalls": ["splitting the difference into separate limits and remaining stuck at 0/0", "canceling x without noting that a limit uses x≠0 in a deleted neighborhood"],
-        "verification": "At x=0.01, the original quotient is approximately (√1.01-√0.99)/0.01≈1.0000, consistent with 1.",
-        "takeaway": "When a difference of radicals gives 0/0, conjugate rationalization often exposes the factor that can be canceled.",
-        "extension": "Replacing 1±x by 1±ax gives, by the same method, the limit a."
+        "analysis": "Direct substitution gives $\\frac{0}{0}$. Because the numerator is a difference of radicals, multiplying by the conjugate sum changes the numerator to 2x, which can then be canceled.",
+        "steps": [
+          "Multiply by $\\frac{\\sqrt{1+x}+\\sqrt{1-x}}{\\sqrt{1+x}+\\sqrt{1-x}}$.",
+          "The numerator becomes $(1+x)-(1-x)=2x$.",
+          "For $x\\ne 0$ in the deleted neighborhood, cancel x to obtain $\\frac{2}{\\sqrt{1+x}+\\sqrt{1-x}}$.",
+          "As $x\\to 0$, both radicals tend to 1, so the denominator tends to 2 and the limit is $\\frac{2}{2}=1$."
+        ],
+        "pitfalls": [
+          "splitting the difference into separate limits and remaining stuck at $\\frac{0}{0}$",
+          "canceling x without noting that a limit uses $x\\ne 0$ in a deleted neighborhood"
+        ],
+        "verification": "At $x=0.01$, the original quotient is approximately $\\frac{\\sqrt{1.01}-\\sqrt{0.99}}{0.01}\\approx 1.0000$, consistent with 1.",
+        "takeaway": "When a difference of radicals gives $\\frac{0}{0}$, conjugate rationalization often exposes the factor that can be canceled.",
+        "extension": "Replacing $1\\pm x$ by $1\\pm ax$ gives, by the same method, the limit a."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "radical limit / rationalization",
+      "relation": "Independently authored synthesis combining radical limit / rationalization; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v1-2.2-function-limits"
+      ]
     }
   },
   {
@@ -1596,53 +2511,88 @@
     "difficulty": "hard",
     "type": "proof",
     "tags": {
-      "zh": ["函数极限唯一性", "ε-δ证明", "反证法", "三角不等式"],
-      "en": ["uniqueness of a function limit", "epsilon-delta proof", "contradiction", "triangle inequality"]
+      "zh": [
+        "函数极限唯一性",
+        "$\\varepsilon -\\delta$证明",
+        "反证法",
+        "三角不等式"
+      ],
+      "en": [
+        "uniqueness of a function limit",
+        "epsilon-delta proof",
+        "contradiction",
+        "triangle inequality"
+      ]
     },
     "minutes": 18,
     "space": "XL",
     "classic_method": true,
     "zh": {
       "title": "证明函数极限的唯一性",
-      "prompt": "设 a 是函数 f 定义域的聚点。若 lim(x→a)f(x)=A 且 lim(x→a)f(x)=B，证明 A=B。",
-      "answer": "反设 A≠B，取 ε=|A-B|/3。由两个极限定义，在同一充分小的去心邻域内同时有 |f(x)-A|<ε、|f(x)-B|<ε。于是 |A-B|≤|A-f(x)|+|f(x)-B|<2|A-B|/3，矛盾，故 A=B。",
+      "prompt": "设 a 是函数 f 定义域的聚点。若 $\\lim_{x\\to a}f(x)=A$ 且 $\\lim_{x\\to a}f(x)=B$，证明 $A=B$。",
+      "answer": "反设 $A\\ne B$，取 $\\varepsilon =\\frac{|A-B|}{3}$。由两个极限定义，在同一充分小的去心邻域内同时有 $|f(x)-A|<\\varepsilon$、$|f(x)-B|<\\varepsilon$。于是 $|A-B|\\le |A-f(x)|+|f(x)-B|<\\frac{2|A-B|}{3}$，矛盾，故 $A=B$。",
       "solution": {
-        "knowledge": ["函数极限唯一性", "ε-δ定义", "取两个 δ 的最小值", "三角不等式"],
-        "analysis": "若 A、B 不同，它们之间有正距离。让 f(x) 同时进入以 A、B 为中心、半径小于两中心距离一半的邻域，就会造成两个邻域不可能相交的矛盾。",
-        "steps": [
-          "反设 A≠B，则 d=|A-B|>0。取 ε=d/3。",
-          "由 lim(x→a)f(x)=A，存在 δ₁>0，使 0<|x-a|<δ₁ 时 |f(x)-A|<d/3。",
-          "由 lim(x→a)f(x)=B，存在 δ₂>0，使 0<|x-a|<δ₂ 时 |f(x)-B|<d/3。",
-          "取 δ=min{δ₁,δ₂}。因 a 为聚点，可在 0<|x-a|<δ 中取到定义域内的 x；此时两组不等式同时成立。",
-          "由三角不等式，d=|A-B|≤|A-f(x)|+|f(x)-B|<d/3+d/3=2d/3。",
-          "这推出 d<2d/3，与 d>0 矛盾，因此反设不成立，只能有 A=B。"
+        "knowledge": [
+          "函数极限唯一性",
+          "$\\varepsilon -\\delta$定义",
+          "取两个 $\\delta$ 的最小值",
+          "三角不等式"
         ],
-        "pitfalls": ["分别得到 δ₁、δ₂ 后没有取最小值，无法保证两个估计同时成立", "忘记 a 为聚点，从而未说明去心邻域中确有定义域点可选"],
-        "verification": "几何上，以 A、B 为中心、半径 d/3 的两个区间之间仍有间隔 d/3，不可能包含同一个 f(x)，与代数矛盾完全一致。",
+        "analysis": "若 A、B 不同，它们之间有正距离。让 $f(x)$ 同时进入以 A、B 为中心、半径小于两中心距离一半的邻域，就会造成两个邻域不可能相交的矛盾。",
+        "steps": [
+          "反设 $A\\ne B$，则 $d=|A-B|>0$。取 $\\varepsilon =\\frac{d}{3}$。",
+          "由 $\\lim_{x\\to a}f(x)=A$，存在 $\\delta _{1}>0$，使 $0<|x-a|<\\delta _{1}$ 时 $|f(x)-A|<\\frac{d}{3}$。",
+          "由 $\\lim_{x\\to a}f(x)=B$，存在 $\\delta _{2}>0$，使 $0<|x-a|<\\delta _{2}$ 时 $|f(x)-B|<\\frac{d}{3}$。",
+          "取 $\\delta =\\min\\{\\delta _{1},\\delta _{2}\\}$。因 a 为聚点，可在 $0<|x-a|<\\delta$ 中取到定义域内的 x；此时两组不等式同时成立。",
+          "由三角不等式，$d=|A-B|\\le |A-f(x)|+|f(x)-B|<\\frac{d}{3}+\\frac{d}{3}=\\frac{2d}{3}$。",
+          "这推出 $d<\\frac{2d}{3}$，与 $d>0$ 矛盾，因此反设不成立，只能有 $A=B$。"
+        ],
+        "pitfalls": [
+          "分别得到 $\\delta _{1}$、$\\delta _{2}$ 后没有取最小值，无法保证两个估计同时成立",
+          "忘记 a 为聚点，从而未说明去心邻域中确有定义域点可选"
+        ],
+        "verification": "几何上，以 A、B 为中心、半径 $\\frac{d}{3}$ 的两个区间之间仍有间隔 $\\frac{d}{3}$，不可能包含同一个 $f(x)$，与代数矛盾完全一致。",
         "takeaway": "唯一性证明的核心是把两个极限估计放进同一个足够小的去心邻域，再用三角不等式比较两候选值。",
-        "extension": "同样的论证可证明数列极限唯一性，只需把两个阈值 N₁、N₂ 合并为 max{N₁,N₂}。"
+        "extension": "同样的论证可证明数列极限唯一性，只需把两个阈值 $N_{1}$、$N_{2}$ 合并为 $\\max\\{N_{1},N_{2}\\}$。"
       }
     },
     "en": {
       "title": "Prove Uniqueness of a Function Limit",
-      "prompt": "Let a be an accumulation point of the domain of f. If lim(x→a)f(x)=A and lim(x→a)f(x)=B, prove that A=B.",
-      "answer": "Assume A≠B and choose ε=|A-B|/3. The two limit definitions imply that, in one sufficiently small deleted neighborhood, both |f(x)-A|<ε and |f(x)-B|<ε hold. Then |A-B|≤|A-f(x)|+|f(x)-B|<2|A-B|/3, a contradiction. Hence A=B.",
+      "prompt": "Let a be an accumulation point of the domain of f. If $\\lim_{x\\to a}f(x)=A$ and $\\lim_{x\\to a}f(x)=B$, prove that $A=B$.",
+      "answer": "Assume $A\\ne B$ and choose $\\varepsilon =\\frac{|A-B|}{3}$. The two limit definitions imply that, in one sufficiently small deleted neighborhood, both $|f(x)-A|<\\varepsilon$ and $|f(x)-B|<\\varepsilon$ hold. Then $|A-B|\\le |A-f(x)|+|f(x)-B|<\\frac{2|A-B|}{3}, a$ contradiction. Hence $A=B$.",
       "solution": {
-        "knowledge": ["uniqueness of function limits", "epsilon-delta definition", "taking the minimum of two deltas", "triangle inequality"],
-        "analysis": "If A and B differ, they have a positive separation. Forcing f(x) into neighborhoods of both centers whose radii total less than that separation creates an impossible overlap.",
-        "steps": [
-          "Assume for contradiction that A≠B, and set d=|A-B|>0. Choose ε=d/3.",
-          "From lim(x→a)f(x)=A, there exists δ₁>0 such that 0<|x-a|<δ₁ implies |f(x)-A|<d/3.",
-          "From lim(x→a)f(x)=B, there exists δ₂>0 such that 0<|x-a|<δ₂ implies |f(x)-B|<d/3.",
-          "Let δ=min{δ₁,δ₂}. Because a is an accumulation point, choose a domain point x with 0<|x-a|<δ; both inequalities then hold simultaneously.",
-          "By the triangle inequality, d=|A-B|≤|A-f(x)|+|f(x)-B|<d/3+d/3=2d/3.",
-          "This gives d<2d/3, contradicting d>0. Therefore the assumption is false and A=B."
+        "knowledge": [
+          "uniqueness of function limits",
+          "epsilon-delta definition",
+          "taking the minimum of two deltas",
+          "triangle inequality"
         ],
-        "pitfalls": ["obtaining δ₁ and δ₂ but failing to take their minimum, so the estimates are not guaranteed simultaneously", "forgetting why the accumulation-point condition supplies a domain point in the deleted neighborhood"],
-        "verification": "Geometrically, the intervals centered at A and B with radius d/3 still have a gap of d/3, so they cannot contain the same value f(x), matching the algebraic contradiction.",
+        "analysis": "If A and B differ, they have a positive separation. Forcing $f(x)$ into neighborhoods of both centers whose radii total less than that separation creates an impossible overlap.",
+        "steps": [
+          "Assume for contradiction that $A\\ne B$, and set $d=|A-B|>0$. Choose $\\varepsilon =\\frac{d}{3}$.",
+          "From $\\lim_{x\\to a}f(x)=A$, there exists $\\delta _{1}>0$ such that $0<|x-a|<\\delta _{1}$ implies $|f(x)-A|<\\frac{d}{3}$.",
+          "From $\\lim_{x\\to a}f(x)=B$, there exists $\\delta _{2}>0$ such that $0<|x-a|<\\delta _{2}$ implies $|f(x)-B|<\\frac{d}{3}$.",
+          "Let $\\delta =\\min\\{\\delta _{1},\\delta _{2}\\}$. Because a is an accumulation point, choose a domain point x with $0<|x-a|<\\delta$; both inequalities then hold simultaneously.",
+          "By the triangle inequality, $d=|A-B|\\le |A-f(x)|+|f(x)-B|<\\frac{d}{3}+\\frac{d}{3}=\\frac{2d}{3}$.",
+          "This gives $d<\\frac{2d}{3}$, contradicting $d>0$. Therefore the assumption is false and $A=B$."
+        ],
+        "pitfalls": [
+          "obtaining $\\delta _{1}$ and $\\delta _{2}$ but failing to take their minimum, so the estimates are not guaranteed simultaneously",
+          "forgetting why the accumulation-point condition supplies a domain point in the deleted neighborhood"
+        ],
+        "verification": "Geometrically, the intervals centered at A and B with radius $\\frac{d}{3}$ still have a gap of $\\frac{d}{3}$, so they cannot contain the same value $f(x)$, matching the algebraic contradiction.",
         "takeaway": "For uniqueness, place both limit estimates in one common deleted neighborhood and compare the two candidate limits with the triangle inequality.",
-        "extension": "The same proof establishes uniqueness of a sequence limit by combining two thresholds with max{N₁,N₂}."
+        "extension": "The same proof establishes uniqueness of a sequence limit by combining two thresholds with $\\max\\{N_{1},N_{2}\\}$."
       }
+    },
+    "source_lineage": {
+      "category": "original_synthesis",
+      "method_family": "uniqueness of a function limit / epsilon-delta proof",
+      "relation": "Independently authored synthesis combining uniqueness of a function limit / epsilon-delta proof; the references supply background concepts and are not source problems.",
+      "references": [
+        "openstax-v1-2.2-function-limits",
+        "openstax-v1-2.5-precise-limit"
+      ]
     }
   },
   {
@@ -1652,49 +2602,79 @@
     "difficulty": "standard",
     "type": "calculation",
     "tags": {
-      "zh": ["函数极限计算", "因式分解", "去心邻域"],
-      "en": ["function-limit calculation", "factorization", "deleted neighborhood"]
+      "zh": [
+        "函数极限计算",
+        "因式分解",
+        "去心邻域"
+      ],
+      "en": [
+        "function-limit calculation",
+        "factorization",
+        "deleted neighborhood"
+      ]
     },
     "minutes": 6,
     "space": "L",
     "classic_method": true,
     "zh": {
       "title": "约去造成零除的公因子",
-      "prompt": "求极限 lim(x→3) (x²-9)/(x-3)。",
+      "prompt": "求极限 $\\lim_{x\\to 3} \\frac{x^{2}-9}{x-3}$。",
       "answer": "6。",
       "solution": {
-        "knowledge": ["平方差公式", "去心邻域内约分", "极限与函数点值的区别"],
-        "analysis": "直接代入得到 0/0，但分子含有与分母相同的因子。极限只要求 x 接近 3 且 x≠3，因此可以先约分。",
-        "steps": [
-          "利用平方差公式分解 x²-9=(x-3)(x+3)。",
-          "当 x≠3 时，(x²-9)/(x-3)=x+3。",
-          "极限研究的去心邻域满足 x≠3，所以该化简在求极限时合法。",
-          "于是 lim(x→3)(x²-9)/(x-3)=lim(x→3)(x+3)=6。"
+        "knowledge": [
+          "平方差公式",
+          "去心邻域内约分",
+          "极限与函数点值的区别"
         ],
-        "pitfalls": ["看到直接代入为 0/0 就误判极限不存在", "约分后声称原函数在 x=3 处也有定义"],
-        "verification": "取 x=2.99 与 3.01，原商分别等于 5.99 与 6.01，从两侧都接近 6。",
-        "takeaway": "0/0 不是答案，而是提示先做代数化简；去心邻域允许约去导致空点的公因子。",
-        "extension": "一般地，lim(x→a)(x²-a²)/(x-a)=2a，可由相同的平方差分解得到。"
+        "analysis": "直接代入得到 $\\frac{0}{0}$，但分子含有与分母相同的因子。极限只要求 x 接近 3 且 $x\\ne 3$，因此可以先约分。",
+        "steps": [
+          "利用平方差公式分解 $x^{2}-9=(x-3)(x+3)$。",
+          "当 $x\\ne 3$ 时，$\\frac{x^{2}-9}{x-3}=x+3$。",
+          "极限研究的去心邻域满足 $x\\ne 3$，所以该化简在求极限时合法。",
+          "于是 $\\lim_{x\\to 3}\\frac{x^{2}-9}{x-3}=\\lim_{x\\to 3}(x+3)=6$。"
+        ],
+        "pitfalls": [
+          "看到直接代入为 $\\frac{0}{0}$ 就误判极限不存在",
+          "约分后声称原函数在 $x=3$ 处也有定义"
+        ],
+        "verification": "取 $x=2.99$ 与 3.01，原商分别等于 5.99 与 6.01，从两侧都接近 6。",
+        "takeaway": "$\\frac{0}{0}$ 不是答案，而是提示先做代数化简；去心邻域允许约去导致空点的公因子。",
+        "extension": "一般地，$\\lim_{x\\to a}\\frac{x^{2}-a^{2}}{x-a}=2a$，可由相同的平方差分解得到。"
       }
     },
     "en": {
       "title": "Cancel the Common Factor Causing Zero Division",
-      "prompt": "Evaluate lim(x→3) (x²-9)/(x-3).",
+      "prompt": "Evaluate $\\lim_{x\\to 3} \\frac{x^{2}-9}{x-3}$.",
       "answer": "6.",
       "solution": {
-        "knowledge": ["difference of squares", "cancellation in a deleted neighborhood", "limit versus point value"],
-        "analysis": "Direct substitution gives 0/0, but the numerator contains the same factor as the denominator. A limit uses x close to 3 with x≠3, so the common factor can be canceled first.",
-        "steps": [
-          "Factor the numerator using x²-9=(x-3)(x+3).",
-          "For x≠3, (x²-9)/(x-3)=x+3.",
-          "The deleted neighborhood used by the limit satisfies x≠3, so this simplification is valid for the limit calculation.",
-          "Therefore lim(x→3)(x²-9)/(x-3)=lim(x→3)(x+3)=6."
+        "knowledge": [
+          "difference of squares",
+          "cancellation in a deleted neighborhood",
+          "limit versus point value"
         ],
-        "pitfalls": ["treating the direct-substitution form 0/0 as proof that the limit does not exist", "claiming after cancellation that the original quotient is defined at x=3"],
-        "verification": "At x=2.99 and x=3.01, the original quotient equals 5.99 and 6.01, approaching 6 from both sides.",
-        "takeaway": "The form 0/0 is not an answer; it signals that algebraic simplification may reveal the limit. A deleted neighborhood permits cancellation of the vanishing factor.",
-        "extension": "More generally, lim(x→a)(x²-a²)/(x-a)=2a by the same difference-of-squares factorization."
+        "analysis": "Direct substitution gives $\\frac{0}{0}$, but the numerator contains the same factor as the denominator. A limit uses x close to 3 with $x\\ne 3$, so the common factor can be canceled first.",
+        "steps": [
+          "Factor the numerator using $x^{2}-9=(x-3)(x+3)$.",
+          "For $x\\ne 3,\\frac{x^{2}-9}{x-3}=x+3$.",
+          "The deleted neighborhood used by the limit satisfies $x\\ne 3$, so this simplification is valid for the limit calculation.",
+          "Therefore $\\lim_{x\\to 3}\\frac{x^{2}-9}{x-3}=\\lim_{x\\to 3}(x+3)=6$."
+        ],
+        "pitfalls": [
+          "treating the direct-substitution form $\\frac{0}{0}$ as proof that the limit does not exist",
+          "claiming after cancellation that the original quotient is defined at $x=3$"
+        ],
+        "verification": "At $x=2.99$ and $x=3.01$, the original quotient equals 5.99 and 6.01, approaching 6 from both sides.",
+        "takeaway": "The form $\\frac{0}{0}$ is not an answer; it signals that algebraic simplification may reveal the limit. A deleted neighborhood permits cancellation of the vanishing factor.",
+        "extension": "More generally, $\\lim_{x\\to a}\\frac{x^{2}-a^{2}}{x-a}=2a$ by the same difference-of-squares factorization."
       }
+    },
+    "source_lineage": {
+      "category": "open_text_adaptation",
+      "method_family": "function-limit calculation / factorization",
+      "relation": "Independently rewritten around an openly documented function-limit calculation / factorization pattern; the references establish method-level lineage, not verbatim reproduction of a source problem.",
+      "references": [
+        "openstax-v1-2.2-function-limits"
+      ]
     }
   }
 ]

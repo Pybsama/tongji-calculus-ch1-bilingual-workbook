@@ -1,0 +1,13 @@
+{
+  "name": "tongji-calculus-ch1-bilingual-workbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KaTeX compatibility audit for the bilingual Chapter 1 calculus corpus",
+  "type": "module",
+  "scripts": {
+    "validate:katex": "node scripts/validate_katex.mjs"
+  },
+  "devDependencies": {
+    "katex": "0.17.0"
+  }
+}

@@ -1,42 +1,50 @@
 from pathlib import Path
 
-import pdfplumber
-from pypdf import PdfReader
-
 from src.corpus import load_questions, validate_questions
-from src.pdf_renderer import EXERCISE_SIZE, SOLUTION_SIZE, build_exercises, build_solutions
+from src.latex_renderer import build_tex
 
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def _assert_size(reader: PdfReader, expected: tuple[float, float]) -> None:
-    page = reader.pages[0]
-    actual = (float(page.mediabox.width), float(page.mediabox.height))
-    assert abs(actual[0] - expected[0]) < 1
-    assert abs(actual[1] - expected[1]) < 1
-
-
-def test_smoke_build_first_two_questions(tmp_path: Path) -> None:
-    corpus = ROOT / "content" / "questions.json"
-    assert corpus.exists()
-    questions = load_questions(corpus)
+def _questions() -> list[dict]:
+    questions = load_questions(ROOT / "content" / "questions.json")
     assert validate_questions(questions) == []
-    sample = questions[:2]
+    return questions
 
-    exercises = tmp_path / "exercises.pdf"
-    solutions = tmp_path / "solutions.pdf"
-    build_exercises(sample, "zh", exercises)
-    build_solutions(sample, "en", solutions)
 
-    exercise_reader = PdfReader(exercises)
-    solution_reader = PdfReader(solutions)
-    _assert_size(exercise_reader, EXERCISE_SIZE)
-    _assert_size(solution_reader, SOLUTION_SIZE)
-    assert len(exercise_reader.pages) >= 5
-    assert len(solution_reader.pages) >= 5
+def test_exercise_tex_uses_xetex_fonts_structured_math_and_safe_blanks() -> None:
+    tex = build_tex(
+        _questions(),
+        language="zh",
+        kind="exercises",
+        chapter=1,
+        pdf_title="test",
+    )
 
-    with pdfplumber.open(exercises) as pdf:
-        text = "\n".join(page.extract_text() or "" for page in pdf.pages)
-    assert "Q001" in text and "Q002" in text
+    assert r"\setCJKmainfont{FandolSong-Regular.otf}" in tex
+    assert r"\setsansfont{texgyreheros-regular.otf}" in tex
+    assert r"\setmathfont{STIXTwoMath-Regular.otf}" in tex
+    assert "includeheadfoot,headheight=5mm,headsep=3mm,footskip=6mm" in tex
+    assert r"\frac{" in tex
+    assert r"\begin{cases}" in tex
+    assert "______" not in tex
+    assert r"\underline{\qquad}" in tex
+    assert r"\textbackslash{}frac" not in tex
 
+
+def test_solution_tex_contains_every_question_and_real_math_environments() -> None:
+    tex = build_tex(
+        _questions(),
+        language="en",
+        kind="solutions",
+        chapter=1,
+        pdf_title="test",
+    )
+
+    for number in range(1, 101):
+        assert f"solution-Q{number:03d}" in tex
+    assert tex.count(r"\pdfbookmark[1]") == 100
+    assert r"\(\lim_{" in tex
+    assert r"\(\frac{" in tex
+    assert r"\textbackslash{}varepsilon" not in tex

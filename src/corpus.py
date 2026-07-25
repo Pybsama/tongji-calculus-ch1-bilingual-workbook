@@ -26,6 +26,25 @@ DIFFICULTY_QUOTAS = {
 }
 VALID_TIERS = {"foundation", "methods", "synthesis", "challenge"}
 VALID_SPACES = {"S", "M", "L", "XL"}
+SOURCE_LINEAGE_CATEGORIES = {
+    "open_text_adaptation",
+    "classic_method_variant",
+    "original_synthesis",
+}
+SOURCE_LINEAGE_REFERENCE_IDS = {
+    "openstax-v1-1.1-functions",
+    "openstax-v1-1.4-inverse-functions",
+    "openstax-v1-2.2-function-limits",
+    "openstax-v1-2.3-limit-laws",
+    "openstax-v1-2.4-continuity",
+    "openstax-v1-2.5-precise-limit",
+    "openstax-v1-4.3-extrema",
+    "openstax-v2-5.1-sequences",
+    "mit-18.01sc-session-4-limits-continuity",
+    "mit-18.01sc-session-5-discontinuity",
+    "mit-18.01sc-session-8-trig-limits",
+    "mit-18.01sc-session-19-limit-involving-e",
+}
 REQUIRED_LOCALIZED = {"title", "prompt", "answer", "solution"}
 REQUIRED_SOLUTION = {
     "knowledge",
@@ -85,6 +104,7 @@ def validate_questions(items: list[dict[str, Any]], enforce_quotas: bool = True)
             "minutes",
             "space",
             "classic_method",
+            "source_lineage",
             "zh",
             "en",
         }
@@ -100,6 +120,46 @@ def validate_questions(items: list[dict[str, Any]], enforce_quotas: bool = True)
             errors.append(prefix + "minutes must be an integer from 2 through 45")
         if not isinstance(item["classic_method"], bool):
             errors.append(prefix + "classic_method must be boolean")
+
+        lineage = item["source_lineage"]
+        if not isinstance(lineage, dict):
+            errors.append(prefix + "source_lineage must be an object")
+        else:
+            lineage_fields = {
+                "category",
+                "method_family",
+                "relation",
+                "references",
+            }
+            lineage_missing = sorted(lineage_fields - set(lineage))
+            lineage_extra = sorted(set(lineage) - lineage_fields)
+            if lineage_missing:
+                errors.append(prefix + f"source_lineage missing {lineage_missing}")
+            if lineage_extra:
+                errors.append(prefix + f"source_lineage has unsupported fields {lineage_extra}")
+            category = lineage.get("category")
+            if category not in SOURCE_LINEAGE_CATEGORIES:
+                errors.append(prefix + f"unsupported source_lineage category {category!r}")
+            method_family = lineage.get("method_family")
+            if not isinstance(method_family, str) or len(method_family.strip()) < 3:
+                errors.append(prefix + "source_lineage method_family is too short")
+            relation = lineage.get("relation")
+            if not isinstance(relation, str) or len(relation.strip()) < 24:
+                errors.append(prefix + "source_lineage relation is too short")
+            references = lineage.get("references")
+            if not isinstance(references, list) or not references:
+                errors.append(prefix + "source_lineage references must be a non-empty array")
+            elif not all(isinstance(reference, str) for reference in references):
+                errors.append(prefix + "source_lineage references must contain strings")
+            else:
+                if len(references) != len(set(references)):
+                    errors.append(prefix + "source_lineage references must be unique")
+                unknown_references = sorted(set(references) - SOURCE_LINEAGE_REFERENCE_IDS)
+                if unknown_references:
+                    errors.append(
+                        prefix
+                        + f"source_lineage has unknown reference IDs {unknown_references}"
+                    )
 
         tags = item["tags"]
         if not isinstance(tags, dict) or not tags.get("zh") or not tags.get("en"):
@@ -147,4 +207,3 @@ def validate_questions(items: list[dict[str, Any]], enforce_quotas: bool = True)
             )
         )
     return errors
-
